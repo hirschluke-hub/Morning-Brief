@@ -112,14 +112,14 @@ def get_weather():
         url = (
             f"https://api.open-meteo.com/v1/forecast"
             f"?latitude={LAT}&longitude={LON}"
-            f"&current=temperature_2m,weather_code"
+            f"&daily=temperature_2m_max,weathercode"
             f"&temperature_unit=fahrenheit"
             f"&timezone=America/Los_Angeles"
         )
         with urllib.request.urlopen(url, timeout=5) as r:
             data = json.loads(r.read())
-        temp = round(data["current"]["temperature_2m"])
-        code = data["current"]["weather_code"]
+        temp = round(data["daily"]["temperature_2m_max"][0])
+        code = data["daily"]["weathercode"][0]
         desc = WEATHER_CODES.get(code, "San Diego")
         return temp, desc
     except Exception:
@@ -492,7 +492,7 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url):
     <div class="weather-temp-big">{weather_str}</div>
     <div class="weather-right">
       <div class="weather-condition">{weather_desc_str}</div>
-      <div class="weather-location">San Diego, CA</div>
+      <div class="weather-location">San Diego, CA — Today's High</div>
     </div>
   </div>
 
