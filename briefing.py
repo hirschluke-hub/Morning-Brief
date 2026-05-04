@@ -149,13 +149,13 @@ def get_todos():
                 raw.append(m["body"].strip())
         raw = list(reversed(raw))
 
-        # "clear" wipes everything
-        if any(r.lower() == "clear" for r in raw):
+        # "clear" (any case, with or without punctuation) wipes everything
+        if any(r.strip().lower().rstrip("!.:") == "clear" for r in raw):
             return []
 
         # "done: <item>" removes matching todos
         done = {r[5:].strip().lower() for r in raw if r.lower().startswith("done:")}
-        todos = [r for r in raw if not r.lower().startswith("done:") and r.lower() not in done]
+        todos = [r for r in raw if not r.lower().startswith("done:") and r.lower().strip() not in done]
 
         print(f"Todos found: {todos}")
         return todos
