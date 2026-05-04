@@ -13,7 +13,7 @@ from googleapiclient.discovery import build
 
 # ── Config ────────────────────────────────────────────────────────────────────
 NTFY_TOPIC    = "luke-brief-x7k2m9"
-PAGE_URL      = "https://tinyurl.com/2bx2vmhw"
+PAGE_URL      = "https://hirschluke-hub.github.io/Morning-Brief/"
 
 SCRIPT_DIR           = os.path.dirname(os.path.abspath(__file__))
 DOCS_DIR             = os.path.join(SCRIPT_DIR, "docs")
