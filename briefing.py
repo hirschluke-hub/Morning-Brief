@@ -444,7 +444,7 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url):
       gap: 14px;
       background: #111;
       border-radius: 12px;
-      border-left: 4px solid #80cbc4;
+      border-left: 4px solid #555;
       padding: 14px 16px;
       margin-bottom: 10px;
       font-size: 15px;
@@ -455,7 +455,7 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url):
     .circle {{
       width: 18px;
       height: 18px;
-      border: 2px solid #80cbc4;
+      border: 2px solid #555;
       border-radius: 50%;
       flex-shrink: 0;
     }}
