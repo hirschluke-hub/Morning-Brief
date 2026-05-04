@@ -13,7 +13,7 @@ from googleapiclient.discovery import build
 
 # ── Config ──────────────────────────────────────────────────────────────────
 GMAIL_ADDRESS     = "hirschluke@gmail.com"
-GMAIL_APP_PW      = os.environ.get("GMAIL_APP_PW", "nnkq bija eeyp utun")
+GMAIL_APP_PW      = os.environ.get("GMAIL_APP_PW", "nnkq bija eeyp utun").replace(" ", "")
 SMS_GATEWAY       = "4254925800@vtext.com"
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 
