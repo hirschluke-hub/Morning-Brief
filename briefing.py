@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Daily morning briefing — generates web page + sends push notification."""
 
+import base64
 import json
 import os
 import random
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -14,6 +15,10 @@ from googleapiclient.discovery import build
 # ── Config ────────────────────────────────────────────────────────────────────
 NTFY_TOPIC    = "luke-brief-x7k2m9"
 PAGE_URL      = "https://hirschluke-hub.github.io/Morning-Brief/"
+
+TWILIO_SID    = os.environ["TWILIO_ACCOUNT_SID"]
+TWILIO_TOKEN  = os.environ["TWILIO_AUTH_TOKEN"]
+TWILIO_NUMBER = "+18588081672"
 
 SCRIPT_DIR           = os.path.dirname(os.path.abspath(__file__))
 DOCS_DIR             = os.path.join(SCRIPT_DIR, "docs")
@@ -121,6 +126,31 @@ def get_weather():
         return None, None
 
 
+# ── To-Do (inbound SMS) ───────────────────────────────────────────────────────
+def get_todos():
+    try:
+        cutoff     = datetime.now(timezone.utc) - timedelta(hours=48)
+        cutoff_day = (cutoff - timedelta(days=1)).strftime("%Y-%m-%d")
+        url = (
+            f"https://api.twilio.com/2010-04-01/Accounts/{TWILIO_SID}/Messages.json"
+            f"?To={TWILIO_NUMBER}&DateSent>={cutoff_day}&PageSize=50"
+        )
+        creds = base64.b64encode(f"{TWILIO_SID}:{TWILIO_TOKEN}".encode()).decode()
+        req   = urllib.request.Request(url, headers={"Authorization": f"Basic {creds}"})
+        with urllib.request.urlopen(req, timeout=5) as r:
+            data = json.loads(r.read())
+        todos = []
+        for m in data.get("messages", []):
+            if m.get("direction") != "inbound":
+                continue
+            sent = datetime.fromisoformat(m["date_sent"].replace(" +0000", "+00:00"))
+            if sent >= cutoff:
+                todos.append(m["body"].strip())
+        return list(reversed(todos))
+    except Exception:
+        return []
+
+
 # ── Google Calendar ───────────────────────────────────────────────────────────
 def get_calendar_service():
     creds = Credentials(
@@ -177,7 +207,7 @@ def fmt_time(dt_str):
 
 
 # ── HTML ──────────────────────────────────────────────────────────────────────
-def generate_html(events, temp, weather_desc, quote, author, image_url):
+def generate_html(events, todos, temp, weather_desc, quote, author, image_url):
     today        = datetime.now()
     day_name     = today.strftime("%A").upper()
     date_display = today.strftime("%B %-d, %Y")
@@ -199,6 +229,14 @@ def generate_html(events, temp, weather_desc, quote, author, image_url):
         events_html = rows
     else:
         events_html = '<div class="empty">Free day — make it yours.</div>'
+
+    if todos:
+        todos_html = "".join(
+            f'<div class="todo-item"><div class="circle"></div>{item}</div>'
+            for item in todos
+        )
+    else:
+        todos_html = '<div class="empty">Text (858) 808-1672 to add tasks.</div>'
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -445,9 +483,7 @@ def generate_html(events, temp, weather_desc, quote, author, image_url):
     </div>
     <div>
       <div class="label">To-Do</div>
-      <div class="todo-item"><div class="circle"></div> —</div>
-      <div class="todo-item"><div class="circle"></div> —</div>
-      <div class="todo-item"><div class="circle"></div> —</div>
+      {todos_html}
     </div>
   </div>
 
@@ -477,10 +513,11 @@ def send_notification(title, body):
 if __name__ == "__main__":
     service        = get_calendar_service()
     events         = get_todays_events(service)
+    todos          = get_todos()
     temp, weather  = get_weather()
     quote, author, image_url = random.choice(QUOTE_IMAGE_PAIRS)
 
-    html = generate_html(events, temp, weather, quote, author, image_url)
+    html = generate_html(events, todos, temp, weather, quote, author, image_url)
     save_html(html)
 
     day = datetime.now().strftime("%A")
