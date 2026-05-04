@@ -2,26 +2,28 @@
 """Daily morning briefing — Google Calendar + Claude + SMS via Verizon gateway."""
 
 import os
-import pickle
 import smtplib
 from datetime import datetime, timezone
 from email.mime.text import MIMEText
 
 import anthropic
 from google.auth.transport.requests import Request
-from google_auth_oauthlib.flow import InstalledAppFlow
+from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 
 # ── Config ──────────────────────────────────────────────────────────────────
 GMAIL_ADDRESS     = "hirschluke@gmail.com"
 GMAIL_APP_PW      = os.environ.get("GMAIL_APP_PW", "nnkq bija eeyp utun")
 SMS_GATEWAY       = "4254925800@vtext.com"
-ANTHROPIC_API_KEY = ""   # paste your key here, or set ANTHROPIC_API_KEY env var
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 
-SCRIPT_DIR   = os.path.dirname(os.path.abspath(__file__))
-CREDS_FILE   = os.path.join(SCRIPT_DIR, "credentials.json")
-TOKEN_FILE   = os.path.join(SCRIPT_DIR, "token.pickle")
-LOG_FILE     = os.path.join(SCRIPT_DIR, "briefing_log.txt")
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+LOG_FILE   = os.path.join(SCRIPT_DIR, "briefing_log.txt")
+
+# Google OAuth — loaded from env vars (GitHub Actions) or hardcoded fallback
+GOOGLE_CLIENT_ID     = os.environ.get("GOOGLE_CLIENT_ID",     "763633570239-qnubdp4htilvdal2lf4de7r3b5tk8ikt.apps.googleusercontent.com")
+GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET", "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")
+GOOGLE_REFRESH_TOKEN = os.environ.get("GOOGLE_REFRESH_TOKEN", "1//06W5GtjfxzER8CgYIARAAGAYSNwF-L9IrUwTpmHepvTVZT84TpHgBjrOqISPWxqCRBd6yvn0TncmXSiLK4U-9biA7jGaL_a8Dr64")
 
 # Google Calendar colorId → category label
 COLOR_CATEGORIES = {
@@ -29,22 +31,16 @@ COLOR_CATEGORIES = {
     "10": "School",   # Basil
 }
 
-SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"]
-
 # ── Google Calendar ──────────────────────────────────────────────────────────
 def get_calendar_service():
-    creds = None
-    if os.path.exists(TOKEN_FILE):
-        with open(TOKEN_FILE, "rb") as f:
-            creds = pickle.load(f)
-    if not creds or not creds.valid:
-        if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
-        else:
-            flow = InstalledAppFlow.from_client_secrets_file(CREDS_FILE, SCOPES)
-            creds = flow.run_local_server(port=0)
-        with open(TOKEN_FILE, "wb") as f:
-            pickle.dump(creds, f)
+    creds = Credentials(
+        token=None,
+        refresh_token=GOOGLE_REFRESH_TOKEN,
+        client_id=GOOGLE_CLIENT_ID,
+        client_secret=GOOGLE_CLIENT_SECRET,
+        token_uri="https://oauth2.googleapis.com/token",
+    )
+    creds.refresh(Request())
     return build("calendar", "v3", credentials=creds)
 
 
