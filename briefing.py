@@ -17,7 +17,7 @@ from googleapiclient.discovery import build
 GMAIL_ADDRESS        = "hirschluke@gmail.com"
 GMAIL_APP_PW         = os.environ["GMAIL_APP_PW"]
 SMS_GATEWAY          = "4254925800@vtext.com"
-PAGE_URL             = "https://hirschluke-hub.github.io/Morning-Brief/"
+PAGE_URL             = "https://tinyurl.com/2bx2vmhw"
 
 SCRIPT_DIR           = os.path.dirname(os.path.abspath(__file__))
 DOCS_DIR             = os.path.join(SCRIPT_DIR, "docs")
