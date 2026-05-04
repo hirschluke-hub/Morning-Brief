@@ -1,0 +1,31 @@
+name: Morning Brief
+
+on:
+  schedule:
+    - cron: '0 14 * * *'  # 7am PDT (UTC-7)
+  workflow_dispatch:       # allows manual trigger from GitHub UI
+
+jobs:
+  send-briefing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install anthropic google-api-python-client google-auth-httplib2 google-auth-oauthlib
+
+      - name: Decode Google credentials
+        run: |
+          echo "${{ secrets.GOOGLE_CREDS_B64 }}" | base64 -d > credentials.json
+          echo "${{ secrets.GOOGLE_TOKEN_B64 }}" | base64 -d > token.pickle
+
+      - name: Run briefing
+        env:
+          GMAIL_APP_PW: ${{ secrets.GMAIL_APP_PW }}
+        run: python briefing.py
