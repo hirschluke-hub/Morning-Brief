@@ -3,7 +3,10 @@ name: Morning Brief
 on:
   schedule:
     - cron: '0 14 * * *'  # 7am PDT (UTC-7)
-  workflow_dispatch:       # allows manual trigger from GitHub UI
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   send-briefing:
@@ -12,8 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
@@ -24,3 +26,11 @@ jobs:
         env:
           GMAIL_APP_PW: ${{ secrets.GMAIL_APP_PW }}
         run: python briefing.py
+
+      - name: Publish page
+        run: |
+          git config user.name "Morning Brief"
+          git config user.email "action@github.com"
+          git add docs/index.html
+          git diff --staged --quiet || git commit -m "Daily brief $(date +%Y-%m-%d)"
+          git push
