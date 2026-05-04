@@ -140,22 +140,26 @@ def get_todos():
         req   = urllib.request.Request(url, headers={"Authorization": f"Basic {creds}"})
         with urllib.request.urlopen(req, timeout=5) as r:
             data = json.loads(r.read())
-        raw = []
+        msgs = []
         for m in data.get("messages", []):
             if m.get("direction") != "inbound":
                 continue
             sent = parsedate_to_datetime(m["date_sent"])
             if sent >= cutoff:
-                raw.append(m["body"].strip())
-        raw = list(reversed(raw))
+                msgs.append({"text": m["body"].strip(), "time": sent})
+        msgs.sort(key=lambda x: x["time"])
 
-        # "clear" (any case, with or without punctuation) wipes everything
-        if any(r.strip().lower().rstrip("!.:") == "clear" for r in raw):
-            return []
+        # Find the most recent "clear" — only keep messages after it
+        last_clear = None
+        for msg in msgs:
+            if msg["text"].strip().lower().rstrip("!.:") == "clear":
+                last_clear = msg["time"]
+        if last_clear:
+            msgs = [m for m in msgs if m["time"] > last_clear]
 
         # "done: <item>" removes matching todos
-        done = {r[5:].strip().lower() for r in raw if r.lower().startswith("done:")}
-        todos = [r for r in raw if not r.lower().startswith("done:") and r.lower().strip() not in done]
+        done  = {m["text"][5:].strip().lower() for m in msgs if m["text"].lower().startswith("done:")}
+        todos = [m["text"] for m in msgs if not m["text"].lower().startswith("done:") and m["text"].lower().strip() not in done]
 
         print(f"Todos found: {todos}")
         return todos
