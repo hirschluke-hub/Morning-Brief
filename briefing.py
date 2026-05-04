@@ -49,6 +49,24 @@ QUOTES = [
     ("Show up. Do the work. Trust the process.", "Anonymous"),
 ]
 
+# Curated dramatic/motivational Unsplash photos — rotates daily
+HERO_IMAGES = [
+    "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&q=85",  # mountain sunset
+    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&q=85",  # mountain sunrise
+    "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1400&q=85",  # aerial lake
+    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&q=85",  # ocean sunrise
+    "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1400&q=85",  # mountain stars
+    "https://images.unsplash.com/photo-1434725039720-aaad6dd32dfe?w=1400&q=85",  # desert road
+    "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1400&q=85",  # forest mist
+    "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1400&q=85",  # lake reflection
+    "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1400&q=85",  # alpine peaks
+    "https://images.unsplash.com/photo-1484910292437-025e5d13ce87?w=1400&q=85",  # city lights
+    "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=1400&q=85",  # person cliff
+    "https://images.unsplash.com/photo-1476611338391-6f395a0dd82e?w=1400&q=85",  # golden hour road
+    "https://images.unsplash.com/photo-1418985991508-e47386d96a71?w=1400&q=85",  # winter sunrise
+    "https://images.unsplash.com/photo-1540390769625-2fc3f8b1d50c?w=1400&q=85",  # dramatic clouds
+]
+
 WEATHER_CODES = {
     0: "Clear skies", 1: "Mainly clear", 2: "Partly cloudy", 3: "Overcast",
     45: "Foggy", 48: "Icy fog", 51: "Light drizzle", 53: "Drizzle",
@@ -131,36 +149,24 @@ def fmt_time(dt_str):
 
 # ── HTML ──────────────────────────────────────────────────────────────────────
 def generate_html(events, temp, weather_desc, quote, author):
-    today    = datetime.now()
-    date_str = today.strftime("%A, %B %-d, %Y")
+    today      = datetime.now()
+    date_str   = today.strftime("%A, %B %-d, %Y")
+    day_of_yr  = today.timetuple().tm_yday
+    image_url  = HERO_IMAGES[day_of_yr % len(HERO_IMAGES)]
+    weather_str = f"{temp}°  ·  {weather_desc}  ·  San Diego" if temp else "San Diego, CA"
 
-    # weather block
-    if temp:
-        weather_html = f"""
-  <div class="weather">
-    <div class="temp">{temp}°</div>
-    <div>
-      <div class="weather-desc">{weather_desc}</div>
-      <div class="weather-loc">San Diego, CA</div>
-    </div>
-  </div>"""
-    else:
-        weather_html = ""
-
-    # events block
     if events:
         rows = ""
         for e in events:
             t = f"{fmt_time(e['start'])}–{fmt_time(e['end'])}"
             rows += f"""
-    <div class="event">
-      <div class="dot" style="background:{e['color']}"></div>
-      <div class="event-info">
-        <div class="event-name">{e['summary']}</div>
-        <div class="event-cat">{e['category']}</div>
-      </div>
-      <div class="event-time">{t}</div>
-    </div>"""
+          <div class="event">
+            <div class="dot" style="background:{e['color']}"></div>
+            <div class="event-info">
+              <div class="event-name">{e['summary']}</div>
+              <div class="event-time">{t}</div>
+            </div>
+          </div>"""
         events_html = rows
     else:
         events_html = '<div class="empty">Free day — make it yours.</div>'
@@ -179,169 +185,194 @@ def generate_html(events, temp, weather_desc, quote, author):
       color: #e0e0e0;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif;
       min-height: 100vh;
-      padding: 52px 24px 72px;
-      max-width: 480px;
-      margin: 0 auto;
     }}
 
-    .date {{
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      color: #484848;
-      margin-bottom: 10px;
+    /* ── Hero ── */
+    .hero {{
+      position: relative;
+      width: 100%;
+      height: 55vh;
+      min-height: 320px;
+      background: url('{image_url}') center/cover no-repeat;
+    }}
+
+    .hero-overlay {{
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.35) 0%,
+        rgba(0,0,0,0.15) 40%,
+        rgba(0,0,0,0.75) 100%
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px 32px 32px;
+    }}
+
+    .hero-top {{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
     }}
 
     .greeting {{
-      font-size: 32px;
+      font-size: 22px;
       font-weight: 600;
-      color: #f2f2f2;
-      margin-bottom: 40px;
-      line-height: 1.2;
+      color: #fff;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
     }}
 
-    .weather {{
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      background: #161616;
-      border-radius: 16px;
-      padding: 20px 22px;
-      margin-bottom: 20px;
+    .weather-badge {{
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      text-align: right;
     }}
 
-    .temp {{
-      font-size: 40px;
-      font-weight: 300;
-      color: #f0f0f0;
+    .hero-bottom {{ }}
+
+    .date-label {{
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 8px;
     }}
 
-    .weather-desc {{
-      font-size: 15px;
-      color: #aaa;
-    }}
-
-    .weather-loc {{
-      font-size: 12px;
-      color: #484848;
-      margin-top: 3px;
-    }}
-
-    .quote {{
-      border-left: 2px solid #222;
-      padding: 12px 18px;
-      margin-bottom: 40px;
-      color: #585858;
-      font-size: 14px;
-      line-height: 1.75;
+    .hero-quote {{
+      font-size: 17px;
       font-style: italic;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.55;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+      max-width: 520px;
     }}
 
-    .quote-author {{
+    .hero-author {{
       margin-top: 8px;
-      font-style: normal;
       font-size: 12px;
-      color: #3a3a3a;
+      color: rgba(255,255,255,0.45);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }}
+
+    /* ── Content ── */
+    .content {{
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 36px 32px 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }}
+
+    @media (max-width: 600px) {{
+      .content {{ grid-template-columns: 1fr; gap: 32px; padding: 28px 20px 56px; }}
     }}
 
     .label {{
       font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 2.5px;
-      color: #383838;
-      margin-bottom: 14px;
+      color: #3a3a3a;
+      margin-bottom: 16px;
     }}
-
-    .events {{ margin-bottom: 40px; }}
 
     .event {{
       display: flex;
-      align-items: center;
-      gap: 14px;
-      background: #161616;
-      border-radius: 14px;
-      padding: 16px 18px;
-      margin-bottom: 8px;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid #1a1a1a;
     }}
+
+    .event:last-child {{ border-bottom: none; }}
 
     .dot {{
       width: 8px;
       height: 8px;
       border-radius: 50%;
       flex-shrink: 0;
+      margin-top: 5px;
     }}
-
-    .event-info {{ flex: 1; }}
 
     .event-name {{
       font-size: 15px;
       font-weight: 500;
-      color: #e0e0e0;
-    }}
-
-    .event-cat {{
-      font-size: 11px;
-      color: #484848;
-      margin-top: 3px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      color: #ddd;
+      line-height: 1.3;
     }}
 
     .event-time {{
-      font-size: 13px;
+      font-size: 12px;
       color: #484848;
-      white-space: nowrap;
+      margin-top: 3px;
     }}
 
     .todo-item {{
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       padding: 14px 0;
-      border-bottom: 1px solid #161616;
-      color: #383838;
+      border-bottom: 1px solid #1a1a1a;
+      color: #333;
       font-size: 15px;
     }}
 
     .todo-item:last-child {{ border-bottom: none; }}
 
     .circle {{
-      width: 18px;
-      height: 18px;
-      border: 1.5px solid #242424;
+      width: 17px;
+      height: 17px;
+      border: 1.5px solid #2a2a2a;
       border-radius: 50%;
       flex-shrink: 0;
     }}
 
-    .empty {{
-      color: #383838;
-      font-size: 14px;
-      padding: 8px 0;
+    .empty {{ color: #383838; font-size: 14px; padding: 8px 0; }}
+
+    .bottom {{
+      text-align: center;
+      padding: 0 32px 56px;
+      font-size: 13px;
+      color: #2e2e2e;
+      font-style: italic;
+      letter-spacing: 0.3px;
     }}
   </style>
 </head>
 <body>
-  <div class="date">{date_str}</div>
-  <div class="greeting">Good morning, Luke.</div>
 
-  {weather_html}
-
-  <div class="quote">
-    {quote}
-    <div class="quote-author">— {author}</div>
+  <div class="hero">
+    <div class="hero-overlay">
+      <div class="hero-top">
+        <div class="greeting">Good morning, Luke.</div>
+        <div class="weather-badge">{weather_str}</div>
+      </div>
+      <div class="hero-bottom">
+        <div class="date-label">{date_str}</div>
+        <div class="hero-quote">"{quote}"</div>
+        <div class="hero-author">— {author}</div>
+      </div>
+    </div>
   </div>
 
-  <div class="events">
-    <div class="label">Today</div>
-    {events_html}
+  <div class="content">
+    <div>
+      <div class="label">Today's Schedule</div>
+      {events_html}
+    </div>
+    <div>
+      <div class="label">To-Do</div>
+      <div class="todo-item"><div class="circle"></div> —</div>
+      <div class="todo-item"><div class="circle"></div> —</div>
+      <div class="todo-item"><div class="circle"></div> —</div>
+    </div>
   </div>
 
-  <div>
-    <div class="label">To-do</div>
-    <div class="todo-item"><div class="circle"></div>—</div>
-    <div class="todo-item"><div class="circle"></div>—</div>
-    <div class="todo-item"><div class="circle"></div>—</div>
-  </div>
+  <div class="bottom">You're building the life you dreamed of. Keep going.</div>
+
 </body>
 </html>"""
 
