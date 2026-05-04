@@ -129,6 +129,7 @@ def get_weather():
 # ── To-Do (inbound SMS) ───────────────────────────────────────────────────────
 def get_todos():
     try:
+        from email.utils import parsedate_to_datetime
         cutoff     = datetime.now(timezone.utc) - timedelta(hours=48)
         cutoff_day = (cutoff - timedelta(days=1)).strftime("%Y-%m-%d")
         url = (
@@ -143,11 +144,12 @@ def get_todos():
         for m in data.get("messages", []):
             if m.get("direction") != "inbound":
                 continue
-            sent = datetime.fromisoformat(m["date_sent"].replace(" +0000", "+00:00"))
+            sent = parsedate_to_datetime(m["date_sent"])
             if sent >= cutoff:
                 todos.append(m["body"].strip())
         return list(reversed(todos))
-    except Exception:
+    except Exception as e:
+        print(f"Todo fetch error: {e}")
         return []
 
 
