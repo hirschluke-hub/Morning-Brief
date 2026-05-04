@@ -426,19 +426,21 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url):
     .todo-item {{
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 14px 0;
-      border-bottom: 1px solid #1a1a1a;
-      color: #333;
+      gap: 14px;
+      background: #111;
+      border-radius: 12px;
+      border-left: 4px solid #80cbc4;
+      padding: 14px 16px;
+      margin-bottom: 10px;
       font-size: 15px;
+      font-weight: 500;
+      color: #e8e8e8;
     }}
 
-    .todo-item:last-child {{ border-bottom: none; }}
-
     .circle {{
-      width: 17px;
-      height: 17px;
-      border: 1.5px solid #2a2a2a;
+      width: 18px;
+      height: 18px;
+      border: 2px solid #80cbc4;
       border-radius: 50%;
       flex-shrink: 0;
     }}
