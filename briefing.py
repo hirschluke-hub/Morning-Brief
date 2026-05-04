@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Daily morning briefing — generates web page + sends SMS link."""
+"""Daily morning briefing — generates web page + sends push notification."""
 
 import json
 import os
@@ -10,13 +10,9 @@ from datetime import datetime, timezone
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
-from twilio.rest import Client
 
 # ── Config ────────────────────────────────────────────────────────────────────
-TWILIO_SID    = os.environ["TWILIO_ACCOUNT_SID"]
-TWILIO_TOKEN  = os.environ["TWILIO_AUTH_TOKEN"]
-TWILIO_FROM   = "+18588081672"
-MY_PHONE      = "+14254925800"
+NTFY_TOPIC    = "luke-brief-x7k2m9"
 PAGE_URL      = "https://tinyurl.com/2bx2vmhw"
 
 SCRIPT_DIR           = os.path.dirname(os.path.abspath(__file__))
@@ -424,9 +420,13 @@ def save_html(html):
         f.write(html)
 
 
-def send_sms(text):
-    client = Client(TWILIO_SID, TWILIO_TOKEN)
-    client.messages.create(body=text, from_=TWILIO_FROM, to=MY_PHONE)
+def send_notification(title, body):
+    req = urllib.request.Request(
+        f"https://ntfy.sh/{NTFY_TOPIC}",
+        data=body.encode(),
+        headers={"Title": title, "Click": PAGE_URL},
+    )
+    urllib.request.urlopen(req, timeout=5)
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
@@ -440,5 +440,5 @@ if __name__ == "__main__":
     save_html(html)
 
     day = datetime.now().strftime("%A")
-    send_sms(f"Good morning Luke. Your {day} brief is ready:\n{PAGE_URL}")
+    send_notification("Morning Brief", f"Good morning Luke. Your {day} brief is ready.")
     print("Done.")
