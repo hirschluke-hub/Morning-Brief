@@ -20,11 +20,12 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib
+        run: pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib twilio
 
       - name: Run briefing
         env:
-          GMAIL_APP_PW: ${{ secrets.GMAIL_APP_PW }}
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}

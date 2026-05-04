@@ -4,20 +4,20 @@
 import json
 import os
 import random
-import smtplib
 import urllib.request
 from datetime import datetime, timezone
-from email.mime.text import MIMEText
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
+from twilio.rest import Client
 
 # ── Config ────────────────────────────────────────────────────────────────────
-GMAIL_ADDRESS        = "hirschluke@gmail.com"
-GMAIL_APP_PW         = os.environ["GMAIL_APP_PW"]
-SMS_GATEWAY          = "4254925800@vtext.com"
-PAGE_URL             = "https://tinyurl.com/2bx2vmhw"
+TWILIO_SID    = os.environ["TWILIO_ACCOUNT_SID"]
+TWILIO_TOKEN  = os.environ["TWILIO_AUTH_TOKEN"]
+TWILIO_FROM   = "+18666257011"
+MY_PHONE      = "+14254925800"
+PAGE_URL      = "https://tinyurl.com/2bx2vmhw"
 
 SCRIPT_DIR           = os.path.dirname(os.path.abspath(__file__))
 DOCS_DIR             = os.path.join(SCRIPT_DIR, "docs")
@@ -425,16 +425,8 @@ def save_html(html):
 
 
 def send_sms(text):
-    msg            = MIMEText(text)
-    msg["From"]    = GMAIL_ADDRESS
-    msg["To"]      = SMS_GATEWAY
-    msg["Subject"] = ""
-
-    with smtplib.SMTP("smtp.gmail.com", 587) as server:
-        server.ehlo()
-        server.starttls()
-        server.login(GMAIL_ADDRESS, GMAIL_APP_PW)
-        server.send_message(msg)
+    client = Client(TWILIO_SID, TWILIO_TOKEN)
+    client.messages.create(body=text, from_=TWILIO_FROM, to=MY_PHONE)
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
