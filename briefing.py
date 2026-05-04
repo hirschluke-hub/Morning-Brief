@@ -140,15 +140,25 @@ def get_todos():
         req   = urllib.request.Request(url, headers={"Authorization": f"Basic {creds}"})
         with urllib.request.urlopen(req, timeout=5) as r:
             data = json.loads(r.read())
-        todos = []
+        raw = []
         for m in data.get("messages", []):
             if m.get("direction") != "inbound":
                 continue
             sent = parsedate_to_datetime(m["date_sent"])
             if sent >= cutoff:
-                todos.append(m["body"].strip())
+                raw.append(m["body"].strip())
+        raw = list(reversed(raw))
+
+        # "clear" wipes everything
+        if any(r.lower() == "clear" for r in raw):
+            return []
+
+        # "done: <item>" removes matching todos
+        done = {r[5:].strip().lower() for r in raw if r.lower().startswith("done:")}
+        todos = [r for r in raw if not r.lower().startswith("done:") and r.lower() not in done]
+
         print(f"Todos found: {todos}")
-        return list(reversed(todos))
+        return todos
     except Exception as e:
         print(f"Todo fetch error: {e}")
         return []
