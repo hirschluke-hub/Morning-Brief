@@ -15,7 +15,7 @@ from googleapiclient.discovery import build
 
 # ── Config ────────────────────────────────────────────────────────────────────
 GMAIL_ADDRESS        = "hirschluke@gmail.com"
-GMAIL_APP_PW         = os.environ.get("GMAIL_APP_PW", "nnkqbijaeeyputun")
+GMAIL_APP_PW         = os.environ["GMAIL_APP_PW"]
 SMS_GATEWAY          = "4254925800@vtext.com"
 PAGE_URL             = "https://hirschluke-hub.github.io/Morning-Brief/"
 
@@ -23,9 +23,9 @@ SCRIPT_DIR           = os.path.dirname(os.path.abspath(__file__))
 DOCS_DIR             = os.path.join(SCRIPT_DIR, "docs")
 HTML_FILE            = os.path.join(DOCS_DIR, "index.html")
 
-GOOGLE_CLIENT_ID     = os.environ.get("GOOGLE_CLIENT_ID",     "763633570239-qnubdp4htilvdal2lf4de7r3b5tk8ikt.apps.googleusercontent.com")
-GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET", "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")
-GOOGLE_REFRESH_TOKEN = os.environ.get("GOOGLE_REFRESH_TOKEN", "1//06W5GtjfxzER8CgYIARAAGAYSNwF-L9IrUwTpmHepvTVZT84TpHgBjrOqISPWxqCRBd6yvn0TncmXSiLK4U-9biA7jGaL_a8Dr64")
+GOOGLE_CLIENT_ID     = os.environ["GOOGLE_CLIENT_ID"]
+GOOGLE_CLIENT_SECRET = os.environ["GOOGLE_CLIENT_SECRET"]
+GOOGLE_REFRESH_TOKEN = os.environ["GOOGLE_REFRESH_TOKEN"]
 
 LAT, LON = 32.7157, -117.1611  # San Diego
 
