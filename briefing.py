@@ -386,7 +386,7 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url):
       font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 2.5px;
-      color: #3a3a3a;
+      color: #888;
       margin-bottom: 16px;
     }}
 
