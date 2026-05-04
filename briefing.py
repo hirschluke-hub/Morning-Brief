@@ -15,7 +15,7 @@ from twilio.rest import Client
 # ── Config ────────────────────────────────────────────────────────────────────
 TWILIO_SID    = os.environ["TWILIO_ACCOUNT_SID"]
 TWILIO_TOKEN  = os.environ["TWILIO_AUTH_TOKEN"]
-TWILIO_FROM   = "+18666257011"
+TWILIO_FROM   = "+18588081672"
 MY_PHONE      = "+14254925800"
 PAGE_URL      = "https://tinyurl.com/2bx2vmhw"
 
