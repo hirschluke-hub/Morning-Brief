@@ -33,64 +33,64 @@ COLOR_CATEGORIES = {
 # Each quote is paired with a thematically matched hero image
 QUOTE_IMAGE_PAIRS = [
     (
-        "The secret of getting ahead is getting started.",
-        "Mark Twain",
-        "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&q=85",
+        "I've missed more than 9,000 shots in my career. I've lost almost 300 games. I've failed over and over again. That is why I succeed.",
+        "Michael Jordan",
+        "https://images.unsplash.com/photo-1546519638405-a2526ab7ccee?w=1400&q=85",  # basketball court
     ),
     (
-        "Do what you can, with what you have, where you are.",
-        "Theodore Roosevelt",
-        "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1400&q=85",
+        "The moment you give up is the moment you let someone else win.",
+        "Kobe Bryant",
+        "https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?w=1400&q=85",  # basketball intensity
     ),
     (
-        "It always seems impossible until it's done.",
-        "Nelson Mandela",
-        "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1400&q=85",
+        "I hated every minute of training, but I said: don't quit. Suffer now and live the rest of your life as a champion.",
+        "Muhammad Ali",
+        "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=1400&q=85",  # boxing
     ),
     (
-        "Don't watch the clock; do what it does. Keep going.",
-        "Sam Levenson",
-        "https://images.unsplash.com/photo-1484910292437-025e5d13ce87?w=1400&q=85",
+        "You are in danger of living a life so comfortable and soft that you will die without ever realizing your true potential.",
+        "David Goggins",
+        "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=1400&q=85",  # runner pushing limits
     ),
     (
         "Either you run the day, or the day runs you.",
         "Jim Rohn",
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&q=85",
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&q=85",  # mountain sunrise commanding view
     ),
     (
-        "You don't have to be great to start, but you have to start to be great.",
-        "Zig Ziglar",
-        "https://images.unsplash.com/photo-1476611338391-6f395a0dd82e?w=1400&q=85",
-    ),
-    (
-        "The way to get started is to quit talking and begin doing.",
-        "Walt Disney",
-        "https://images.unsplash.com/photo-1434725039720-aaad6dd32dfe?w=1400&q=85",
+        "It always seems impossible until it's done.",
+        "Nelson Mandela",
+        "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1400&q=85",  # alpine summit
     ),
     (
         "Success is not final, failure is not fatal: it is the courage to continue that counts.",
         "Winston Churchill",
-        "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=1400&q=85",
-    ),
-    (
-        "Your time is limited, so don't waste it living someone else's life.",
-        "Steve Jobs",
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&q=85",
+        "https://images.unsplash.com/photo-1540390769625-2fc3f8b1d50c?w=1400&q=85",  # dramatic storm clouds
     ),
     (
         "Hard work beats talent when talent doesn't work hard.",
         "Tim Notke",
-        "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1400&q=85",
+        "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1400&q=85",  # gym / weight room
+    ),
+    (
+        "Your time is limited, so don't waste it living someone else's life.",
+        "Steve Jobs",
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&q=85",  # open ocean horizon
+    ),
+    (
+        "Do what you can, with what you have, where you are.",
+        "Theodore Roosevelt",
+        "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=1400&q=85",  # person on cliff edge
     ),
     (
         "Discipline is choosing between what you want now and what you want most.",
         "Abraham Lincoln",
-        "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1400&q=85",
+        "https://images.unsplash.com/photo-1476611338391-6f395a0dd82e?w=1400&q=85",  # lone road golden hour
     ),
     (
         "Show up. Do the work. Trust the process.",
         "Anonymous",
-        "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1400&q=85",
+        "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1400&q=85",  # mountain under stars
     ),
 ]
 
