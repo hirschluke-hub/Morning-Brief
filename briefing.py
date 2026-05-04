@@ -30,37 +30,68 @@ COLOR_CATEGORIES = {
     "10": ("School",   "#81c784"),
 }
 
-QUOTES = [
-    ("The secret of getting ahead is getting started.", "Mark Twain"),
-    ("Do what you can, with what you have, where you are.", "Theodore Roosevelt"),
-    ("It always seems impossible until it's done.", "Nelson Mandela"),
-    ("Don't watch the clock; do what it does. Keep going.", "Sam Levenson"),
-    ("Either you run the day, or the day runs you.", "Jim Rohn"),
-    ("You don't have to be great to start, but you have to start to be great.", "Zig Ziglar"),
-    ("The way to get started is to quit talking and begin doing.", "Walt Disney"),
-    ("Success is not final, failure is not fatal: it is the courage to continue that counts.", "Winston Churchill"),
-    ("Your time is limited, so don't waste it living someone else's life.", "Steve Jobs"),
-    ("Hard work beats talent when talent doesn't work hard.", "Tim Notke"),
-    ("Discipline is choosing between what you want now and what you want most.", "Abraham Lincoln"),
-    ("Show up. Do the work. Trust the process.", "Anonymous"),
-]
-
-# Curated dramatic/motivational Unsplash photos — rotates daily
-HERO_IMAGES = [
-    "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&q=85",  # mountain sunset
-    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&q=85",  # mountain sunrise
-    "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1400&q=85",  # aerial lake
-    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&q=85",  # ocean sunrise
-    "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1400&q=85",  # mountain stars
-    "https://images.unsplash.com/photo-1434725039720-aaad6dd32dfe?w=1400&q=85",  # desert road
-    "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1400&q=85",  # forest mist
-    "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1400&q=85",  # lake reflection
-    "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1400&q=85",  # alpine peaks
-    "https://images.unsplash.com/photo-1484910292437-025e5d13ce87?w=1400&q=85",  # city lights
-    "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=1400&q=85",  # person cliff
-    "https://images.unsplash.com/photo-1476611338391-6f395a0dd82e?w=1400&q=85",  # golden hour road
-    "https://images.unsplash.com/photo-1418985991508-e47386d96a71?w=1400&q=85",  # winter sunrise
-    "https://images.unsplash.com/photo-1540390769625-2fc3f8b1d50c?w=1400&q=85",  # dramatic clouds
+# Each quote is paired with a thematically matched hero image
+QUOTE_IMAGE_PAIRS = [
+    (
+        "The secret of getting ahead is getting started.",
+        "Mark Twain",
+        "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&q=85",
+    ),
+    (
+        "Do what you can, with what you have, where you are.",
+        "Theodore Roosevelt",
+        "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1400&q=85",
+    ),
+    (
+        "It always seems impossible until it's done.",
+        "Nelson Mandela",
+        "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1400&q=85",
+    ),
+    (
+        "Don't watch the clock; do what it does. Keep going.",
+        "Sam Levenson",
+        "https://images.unsplash.com/photo-1484910292437-025e5d13ce87?w=1400&q=85",
+    ),
+    (
+        "Either you run the day, or the day runs you.",
+        "Jim Rohn",
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&q=85",
+    ),
+    (
+        "You don't have to be great to start, but you have to start to be great.",
+        "Zig Ziglar",
+        "https://images.unsplash.com/photo-1476611338391-6f395a0dd82e?w=1400&q=85",
+    ),
+    (
+        "The way to get started is to quit talking and begin doing.",
+        "Walt Disney",
+        "https://images.unsplash.com/photo-1434725039720-aaad6dd32dfe?w=1400&q=85",
+    ),
+    (
+        "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+        "Winston Churchill",
+        "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=1400&q=85",
+    ),
+    (
+        "Your time is limited, so don't waste it living someone else's life.",
+        "Steve Jobs",
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&q=85",
+    ),
+    (
+        "Hard work beats talent when talent doesn't work hard.",
+        "Tim Notke",
+        "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1400&q=85",
+    ),
+    (
+        "Discipline is choosing between what you want now and what you want most.",
+        "Abraham Lincoln",
+        "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1400&q=85",
+    ),
+    (
+        "Show up. Do the work. Trust the process.",
+        "Anonymous",
+        "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1400&q=85",
+    ),
 ]
 
 WEATHER_CODES = {
@@ -134,6 +165,8 @@ def get_todays_events(service):
 
 def fmt_time(dt_str):
     try:
+        if "T" not in dt_str:
+            return "All day"
         dt     = datetime.fromisoformat(dt_str)
         hour   = dt.strftime("%I").lstrip("0") or "12"
         minute = dt.strftime("%M")
@@ -144,25 +177,24 @@ def fmt_time(dt_str):
 
 
 # ── HTML ──────────────────────────────────────────────────────────────────────
-def generate_html(events, temp, weather_desc, quote, author):
-    today      = datetime.now()
-    date_str   = today.strftime("%A, %B %-d, %Y")
-    day_of_yr  = today.timetuple().tm_yday
-    image_url  = HERO_IMAGES[day_of_yr % len(HERO_IMAGES)]
-    weather_str = f"{temp}°" if temp else ""
+def generate_html(events, temp, weather_desc, quote, author, image_url):
+    today        = datetime.now()
+    day_name     = today.strftime("%A").upper()
+    date_display = today.strftime("%B %-d, %Y")
+    weather_str      = f"{temp}°" if temp else ""
     weather_desc_str = weather_desc if weather_desc else ""
 
     if events:
         rows = ""
         for e in events:
-            t = f"{fmt_time(e['start'])}–{fmt_time(e['end'])}"
+            start_t    = fmt_time(e["start"])
+            end_t      = fmt_time(e["end"])
+            time_range = start_t if start_t == "All day" else f"{start_t} — {end_t}"
             rows += f"""
-          <div class="event">
-            <div class="dot" style="background:{e['color']}"></div>
-            <div class="event-info">
-              <div class="event-name">{e['summary']}</div>
-              <div class="event-time">{t}</div>
-            </div>
+          <div class="event" style="border-left-color:{e['color']}">
+            <div class="event-time">{time_range}</div>
+            <div class="event-name">{e['summary']}</div>
+            <div class="event-category" style="color:{e['color']}">{e['category']}</div>
           </div>"""
         events_html = rows
     else:
@@ -188,8 +220,8 @@ def generate_html(events, temp, weather_desc, quote, author):
     .hero {{
       position: relative;
       width: 100%;
-      height: 55vh;
-      min-height: 320px;
+      height: 60vh;
+      min-height: 360px;
       background: url('{image_url}') center/cover no-repeat;
     }}
 
@@ -198,14 +230,14 @@ def generate_html(events, temp, weather_desc, quote, author):
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(0,0,0,0.35) 0%,
-        rgba(0,0,0,0.15) 40%,
-        rgba(0,0,0,0.75) 100%
+        rgba(0,0,0,0.3) 0%,
+        rgba(0,0,0,0.1) 35%,
+        rgba(0,0,0,0.85) 100%
       );
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 28px 32px 32px;
+      padding: 28px 32px 36px;
     }}
 
     .hero-top {{
@@ -215,120 +247,53 @@ def generate_html(events, temp, weather_desc, quote, author):
     }}
 
     .greeting {{
-      font-size: 22px;
-      font-weight: 600;
-      color: #fff;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-    }}
-
-    .weather-badge {{
       font-size: 13px;
-      color: rgba(255,255,255,0.75);
-      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-      text-align: right;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
     }}
 
     .hero-bottom {{ }}
 
-    .date-label {{
-      font-size: 10px;
+    .hero-day {{
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,0.38);
       text-transform: uppercase;
-      letter-spacing: 2px;
-      color: rgba(255,255,255,0.45);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
+    }}
+
+    .hero-date {{
+      font-size: 38px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.5px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+      margin-bottom: 18px;
+      line-height: 1;
     }}
 
     .hero-quote {{
-      font-size: 17px;
+      font-size: 16px;
       font-style: italic;
-      color: rgba(255,255,255,0.9);
-      line-height: 1.55;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
       text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-      max-width: 520px;
+      max-width: 500px;
     }}
 
     .hero-author {{
       margin-top: 8px;
       font-size: 12px;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.38);
       text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      letter-spacing: 0.5px;
     }}
 
-    /* ── Content ── */
-    .content {{
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 36px 32px 64px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }}
-
-    @media (max-width: 600px) {{
-      .content {{ grid-template-columns: 1fr; gap: 32px; padding: 28px 20px 56px; }}
-    }}
-
-    .label {{
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      color: #3a3a3a;
-      margin-bottom: 16px;
-    }}
-
-    .event {{
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 14px 0;
-      border-bottom: 1px solid #1a1a1a;
-    }}
-
-    .event:last-child {{ border-bottom: none; }}
-
-    .dot {{
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
-      margin-top: 5px;
-    }}
-
-    .event-name {{
-      font-size: 15px;
-      font-weight: 500;
-      color: #ddd;
-      line-height: 1.3;
-    }}
-
-    .event-time {{
-      font-size: 12px;
-      color: #484848;
-      margin-top: 3px;
-    }}
-
-    .todo-item {{
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 0;
-      border-bottom: 1px solid #1a1a1a;
-      color: #333;
-      font-size: 15px;
-    }}
-
-    .todo-item:last-child {{ border-bottom: none; }}
-
-    .circle {{
-      width: 17px;
-      height: 17px;
-      border: 1.5px solid #2a2a2a;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }}
-
-    .empty {{ color: #383838; font-size: 14px; padding: 8px 0; }}
-
+    /* ── Weather ── */
     .weather-strip {{
       background: #111;
       border-bottom: 1px solid #1c1c1c;
@@ -361,6 +326,84 @@ def generate_html(events, temp, weather_desc, quote, author):
       letter-spacing: 1.5px;
     }}
 
+    /* ── Content ── */
+    .content {{
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 36px 32px 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }}
+
+    @media (max-width: 600px) {{
+      .content {{ grid-template-columns: 1fr; gap: 32px; padding: 28px 20px 56px; }}
+      .hero-date {{ font-size: 28px; }}
+    }}
+
+    .label {{
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: #3a3a3a;
+      margin-bottom: 16px;
+    }}
+
+    /* ── Event cards ── */
+    .event {{
+      background: #111;
+      border-radius: 12px;
+      border-left: 4px solid #444;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+    }}
+
+    .event-time {{
+      font-size: 19px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 5px;
+    }}
+
+    .event-name {{
+      font-size: 14px;
+      color: #888;
+      line-height: 1.35;
+      margin-bottom: 5px;
+    }}
+
+    .event-category {{
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }}
+
+    /* ── To-Do ── */
+    .todo-item {{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid #1a1a1a;
+      color: #333;
+      font-size: 15px;
+    }}
+
+    .todo-item:last-child {{ border-bottom: none; }}
+
+    .circle {{
+      width: 17px;
+      height: 17px;
+      border: 1.5px solid #2a2a2a;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }}
+
+    .empty {{ color: #383838; font-size: 14px; padding: 8px 0; }}
+
     .bottom {{
       text-align: center;
       padding: 0 32px 56px;
@@ -379,7 +422,8 @@ def generate_html(events, temp, weather_desc, quote, author):
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="date-label">{date_str}</div>
+        <div class="hero-day">{day_name}</div>
+        <div class="hero-date">{date_display}</div>
         <div class="hero-quote">"{quote}"</div>
         <div class="hero-author">— {author}</div>
       </div>
@@ -434,9 +478,9 @@ if __name__ == "__main__":
     service        = get_calendar_service()
     events         = get_todays_events(service)
     temp, weather  = get_weather()
-    quote, author  = random.choice(QUOTES)
+    quote, author, image_url = random.choice(QUOTE_IMAGE_PAIRS)
 
-    html = generate_html(events, temp, weather, quote, author)
+    html = generate_html(events, temp, weather, quote, author, image_url)
     save_html(html)
 
     day = datetime.now().strftime("%A")
