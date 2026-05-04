@@ -153,7 +153,8 @@ def generate_html(events, temp, weather_desc, quote, author):
     date_str   = today.strftime("%A, %B %-d, %Y")
     day_of_yr  = today.timetuple().tm_yday
     image_url  = HERO_IMAGES[day_of_yr % len(HERO_IMAGES)]
-    weather_str = f"{temp}°  ·  {weather_desc}  ·  San Diego" if temp else "San Diego, CA"
+    weather_str = f"{temp}°" if temp else ""
+    weather_desc_str = weather_desc if weather_desc else ""
 
     if events:
         rows = ""
@@ -332,6 +333,38 @@ def generate_html(events, temp, weather_desc, quote, author):
 
     .empty {{ color: #383838; font-size: 14px; padding: 8px 0; }}
 
+    .weather-strip {{
+      background: #111;
+      border-bottom: 1px solid #1c1c1c;
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }}
+
+    .weather-temp-big {{
+      font-size: 52px;
+      font-weight: 200;
+      color: #f0f0f0;
+      line-height: 1;
+    }}
+
+    .weather-right {{}}
+
+    .weather-condition {{
+      font-size: 16px;
+      color: #aaa;
+      font-weight: 400;
+    }}
+
+    .weather-location {{
+      font-size: 12px;
+      color: #3a3a3a;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }}
+
     .bottom {{
       text-align: center;
       padding: 0 32px 56px;
@@ -348,13 +381,20 @@ def generate_html(events, temp, weather_desc, quote, author):
     <div class="hero-overlay">
       <div class="hero-top">
         <div class="greeting">Good morning, Luke.</div>
-        <div class="weather-badge">{weather_str}</div>
       </div>
       <div class="hero-bottom">
         <div class="date-label">{date_str}</div>
         <div class="hero-quote">"{quote}"</div>
         <div class="hero-author">— {author}</div>
       </div>
+    </div>
+  </div>
+
+  <div class="weather-strip">
+    <div class="weather-temp-big">{weather_str}</div>
+    <div class="weather-right">
+      <div class="weather-condition">{weather_desc_str}</div>
+      <div class="weather-location">San Diego, CA</div>
     </div>
   </div>
 
@@ -408,5 +448,5 @@ if __name__ == "__main__":
     save_html(html)
 
     day = datetime.now().strftime("%A")
-    send_sms(f"Good morning Luke. Your {day} brief: {PAGE_URL}")
+    send_sms(f"Good morning Luke. Your {day} brief is ready:\n{PAGE_URL}")
     print("Done.")
