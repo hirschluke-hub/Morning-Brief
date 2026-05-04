@@ -130,11 +130,11 @@ def get_weather():
 def get_todos():
     try:
         from email.utils import parsedate_to_datetime
-        cutoff     = datetime.now(timezone.utc) - timedelta(hours=48)
-        cutoff_day = (cutoff - timedelta(days=1)).strftime("%Y-%m-%d")
+        import urllib.parse
+        cutoff = datetime.now(timezone.utc) - timedelta(hours=48)
         url = (
             f"https://api.twilio.com/2010-04-01/Accounts/{TWILIO_SID}/Messages.json"
-            f"?To={TWILIO_NUMBER}&DateSent>={cutoff_day}&PageSize=50"
+            f"?To={urllib.parse.quote(TWILIO_NUMBER)}&PageSize=50"
         )
         creds = base64.b64encode(f"{TWILIO_SID}:{TWILIO_TOKEN}".encode()).decode()
         req   = urllib.request.Request(url, headers={"Authorization": f"Basic {creds}"})
@@ -147,6 +147,7 @@ def get_todos():
             sent = parsedate_to_datetime(m["date_sent"])
             if sent >= cutoff:
                 todos.append(m["body"].strip())
+        print(f"Todos found: {todos}")
         return list(reversed(todos))
     except Exception as e:
         print(f"Todo fetch error: {e}")
