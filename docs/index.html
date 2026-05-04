@@ -18,9 +18,9 @@
     .hero {
       position: relative;
       width: 100%;
-      height: 55vh;
-      min-height: 320px;
-      background: url('https://images.unsplash.com/photo-1418985991508-e47386d96a71?w=1400&q=85') center/cover no-repeat;
+      height: 60vh;
+      min-height: 360px;
+      background: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1400&q=85') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -28,14 +28,14 @@
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(0,0,0,0.35) 0%,
-        rgba(0,0,0,0.15) 40%,
-        rgba(0,0,0,0.75) 100%
+        rgba(0,0,0,0.3) 0%,
+        rgba(0,0,0,0.1) 35%,
+        rgba(0,0,0,0.85) 100%
       );
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 28px 32px 32px;
+      padding: 28px 32px 36px;
     }
 
     .hero-top {
@@ -45,120 +45,53 @@
     }
 
     .greeting {
-      font-size: 22px;
-      font-weight: 600;
-      color: #fff;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-    }
-
-    .weather-badge {
       font-size: 13px;
-      color: rgba(255,255,255,0.75);
-      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-      text-align: right;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
     }
 
     .hero-bottom { }
 
-    .date-label {
-      font-size: 10px;
+    .hero-day {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,0.38);
       text-transform: uppercase;
-      letter-spacing: 2px;
-      color: rgba(255,255,255,0.45);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
+    }
+
+    .hero-date {
+      font-size: 38px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.5px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+      margin-bottom: 18px;
+      line-height: 1;
     }
 
     .hero-quote {
-      font-size: 17px;
+      font-size: 16px;
       font-style: italic;
-      color: rgba(255,255,255,0.9);
-      line-height: 1.55;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
       text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-      max-width: 520px;
+      max-width: 500px;
     }
 
     .hero-author {
       margin-top: 8px;
       font-size: 12px;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.38);
       text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      letter-spacing: 0.5px;
     }
 
-    /* ── Content ── */
-    .content {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 36px 32px 64px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }
-
-    @media (max-width: 600px) {
-      .content { grid-template-columns: 1fr; gap: 32px; padding: 28px 20px 56px; }
-    }
-
-    .label {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      color: #3a3a3a;
-      margin-bottom: 16px;
-    }
-
-    .event {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 14px 0;
-      border-bottom: 1px solid #1a1a1a;
-    }
-
-    .event:last-child { border-bottom: none; }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
-      margin-top: 5px;
-    }
-
-    .event-name {
-      font-size: 15px;
-      font-weight: 500;
-      color: #ddd;
-      line-height: 1.3;
-    }
-
-    .event-time {
-      font-size: 12px;
-      color: #484848;
-      margin-top: 3px;
-    }
-
-    .todo-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 0;
-      border-bottom: 1px solid #1a1a1a;
-      color: #333;
-      font-size: 15px;
-    }
-
-    .todo-item:last-child { border-bottom: none; }
-
-    .circle {
-      width: 17px;
-      height: 17px;
-      border: 1.5px solid #2a2a2a;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .empty { color: #383838; font-size: 14px; padding: 8px 0; }
-
+    /* ── Weather ── */
     .weather-strip {
       background: #111;
       border-bottom: 1px solid #1c1c1c;
@@ -191,6 +124,84 @@
       letter-spacing: 1.5px;
     }
 
+    /* ── Content ── */
+    .content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 36px 32px 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .content { grid-template-columns: 1fr; gap: 32px; padding: 28px 20px 56px; }
+      .hero-date { font-size: 28px; }
+    }
+
+    .label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: #3a3a3a;
+      margin-bottom: 16px;
+    }
+
+    /* ── Event cards ── */
+    .event {
+      background: #111;
+      border-radius: 12px;
+      border-left: 4px solid #444;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+    }
+
+    .event-time {
+      font-size: 19px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .event-name {
+      font-size: 14px;
+      color: #888;
+      line-height: 1.35;
+      margin-bottom: 5px;
+    }
+
+    .event-category {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    /* ── To-Do ── */
+    .todo-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid #1a1a1a;
+      color: #333;
+      font-size: 15px;
+    }
+
+    .todo-item:last-child { border-bottom: none; }
+
+    .circle {
+      width: 17px;
+      height: 17px;
+      border: 1.5px solid #2a2a2a;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .empty { color: #383838; font-size: 14px; padding: 8px 0; }
+
     .bottom {
       text-align: center;
       padding: 0 32px 56px;
@@ -209,9 +220,10 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="date-label">Monday, May 4, 2026</div>
-        <div class="hero-quote">"Don't watch the clock; do what it does. Keep going."</div>
-        <div class="hero-author">— Sam Levenson</div>
+        <div class="hero-day">MONDAY</div>
+        <div class="hero-date">May 4, 2026</div>
+        <div class="hero-quote">"Discipline is choosing between what you want now and what you want most."</div>
+        <div class="hero-author">— Abraham Lincoln</div>
       </div>
     </div>
   </div>
@@ -228,19 +240,15 @@
     <div>
       <div class="label">Today's Schedule</div>
       
-          <div class="event">
-            <div class="dot" style="background:#b39ddb"></div>
-            <div class="event-info">
-              <div class="event-name">Interwest Capital Internship</div>
-              <div class="event-time">10am–2pm</div>
-            </div>
+          <div class="event" style="border-left-color:#b39ddb">
+            <div class="event-time">10am — 2pm</div>
+            <div class="event-name">Interwest Capital Internship</div>
+            <div class="event-category" style="color:#b39ddb">Work</div>
           </div>
-          <div class="event">
-            <div class="dot" style="background:#81c784"></div>
-            <div class="event-info">
-              <div class="event-name">Valuations Class</div>
-              <div class="event-time">4pm–6pm</div>
-            </div>
+          <div class="event" style="border-left-color:#81c784">
+            <div class="event-time">4pm — 6pm</div>
+            <div class="event-name">Valuations Class</div>
+            <div class="event-category" style="color:#81c784">School</div>
           </div>
     </div>
     <div>
