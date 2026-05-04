@@ -383,10 +383,11 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url):
     }}
 
     .label {{
-      font-size: 10px;
+      font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 2.5px;
       color: #888;
+      font-weight: 600;
       margin-bottom: 16px;
     }}
 
