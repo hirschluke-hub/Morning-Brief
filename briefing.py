@@ -98,8 +98,8 @@ QUOTE_IMAGE_PAIRS = [
     ("Do something today that your future self will thank you for.", "Sean Patrick Flanery", "https://images.unsplash.com/photo-1434725039720-aaad6dd32dfe?w=1400&q=85"),
     ("Motivation gets you going, but discipline keeps you growing.", "John C. Maxwell", "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=1400&q=85"),
     # ── Athletes / Sports ─────────────────────────────────────────────────────
-    ("I've missed more than 9,000 shots in my career. I've lost almost 300 games. I've failed over and over again. That is why I succeed.", "Michael Jordan", "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=1400&q=85"),
-    ("The moment you give up is the moment you let someone else win.", "Kobe Bryant", "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=1400&q=85"),
+    ("I've missed more than 9,000 shots in my career. I've lost almost 300 games. I've failed over and over again. That is why I succeed.", "Michael Jordan", "https://images.unsplash.com/photo-1752166673288-f8e354af4fb9?w=1400&q=85"),
+    ("The moment you give up is the moment you let someone else win.", "Kobe Bryant", "https://images.unsplash.com/photo-1752166673288-f8e354af4fb9?w=1400&q=85"),
     ("I hated every minute of training, but I said: don't quit. Suffer now and live the rest of your life as a champion.", "Muhammad Ali", "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=1400&q=85"),
     ("Don't count the days, make the days count.", "Muhammad Ali", "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=1400&q=85"),
     ("You are in danger of living a life so comfortable and soft that you will die without ever realizing your true potential.", "David Goggins", "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=1400&q=85"),
@@ -157,7 +157,7 @@ QUOTE_IMAGE_PAIRS = [
     # ── Action / Initiative ───────────────────────────────────────────────────
     ("The journey of a thousand miles begins with one step.", "Lao Tzu", "https://images.unsplash.com/photo-1476611338391-6f395a0dd82e?w=1400&q=85"),
     ("Don't wait. The time will never be just right.", "Napoleon Hill", "https://images.unsplash.com/photo-1434725039720-aaad6dd32dfe?w=1400&q=85"),
-    ("You miss 100% of the shots you don't take.", "Wayne Gretzky", "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=1400&q=85"),
+    ("You miss 100% of the shots you don't take.", "Wayne Gretzky", "https://images.unsplash.com/photo-1752166673288-f8e354af4fb9?w=1400&q=85"),
     ("The best time to plant a tree was 20 years ago. The second best time is now.", "Chinese Proverb", "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1400&q=85"),
     ("Go confidently in the direction of your dreams. Live the life you have imagined.", "Henry David Thoreau", "https://images.unsplash.com/photo-1476611338391-6f395a0dd82e?w=1400&q=85"),
     ("Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do.", "Mark Twain", "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&q=85"),
