@@ -4,6 +4,7 @@
 import base64
 import json
 import os
+import subprocess
 import urllib.request
 from datetime import datetime, timedelta, timezone
 
@@ -15,8 +16,8 @@ from googleapiclient.discovery import build
 NTFY_TOPIC    = "luke-brief-x7k2m9"
 PAGE_URL      = "https://hirschluke-hub.github.io/Morning-Brief/"
 
-TWILIO_SID    = os.environ["TWILIO_ACCOUNT_SID"]
-TWILIO_TOKEN  = os.environ["TWILIO_AUTH_TOKEN"]
+TWILIO_SID    = os.environ.get("TWILIO_ACCOUNT_SID", "")
+TWILIO_TOKEN  = os.environ.get("TWILIO_AUTH_TOKEN", "")
 TWILIO_NUMBER = "+18588081672"
 
 SCRIPT_DIR           = os.path.dirname(os.path.abspath(__file__))
@@ -625,6 +626,21 @@ def send_notification(title, body):
     urllib.request.urlopen(req, timeout=5)
 
 
+def publish_page():
+    today = datetime.now().strftime("%Y-%m-%d")
+    cmds = [
+        ["git", "config", "user.name", "Morning Brief"],
+        ["git", "config", "user.email", "action@github.com"],
+        ["git", "add", "docs/index.html"],
+        ["git", "commit", "-m", f"Daily brief {today}"],
+        ["git", "push"],
+    ]
+    for cmd in cmds:
+        result = subprocess.run(cmd, cwd=SCRIPT_DIR, capture_output=True, text=True)
+        if result.returncode != 0 and cmd[1] != "commit":
+            print(f"git error ({' '.join(cmd)}): {result.stderr.strip()}")
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
     service        = get_calendar_service()
@@ -638,5 +654,6 @@ if __name__ == "__main__":
     save_html(html)
 
     day = datetime.now().strftime("%A")
+    publish_page()
     send_notification("Morning Brief", f"Good morning Luke. Your {day} brief is ready.")
     print("Done.")
