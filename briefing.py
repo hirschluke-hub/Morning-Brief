@@ -6,6 +6,7 @@ import json
 import os
 import subprocess
 import urllib.request
+import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 
 from google.auth.transport.requests import Request
@@ -294,8 +295,56 @@ def fmt_time(dt_str):
         return dt_str
 
 
+# ── News ──────────────────────────────────────────────────────────────────────
+NEWS_FEEDS = {
+    "GlobeSt":            "https://www.globest.com/feed/",
+    "The Real Deal":      "https://therealdeal.com/feed/",
+    "Commercial Observer":"https://commercialobserver.com/feed/",
+}
+
+NEWS_KEYWORDS = {
+    "san diego":          3,
+    "multifamily":        3,
+    "multi-family":       3,
+    "apartment":          2,
+    "apartments":         2,
+    "mixed-use":          1,
+    "mixed use":          1,
+    "affordable housing": 2,
+    "cap rate":           1,
+}
+
+
+def get_news(max_articles=5):
+    articles = []
+    for source, feed_url in NEWS_FEEDS.items():
+        try:
+            req = urllib.request.Request(feed_url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=8) as r:
+                root = ET.fromstring(r.read())
+            for item in root.findall(".//item"):
+                title = item.findtext("title") or ""
+                desc  = item.findtext("description") or ""
+                link  = item.findtext("link") or ""
+                text  = (title + " " + desc).lower()
+                score = sum(v for k, v in NEWS_KEYWORDS.items() if k in text)
+                if score >= 3:
+                    articles.append({"title": title.strip(), "link": link.strip(), "source": source, "score": score})
+        except Exception as e:
+            print(f"News feed error ({source}): {e}")
+
+    articles.sort(key=lambda x: x["score"], reverse=True)
+    seen, unique = set(), []
+    for a in articles:
+        key = a["title"][:50].lower()
+        if key not in seen:
+            seen.add(key)
+            unique.append(a)
+    return unique[:max_articles]
+
+
 # ── HTML ──────────────────────────────────────────────────────────────────────
-def generate_html(events, todos, temp, weather_desc, quote, author, image_url):
+def generate_html(events, todos, temp, weather_desc, quote, author, image_url, news=None):
     today        = datetime.now()
     day_name     = today.strftime("%A").upper()
     date_display = today.strftime("%B %-d, %Y")
@@ -325,6 +374,17 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url):
         )
     else:
         todos_html = '<div class="empty">add &lt;item&gt; &nbsp;·&nbsp; done &lt;n&gt; &nbsp;·&nbsp; list &nbsp;·&nbsp; clear</div>'
+
+    if news:
+        news_html = "".join(
+            f'<a class="news-item" href="{a["link"]}" target="_blank" rel="noopener">'
+            f'<div class="news-title">{a["title"]}</div>'
+            f'<div class="news-source">{a["source"]}</div>'
+            f'</a>'
+            for a in news
+        )
+    else:
+        news_html = '<div class="empty">No relevant CRE news today.</div>'
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -533,6 +593,42 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url):
 
     .empty {{ color: #383838; font-size: 14px; padding: 8px 0; }}
 
+    /* ── News ── */
+    .news-section {{
+      border-bottom: 1px solid #1c1c1c;
+      padding: 28px 32px;
+    }}
+
+    .news-inner {{
+      max-width: 860px;
+      margin: 0 auto;
+    }}
+
+    .news-item {{
+      display: block;
+      padding: 12px 0;
+      border-bottom: 1px solid #1a1a1a;
+      text-decoration: none;
+    }}
+
+    .news-item:last-child {{ border-bottom: none; }}
+
+    .news-title {{
+      font-size: 14px;
+      color: #d0d0d0;
+      line-height: 1.45;
+    }}
+
+    .news-item:hover .news-title {{ color: #fff; }}
+
+    .news-source {{
+      font-size: 10px;
+      color: #3a3a3a;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }}
+
     .bottom {{
       text-align: center;
       padding: 0 32px 56px;
@@ -564,6 +660,13 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url):
     <div class="weather-right">
       <div class="weather-condition">{weather_desc_str}</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
+    </div>
+  </div>
+
+  <div class="news-section">
+    <div class="news-inner">
+      <div class="label">CRE News</div>
+      {news_html}
     </div>
   </div>
 
@@ -624,7 +727,8 @@ if __name__ == "__main__":
     day_of_year = datetime.now().timetuple().tm_yday
     quote, author, image_url = QUOTE_IMAGE_PAIRS[day_of_year % len(QUOTE_IMAGE_PAIRS)]
 
-    html = generate_html(events, todos, temp, weather, quote, author, image_url)
+    news = get_news()
+    html = generate_html(events, todos, temp, weather, quote, author, image_url, news)
     save_html(html)
 
     day = datetime.now().strftime("%A")
