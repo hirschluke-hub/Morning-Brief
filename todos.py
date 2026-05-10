@@ -25,6 +25,11 @@ def fetch_todos(since_hours=48):
     with urllib.request.urlopen(req, timeout=5) as r:
         data = json.loads(r.read())
 
+    print(f"DEBUG SID prefix: {TWILIO_SID[:6]}")
+    print(f"DEBUG total messages from API: {len(data.get('messages', []))}")
+    for m in data.get("messages", []):
+        print(f"DEBUG msg: dir={m.get('direction')} body={m.get('body','')[:30]!r}")
+
     msgs = []
     for m in data.get("messages", []):
         if m.get("direction") != "inbound":
@@ -37,6 +42,7 @@ def fetch_todos(since_hours=48):
                 "from": m.get("from", ""),
             })
     msgs.sort(key=lambda x: x["time"])
+    print(f"DEBUG inbound msgs in window: {[m['text'] for m in msgs]}")
 
     todos         = []
     list_reply_to = None
