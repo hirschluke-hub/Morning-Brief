@@ -37,15 +37,28 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
         todos_html = '<div class="empty">add &lt;item&gt; &nbsp;·&nbsp; done &lt;n&gt; &nbsp;·&nbsp; list &nbsp;·&nbsp; clear</div>'
 
     if news:
-        news_html = "".join(
-            f'<a class="news-item" href="{a["link"]}" target="_blank" rel="noopener">'
-            f'<div class="news-title">{a["title"]}</div>'
-            f'<div class="news-source">{a["source"]}</div>'
-            f'</a>'
-            for a in news
-        )
+        cards = []
+        for a in news:
+            tags_html = "".join(f'<span class="tag">{t}</span>' for t in (a.get("tags") or []))
+            score     = a.get("score", "")
+            category  = a.get("category", a.get("source", ""))
+            summary   = a.get("summary", "")
+            why       = a.get("why_it_matters", "")
+            cards.append(f"""
+        <div class="news-card">
+          <div class="news-card-meta">
+            <span class="news-category">{category}</span>
+            {f'<span class="news-score">{score}/10</span>' if score else ''}
+          </div>
+          <a class="news-headline" href="{a['link']}" target="_blank" rel="noopener">{a['title']}</a>
+          <div class="news-source-label">{a['source']}</div>
+          {f'<p class="news-summary">{summary}</p>' if summary else ''}
+          {f'<div class="news-why">Why it matters: {why}</div>' if why else ''}
+          {f'<div class="news-tags">{tags_html}</div>' if tags_html else ''}
+        </div>""")
+        news_html = "".join(cards)
     else:
-        news_html = '<div class="empty">No relevant CRE news today.</div>'
+        news_html = '<div class="empty">No stories cleared the bar today.</div>'
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -265,29 +278,94 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
       margin: 0 auto;
     }}
 
-    .news-item {{
-      display: block;
-      padding: 12px 0;
-      border-bottom: 1px solid #1a1a1a;
+    .news-intro {{
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 20px;
+      font-style: italic;
+    }}
+
+    .news-card {{
+      background: #111;
+      border-radius: 12px;
+      border-left: 4px solid #2a2a2a;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+    }}
+
+    .news-card-meta {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 7px;
+    }}
+
+    .news-category {{
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #666;
+    }}
+
+    .news-score {{
+      font-size: 11px;
+      font-weight: 700;
+      color: #80cbc4;
+      background: rgba(128,203,196,0.08);
+      padding: 2px 8px;
+      border-radius: 10px;
+    }}
+
+    .news-headline {{
+      font-size: 15px;
+      font-weight: 600;
+      color: #e0e0e0;
       text-decoration: none;
+      line-height: 1.4;
+      display: block;
+      margin-bottom: 3px;
     }}
 
-    .news-item:last-child {{ border-bottom: none; }}
+    .news-headline:hover {{ color: #fff; }}
 
-    .news-title {{
-      font-size: 14px;
-      color: #d0d0d0;
-      line-height: 1.45;
-    }}
-
-    .news-item:hover .news-title {{ color: #fff; }}
-
-    .news-source {{
+    .news-source-label {{
       font-size: 10px;
       color: #3a3a3a;
-      margin-top: 4px;
       text-transform: uppercase;
       letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }}
+
+    .news-summary {{
+      font-size: 13px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }}
+
+    .news-why {{
+      font-size: 12px;
+      color: #4a4a4a;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      font-style: italic;
+    }}
+
+    .news-tags {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }}
+
+    .tag {{
+      font-size: 10px;
+      color: #484848;
+      background: #161616;
+      border: 1px solid #242424;
+      border-radius: 4px;
+      padding: 2px 7px;
+      letter-spacing: 0.4px;
     }}
 
     .bottom {{
@@ -326,7 +404,8 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
 
   <div class="news-section">
     <div class="news-inner">
-      <div class="label">CRE News</div>
+      <div class="label">Top Stories Worth Knowing Today</div>
+      <div class="news-intro">Here are the few stories actually worth your attention.</div>
       {news_html}
     </div>
   </div>
