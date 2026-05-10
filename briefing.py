@@ -297,9 +297,10 @@ def fmt_time(dt_str):
 
 # ── News ──────────────────────────────────────────────────────────────────────
 NEWS_FEEDS = {
-    "GlobeSt":            "https://www.globest.com/feed/",
-    "The Real Deal":      "https://therealdeal.com/feed/",
-    "Commercial Observer":"https://commercialobserver.com/feed/",
+    "Multifamily Dive": "https://www.multifamilydive.com/feeds/news/",
+    "Connect CRE":      "https://www.connectcre.com/feed/",
+    "REBusiness Online": "https://rebusinessonline.com/feed/",
+    "Bisnow":           "https://www.bisnow.com/rss",
 }
 
 NEWS_KEYWORDS = {
