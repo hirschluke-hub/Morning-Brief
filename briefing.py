@@ -224,40 +224,15 @@ def get_weather():
 
 
 # ── To-Do (inbound SMS) ───────────────────────────────────────────────────────
+from todos import fetch_todos, send_sms
+
+
 def get_todos():
     try:
-        from email.utils import parsedate_to_datetime
-        import urllib.parse
-        cutoff = datetime.now(timezone.utc) - timedelta(hours=48)
-        url = (
-            f"https://api.twilio.com/2010-04-01/Accounts/{TWILIO_SID}/Messages.json"
-            f"?To={urllib.parse.quote(TWILIO_NUMBER)}&PageSize=50"
-        )
-        creds = base64.b64encode(f"{TWILIO_SID}:{TWILIO_TOKEN}".encode()).decode()
-        req   = urllib.request.Request(url, headers={"Authorization": f"Basic {creds}"})
-        with urllib.request.urlopen(req, timeout=5) as r:
-            data = json.loads(r.read())
-        msgs = []
-        for m in data.get("messages", []):
-            if m.get("direction") != "inbound":
-                continue
-            sent = parsedate_to_datetime(m["date_sent"])
-            if sent >= cutoff:
-                msgs.append({"text": m["body"].strip(), "time": sent})
-        msgs.sort(key=lambda x: x["time"])
-
-        # Find the most recent "clear" — only keep messages after it
-        last_clear = None
-        for msg in msgs:
-            if msg["text"].strip().lower().rstrip("!.:") == "clear":
-                last_clear = msg["time"]
-        if last_clear:
-            msgs = [m for m in msgs if m["time"] > last_clear]
-
-        # "done: <item>" removes matching todos
-        done  = {m["text"][5:].strip().lower() for m in msgs if m["text"].lower().startswith("done:")}
-        todos = [m["text"] for m in msgs if not m["text"].lower().startswith("done:") and m["text"].lower().strip() not in done]
-
+        todos, list_reply_to = fetch_todos()
+        if list_reply_to and TWILIO_SID and TWILIO_TOKEN:
+            reply = "\n".join(f"{i+1}. {t}" for i, t in enumerate(todos)) if todos else "No todos. Text 'add <item>' to start."
+            send_sms(list_reply_to, reply)
         print(f"Todos found: {todos}")
         return todos
     except Exception as e:
@@ -350,7 +325,7 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url):
             for item in todos
         )
     else:
-        todos_html = '<div class="empty">Text (858) 808-1672 to add tasks.</div>'
+        todos_html = '<div class="empty">add &lt;item&gt; &nbsp;·&nbsp; done &lt;n&gt; &nbsp;·&nbsp; list &nbsp;·&nbsp; clear</div>'
 
     return f"""<!DOCTYPE html>
 <html lang="en">
