@@ -1,7 +1,9 @@
-"""CRE news — fetches and scores articles from free RSS feeds."""
+"""CRE news — fetches articles from the last 24 hours from free RSS feeds."""
 
 import urllib.request
 import xml.etree.ElementTree as ET
+from datetime import datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
 
 NEWS_FEEDS = {
     "Multifamily Dive":  "https://www.multifamilydive.com/feeds/news/",
@@ -24,13 +26,23 @@ NEWS_KEYWORDS = {
 
 
 def get_news(max_articles=5):
+    cutoff   = datetime.now(timezone.utc) - timedelta(hours=24)
     articles = []
+
     for source, feed_url in NEWS_FEEDS.items():
         try:
             req = urllib.request.Request(feed_url, headers={"User-Agent": "Mozilla/5.0"})
             with urllib.request.urlopen(req, timeout=8) as r:
                 root = ET.fromstring(r.read())
             for item in root.findall(".//item"):
+                pub_date = item.findtext("pubDate") or ""
+                try:
+                    published = parsedate_to_datetime(pub_date)
+                except Exception:
+                    continue
+                if published < cutoff:
+                    continue
+
                 title = item.findtext("title") or ""
                 desc  = item.findtext("description") or ""
                 link  = item.findtext("link") or ""
