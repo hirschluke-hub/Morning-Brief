@@ -3,7 +3,7 @@
 import os
 import urllib.request
 from flask import Flask, Response, request
-from todos import fetch_todos
+from sections.todos import fetch_todos
 
 app = Flask(__name__)
 

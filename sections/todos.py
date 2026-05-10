@@ -1,4 +1,4 @@
-"""Shared todo parsing logic — reads Twilio message history and returns current list."""
+"""To-do list — reads Twilio inbound SMS history and returns current list."""
 
 import base64
 import json
@@ -8,8 +8,10 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 
+
 def _clean(val):
     return "".join(c for c in val if c.isprintable() and not c.isspace())
+
 
 TWILIO_SID    = _clean(os.environ.get("TWILIO_ACCOUNT_SID", ""))
 TWILIO_TOKEN  = _clean(os.environ.get("TWILIO_AUTH_TOKEN", ""))
@@ -77,3 +79,15 @@ def send_sms(to, body):
         urllib.request.urlopen(req, timeout=5)
     except Exception as e:
         print(f"SMS send error: {e}")
+
+
+def get_todos():
+    try:
+        todos, list_reply_to = fetch_todos()
+        if list_reply_to and TWILIO_SID and TWILIO_TOKEN:
+            reply = "\n".join(f"{i+1}. {t}" for i, t in enumerate(todos)) if todos else "No todos. Text 'add <item>' to start."
+            send_sms(list_reply_to, reply)
+        return todos
+    except Exception as e:
+        print(f"Todo fetch error: {e}")
+        return []
