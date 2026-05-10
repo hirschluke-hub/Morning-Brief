@@ -205,6 +205,42 @@
 
     .empty { color: #383838; font-size: 14px; padding: 8px 0; }
 
+    /* ── News ── */
+    .news-section {
+      border-bottom: 1px solid #1c1c1c;
+      padding: 28px 32px;
+    }
+
+    .news-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .news-item {
+      display: block;
+      padding: 12px 0;
+      border-bottom: 1px solid #1a1a1a;
+      text-decoration: none;
+    }
+
+    .news-item:last-child { border-bottom: none; }
+
+    .news-title {
+      font-size: 14px;
+      color: #d0d0d0;
+      line-height: 1.45;
+    }
+
+    .news-item:hover .news-title { color: #fff; }
+
+    .news-source {
+      font-size: 10px;
+      color: #3a3a3a;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
     .bottom {
       text-align: center;
       padding: 0 32px 56px;
@@ -232,10 +268,17 @@
   </div>
 
   <div class="weather-strip">
-    <div class="weather-temp-big"></div>
+    <div class="weather-temp-big">71°</div>
     <div class="weather-right">
-      <div class="weather-condition"></div>
+      <div class="weather-condition">Foggy</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
+    </div>
+  </div>
+
+  <div class="news-section">
+    <div class="news-inner">
+      <div class="label">CRE News</div>
+      <a class="news-item" href="https://commercialobserver.com/2026/05/multifamily-investors-hospitality/" target="_blank" rel="noopener"><div class="news-title">Multifamily Investors Should Consider Hospitality Too</div><div class="news-source">Commercial Observer</div></a><a class="news-item" href="https://commercialobserver.com/2026/05/barings-jll-58m-refi-bushwick-multifamily/" target="_blank" rel="noopener"><div class="news-title">Barings Provides $58M Refi for Bushwick Multifamily Building</div><div class="news-source">Commercial Observer</div></a><a class="news-item" href="https://commercialobserver.com/2026/05/knighthead-funding-nashville-apartments-vanderbilt/" target="_blank" rel="noopener"><div class="news-title">Knighthead Funding Refis Nashville Apartments With $27M Loan</div><div class="news-source">Commercial Observer</div></a><a class="news-item" href="https://commercialobserver.com/2026/05/walker-dunlop-investment-partners-2026-cre-risks/" target="_blank" rel="noopener"><div class="news-title">Walker & Dunlop Investment Partners Outlines 2026 CRE Risks</div><div class="news-source">Commercial Observer</div></a><a class="news-item" href="https://commercialobserver.com/2026/05/s3-capital-closes-fund-focused-multifamily-lending-1-3b/" target="_blank" rel="noopener"><div class="news-title">S3 Capital Closes Fund Focused on Multifamily Lending at $1.3B</div><div class="news-source">Commercial Observer</div></a>
     </div>
   </div>
 
@@ -246,7 +289,7 @@
     </div>
     <div>
       <div class="label">To-Do</div>
-      <div class="todo-item"><div class="circle"></div>take out the trash</div><div class="todo-item"><div class="circle"></div>take out the trash</div><div class="todo-item"><div class="circle"></div>add Anthony to calendar tomorrow</div><div class="todo-item"><div class="circle"></div><add Anthony to calendar></div><div class="todo-item"><div class="circle"></div>take out trash</div>
+      <div class="todo-item"><div class="circle"></div>look at the view</div>
     </div>
   </div>
 
