@@ -35,13 +35,22 @@ def fmt_list(todos):
     return "\n".join(f"{i+1}. {t}" for i, t in enumerate(todos))
 
 
+def safe_fetch():
+    try:
+        return fetch_todos()
+    except Exception as e:
+        print(f"fetch_todos error: {e}")
+        notify("Morning Brief", f"Error fetching todos: {e}")
+        return [], None
+
+
 @app.route("/sms", methods=["POST"])
 def sms():
     body  = request.form.get("Body", "").strip()
     lower = body.lower().strip()
 
     if lower == "list":
-        todos, _ = fetch_todos()
+        todos, _ = safe_fetch()
         notify("To-Do List", fmt_list(todos))
 
     elif lower.startswith("add "):
@@ -49,7 +58,7 @@ def sms():
         if not item:
             notify("Morning Brief", "Usage: add <item>")
         else:
-            todos, _ = fetch_todos()
+            todos, _ = safe_fetch()
             notify("Added ✓", fmt_list(todos))
 
     elif lower.startswith("done "):
@@ -58,7 +67,7 @@ def sms():
         except ValueError:
             notify("Morning Brief", "Usage: done <number>  e.g. done 2")
         else:
-            todos, _ = fetch_todos()
+            todos, _ = safe_fetch()
             if 1 <= n <= len(todos):
                 removed = todos[n - 1]
                 remaining = [t for i, t in enumerate(todos) if i != n - 1]
