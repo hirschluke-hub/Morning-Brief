@@ -18,22 +18,15 @@ TWILIO_NUMBER = "+18588081672"
 
 def fetch_todos(since_hours=48):
     """Return (todos, list_reply_to) by replaying inbound SMS commands."""
-    print(f"DEBUG TWILIO_SID={TWILIO_SID!r} TWILIO_TOKEN={'set' if TWILIO_TOKEN else 'empty'}")
     cutoff = datetime.now(timezone.utc) - timedelta(hours=since_hours)
     url = (
         f"https://api.twilio.com/2010-04-01/Accounts/{TWILIO_SID}/Messages.json"
         f"?To={urllib.parse.quote(TWILIO_NUMBER)}&PageSize=50"
     )
-    print(f"DEBUG url={url}")
     creds = base64.b64encode(f"{TWILIO_SID}:{TWILIO_TOKEN}".encode()).decode()
     req   = urllib.request.Request(url, headers={"Authorization": f"Basic {creds}"})
     with urllib.request.urlopen(req, timeout=5) as r:
         data = json.loads(r.read())
-
-    print(f"DEBUG SID prefix: {TWILIO_SID[:6]}")
-    print(f"DEBUG total messages from API: {len(data.get('messages', []))}")
-    for m in data.get("messages", []):
-        print(f"DEBUG msg: dir={m.get('direction')} body={m.get('body','')[:30]!r}")
 
     msgs = []
     for m in data.get("messages", []):
@@ -47,7 +40,6 @@ def fetch_todos(since_hours=48):
                 "from": m.get("from", ""),
             })
     msgs.sort(key=lambda x: x["time"])
-    print(f"DEBUG inbound msgs in window: {[m['text'] for m in msgs]}")
 
     todos         = []
     list_reply_to = None

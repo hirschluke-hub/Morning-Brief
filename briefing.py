@@ -233,7 +233,6 @@ def get_todos():
         if list_reply_to and TWILIO_SID and TWILIO_TOKEN:
             reply = "\n".join(f"{i+1}. {t}" for i, t in enumerate(todos)) if todos else "No todos. Text 'add <item>' to start."
             send_sms(list_reply_to, reply)
-        print(f"Todos found: {todos}")
         return todos
     except Exception as e:
         print(f"Todo fetch error: {e}")
