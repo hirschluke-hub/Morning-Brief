@@ -10,11 +10,11 @@ from email.utils import parsedate_to_datetime
 import anthropic
 
 CANDIDATE_FEEDS = {
-    "CRE / Capital Markets":   "https://news.google.com/rss/search?q=commercial+real+estate+capital+markets+CMBS+lending+acquisitions&hl=en-US&gl=US&ceid=US:en",
+    "CRE / Capital Markets":    "https://news.google.com/rss/search?q=commercial+real+estate+capital+markets+CMBS+lending+acquisitions&hl=en-US&gl=US&ceid=US:en",
     "Development / Multifamily": "https://news.google.com/rss/search?q=multifamily+development+industrial+office+retail+real+estate+deal&hl=en-US&gl=US&ceid=US:en",
-    "San Diego":               "https://news.google.com/rss/search?q=san+diego+real+estate+development+zoning+business&hl=en-US&gl=US&ceid=US:en",
-    "Proptech / AI":           "https://news.google.com/rss/search?q=proptech+AI+real+estate+data+center+technology&hl=en-US&gl=US&ceid=US:en",
-    "Markets / Economy":       "https://news.google.com/rss/search?q=interest+rates+federal+reserve+economy+real+estate+investors+tariffs&hl=en-US&gl=US&ceid=US:en",
+    "San Diego":                "https://news.google.com/rss/search?q=san+diego+real+estate+development+zoning+business&hl=en-US&gl=US&ceid=US:en",
+    "Proptech / AI":            "https://news.google.com/rss/search?q=proptech+AI+real+estate+data+center+technology&hl=en-US&gl=US&ceid=US:en",
+    "Markets / Economy":        "https://news.google.com/rss/search?q=interest+rates+federal+reserve+economy+real+estate+investors+tariffs&hl=en-US&gl=US&ceid=US:en",
 }
 
 CURATION_PROMPT = """\
@@ -34,20 +34,17 @@ downtown/UTC/La Jolla/Del Mar/North County, major employer moves, infrastructure
 taxes, energy, labor, or investor sentiment
 
 Selection rules:
-- Maximum 5 articles total
-- Minimum relevance score: 8/10
-- Prefer articles from the last 24–48 hours
-- Exclude: celebrity news, sports, crime, generic politics, weak local stories, repetitive coverage of the same story
-- Quality over quantity: 2–3 great articles beats 5 average ones
-- If nothing clears 8/10, return fewer articles or an empty list
-
-Rank by: relevance to user → importance → CRE/investing impact → timeliness → uniqueness/early insight
+- Return 3 to 5 articles. Always return at least 3 if candidates are available.
+- Minimum relevance score: 7/10
+- Prefer articles from the last 24–72 hours
+- Exclude: celebrity news, sports, crime, generic politics, repetitive coverage of the same story
+- Rank by: relevance to user → importance → CRE/investing impact → timeliness → uniqueness
 
 Here are today's candidate articles (index | title | source | description snippet):
 
 {candidates}
 
-Return ONLY a valid JSON object with this exact structure — no markdown, no explanation:
+Return ONLY a valid JSON object — no markdown, no explanation:
 {{
   "articles": [
     {{
@@ -64,7 +61,7 @@ Return ONLY a valid JSON object with this exact structure — no markdown, no ex
 }}"""
 
 
-def _fetch_candidates(hours=48):
+def _fetch_candidates(hours=72):
     cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
     candidates = []
     seen = set()
@@ -101,9 +98,27 @@ def _fetch_candidates(hours=48):
     return candidates[:50]
 
 
+def _fallback_articles(candidates, n=5):
+    """Return raw candidates as minimal article dicts when Claude is unavailable."""
+    return [
+        {
+            "title":         a["title"],
+            "source":        a["source"],
+            "link":          a["link"],
+            "score":         "",
+            "category":      a["source"],
+            "summary":       a["desc"],
+            "why_it_matters": "",
+            "tags":          [],
+        }
+        for a in candidates[:n]
+    ]
+
+
 def get_news():
     candidates = _fetch_candidates()
     if not candidates:
+        print("News: no candidates fetched from RSS feeds")
         return []
 
     candidate_text = "\n".join(
@@ -123,7 +138,11 @@ def get_news():
             raw = "\n".join(raw.split("\n")[1:])
             if raw.endswith("```"):
                 raw = raw[:-3]
-        return json.loads(raw).get("articles", [])
+        articles = json.loads(raw).get("articles", [])
+        if articles:
+            return articles
+        print("News: Claude returned 0 articles — using fallback")
+        return _fallback_articles(candidates)
     except Exception as e:
-        print(f"Claude curation error: {e}")
-        return []
+        print(f"News: Claude curation error — {e} — using fallback")
+        return _fallback_articles(candidates)
