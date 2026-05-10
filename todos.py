@@ -8,8 +8,11 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 
-TWILIO_SID    = os.environ.get("TWILIO_ACCOUNT_SID", "").strip()
-TWILIO_TOKEN  = os.environ.get("TWILIO_AUTH_TOKEN", "").strip()
+def _clean(val):
+    return "".join(c for c in val if c.isprintable() and not c.isspace())
+
+TWILIO_SID    = _clean(os.environ.get("TWILIO_ACCOUNT_SID", ""))
+TWILIO_TOKEN  = _clean(os.environ.get("TWILIO_AUTH_TOKEN", ""))
 TWILIO_NUMBER = "+18588081672"
 
 
