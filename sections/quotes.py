@@ -165,4 +165,6 @@ QUOTE_IMAGE_PAIRS = [
 
 def get_quote():
     day_of_year = datetime.now().timetuple().tm_yday
-    return QUOTE_IMAGE_PAIRS[day_of_year % len(QUOTE_IMAGE_PAIRS)]
+    quote, author, _ = QUOTE_IMAGE_PAIRS[day_of_year % len(QUOTE_IMAGE_PAIRS)]
+    image_url = f"https://picsum.photos/seed/{day_of_year}/1400/800"
+    return quote, author, image_url
