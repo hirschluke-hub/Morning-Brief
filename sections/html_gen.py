@@ -82,7 +82,7 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: url('{image_url}') center/cover no-repeat;
+      background: #1a1a1a url('{image_url}') center/cover no-repeat;
     }}
 
     .hero-overlay {{

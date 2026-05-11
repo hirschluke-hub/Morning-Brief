@@ -2,10 +2,13 @@
 
 import os
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
+
+PT = ZoneInfo("America/Los_Angeles")
 
 COLOR_CATEGORIES = {
     "1":  ("Work",     "#b39ddb"),
@@ -26,7 +29,7 @@ def get_calendar_service():
 
 
 def get_todays_events(service):
-    now   = datetime.now(timezone.utc)
+    now   = datetime.now(PT)
     start = now.replace(hour=0,  minute=0,  second=0,  microsecond=0)
     end   = now.replace(hour=23, minute=59, second=59, microsecond=0)
 
