@@ -31,7 +31,7 @@ def send_notification(title, body):
     req = urllib.request.Request(
         f"https://ntfy.sh/{NTFY_TOPIC}",
         data=body.encode(),
-        headers={"Title": title, "Click": PAGE_URL},
+        headers={"Title": title, "Click": PAGE_URL, "Priority": "high"},
     )
     urllib.request.urlopen(req, timeout=5)
 
