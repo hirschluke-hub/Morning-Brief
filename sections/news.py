@@ -1,21 +1,18 @@
-"""CRE news — fetches candidates from RSS then uses Claude to curate and summarize."""
+"""Newsletter news — fetches Morning Digest emails from Gmail, curates with Claude."""
 
+import base64
 import json
 import os
-import urllib.request
-import xml.etree.ElementTree as ET
+import re
 from datetime import datetime, timedelta, timezone
-from email.utils import parsedate_to_datetime
 
 import anthropic
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+from googleapiclient.discovery import build
 
-CANDIDATE_FEEDS = {
-    "CRE / Capital Markets":    "https://news.google.com/rss/search?q=commercial+real+estate+capital+markets+CMBS+lending+acquisitions&hl=en-US&gl=US&ceid=US:en",
-    "Development / Multifamily": "https://news.google.com/rss/search?q=multifamily+development+industrial+office+retail+real+estate+deal&hl=en-US&gl=US&ceid=US:en",
-    "San Diego":                "https://news.google.com/rss/search?q=san+diego+real+estate+development+zoning+business&hl=en-US&gl=US&ceid=US:en",
-    "Proptech / AI":            "https://news.google.com/rss/search?q=proptech+AI+real+estate+data+center+technology&hl=en-US&gl=US&ceid=US:en",
-    "Markets / Economy":        "https://news.google.com/rss/search?q=interest+rates+federal+reserve+economy+real+estate+investors+tariffs&hl=en-US&gl=US&ceid=US:en",
-}
+MORNING_DIGEST_LABEL = "Label_4467215843786575600"
+MAX_CHARS_PER_EMAIL = 3000
 
 CURATION_PROMPT = """\
 You are a sharp CRE analyst briefing a real estate graduate student each morning.
@@ -34,23 +31,22 @@ downtown/UTC/La Jolla/Del Mar/North County, major employer moves, infrastructure
 taxes, energy, labor, or investor sentiment
 
 Selection rules:
-- Return 3 to 5 articles. Always return at least 3 if candidates are available.
+- Return 3 to 5 articles. Always return at least 3 if content is available.
 - Minimum relevance score: 7/10
-- Prefer articles from the last 24–72 hours
-- Exclude: celebrity news, sports, crime, generic politics, repetitive coverage of the same story
+- Exclude: celebrity news, sports, crime, generic politics, repetitive coverage, ads, event promotions
 - Rank by: relevance to user → importance → CRE/investing impact → timeliness → uniqueness
 
-Here are today's candidate articles (index | title | source | description snippet):
+Below are the contents of today's morning newsletters. Extract and summarize the most relevant stories.
 
-{candidates}
+{newsletters}
 
 Return ONLY a valid JSON object — no markdown, no explanation:
 {{
   "articles": [
     {{
-      "title": "exact headline",
-      "source": "publication name",
-      "link": "url",
+      "title": "clear headline summarizing the story",
+      "source": "newsletter name",
+      "link": "url if present, else empty string",
       "score": 9,
       "category": "CRE Capital Markets",
       "summary": "2-3 sentence analyst summary written for a sharp young CRE investor",
@@ -61,69 +57,100 @@ Return ONLY a valid JSON object — no markdown, no explanation:
 }}"""
 
 
-def _fetch_candidates(hours=72):
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
-    candidates = []
-    seen = set()
+def _get_gmail_service():
+    creds = Credentials(
+        token=None,
+        refresh_token=os.environ["GOOGLE_REFRESH_TOKEN"],
+        client_id=os.environ["GOOGLE_CLIENT_ID"],
+        client_secret=os.environ["GOOGLE_CLIENT_SECRET"],
+        token_uri="https://oauth2.googleapis.com/token",
+    )
+    creds.refresh(Request())
+    return build("gmail", "v1", credentials=creds)
 
-    for label, feed_url in CANDIDATE_FEEDS.items():
+
+def _decode(data):
+    return base64.urlsafe_b64decode(data + "==").decode("utf-8", errors="replace")
+
+
+def _strip_html(html):
+    html = re.sub(r'<(script|style)[^>]*>.*?</\1>', '', html, flags=re.DOTALL | re.IGNORECASE)
+    text = re.sub(r'<[^>]+>', ' ', html)
+    for entity, char in [('&amp;', '&'), ('&lt;', '<'), ('&gt;', '>'),
+                         ('&nbsp;', ' '), ('&#39;', "'"), ('&quot;', '"')]:
+        text = text.replace(entity, char)
+    return re.sub(r'\s+', ' ', text).strip()
+
+
+def _extract_text(payload):
+    mime = payload.get("mimeType", "")
+    body_data = payload.get("body", {}).get("data", "")
+
+    if mime == "text/plain" and body_data:
+        return _decode(body_data)
+    if mime == "text/html" and body_data:
+        return _strip_html(_decode(body_data))
+
+    parts = payload.get("parts", [])
+    for part in parts:
+        if part.get("mimeType") == "text/plain":
+            text = _extract_text(part)
+            if text:
+                return text
+    for part in parts:
+        text = _extract_text(part)
+        if text:
+            return text
+    return ""
+
+
+def _fetch_newsletters():
+    service = _get_gmail_service()
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+    after = cutoff.strftime("%Y/%m/%d")
+
+    result = service.users().messages().list(
+        userId="me",
+        labelIds=[MORNING_DIGEST_LABEL],
+        q=f"after:{after}",
+        maxResults=15,
+    ).execute()
+
+    newsletters = []
+    for ref in result.get("messages", []):
         try:
-            req = urllib.request.Request(feed_url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=8) as r:
-                root = ET.fromstring(r.read())
-            for item in root.findall(".//item"):
-                title    = (item.findtext("title") or "").strip()
-                link     = (item.findtext("link") or "").strip()
-                desc     = (item.findtext("description") or "").strip()
-                pub_date = item.findtext("pubDate") or ""
-
-                if not title:
-                    continue
-                key = title[:50].lower()
-                if key in seen:
-                    continue
-
-                try:
-                    published = parsedate_to_datetime(pub_date)
-                    if published < cutoff:
-                        continue
-                except Exception:
-                    pass  # include if date unparseable
-
-                seen.add(key)
-                candidates.append({"title": title, "link": link, "desc": desc[:180], "source": label})
+            msg = service.users().messages().get(userId="me", id=ref["id"], format="full").execute()
+            payload = msg.get("payload", {})
+            headers = {h["name"]: h["value"] for h in payload.get("headers", [])}
+            sender  = headers.get("From", "")
+            subject = headers.get("Subject", "")
+            text    = _extract_text(payload)
+            if text:
+                newsletters.append({
+                    "sender":  sender,
+                    "subject": subject,
+                    "content": text[:MAX_CHARS_PER_EMAIL],
+                })
         except Exception as e:
-            print(f"Feed error ({label}): {e}")
+            print(f"Gmail: error reading message {ref['id']}: {e}")
 
-    return candidates[:50]
-
-
-def _fallback_articles(candidates, n=5):
-    """Return raw candidates as minimal article dicts when Claude is unavailable."""
-    return [
-        {
-            "title":         a["title"],
-            "source":        a["source"],
-            "link":          a["link"],
-            "score":         "",
-            "category":      a["source"],
-            "summary":       a["desc"],
-            "why_it_matters": "",
-            "tags":          [],
-        }
-        for a in candidates[:n]
-    ]
+    return newsletters
 
 
 def get_news():
-    candidates = _fetch_candidates()
-    if not candidates:
-        print("News: no candidates fetched from RSS feeds")
+    try:
+        newsletters = _fetch_newsletters()
+    except Exception as e:
+        print(f"News: Gmail fetch failed — {e}")
         return []
 
-    candidate_text = "\n".join(
-        f"{i+1}. {a['title']} | {a['source']} | {a['desc'][:140]}"
-        for i, a in enumerate(candidates)
+    if not newsletters:
+        print("News: no newsletters found in Morning Digest")
+        return []
+
+    newsletter_text = "\n\n---\n\n".join(
+        f"FROM: {n['sender']}\nSUBJECT: {n['subject']}\n\n{n['content']}"
+        for n in newsletters
     )
 
     try:
@@ -131,7 +158,7 @@ def get_news():
         msg = client.messages.create(
             model="claude-haiku-4-5-20251001",
             max_tokens=2000,
-            messages=[{"role": "user", "content": CURATION_PROMPT.format(candidates=candidate_text)}],
+            messages=[{"role": "user", "content": CURATION_PROMPT.format(newsletters=newsletter_text)}],
         )
         raw = msg.content[0].text.strip()
         if raw.startswith("```"):
@@ -141,8 +168,8 @@ def get_news():
         articles = json.loads(raw).get("articles", [])
         if articles:
             return articles
-        print("News: Claude returned 0 articles — using fallback")
-        return _fallback_articles(candidates)
+        print("News: Claude returned 0 articles")
+        return []
     except Exception as e:
-        print(f"News: Claude curation error — {e} — using fallback")
-        return _fallback_articles(candidates)
+        print(f"News: Claude curation error — {e}")
+        return []
