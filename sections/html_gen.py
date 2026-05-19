@@ -51,8 +51,18 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
             start_t    = fmt_time(e["start"])
             end_t      = fmt_time(e["end"])
             time_range = start_t if start_t == "All day" else f"{start_t} — {end_t}"
+            try:
+                if "T" in e["start"] and "T" in e["end"]:
+                    dt_start = datetime.fromisoformat(e["start"])
+                    dt_end   = datetime.fromisoformat(e["end"])
+                    mins     = (dt_end - dt_start).total_seconds() / 60
+                    height   = max(62, round(mins / 60 * 72))
+                else:
+                    height = 62
+            except Exception:
+                height = 62
             rows += f"""
-          <div class="event" style="border-left-color:{e['color']}">
+          <div class="event" style="border-left-color:{e['color']};min-height:{height}px;">
             <div class="event-time">{time_range}</div>
             <div class="event-name">{e['summary']}</div>
             <div class="event-category" style="color:{e['color']}">{e['category']}</div>
