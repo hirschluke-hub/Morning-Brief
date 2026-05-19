@@ -21,7 +21,7 @@ def _weather_icon(desc):
         return '<svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="17.66" y2="6.34"/><line x1="6.34" y1="17.66" x2="4.93" y2="19.07"/></svg>'
 
 
-def generate_html(events, todos, temp, weather_desc, quote, author, image_url, news=None):
+def generate_html(events, todos, temp, weather_desc, quote, author, image_url, news=None, russian=None):
     today        = datetime.now()
     day_name     = today.strftime("%A").upper()
     date_display = today.strftime("%B %-d, %Y")
@@ -60,6 +60,16 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
         events_html = rows
     else:
         events_html = '<div class="empty">Free day — make it yours.</div>'
+
+    if russian:
+        russian_html = f"""
+      <div class="russian-word">{russian.get('russian', '')}</div>
+      <div class="russian-translit">{russian.get('transliteration', '')}</div>
+      <div class="russian-english">{russian.get('english', '')}</div>
+      <div class="russian-explanation">{russian.get('explanation', '')}</div>
+      <button class="russian-pronounce" onclick="(function(){{var u=new SpeechSynthesisUtterance('{russian.get('russian', '')}');u.lang='ru-RU';u.rate=0.8;window.speechSynthesis.speak(u);}})()">&#9654; Pronounce</button>"""
+    else:
+        russian_html = '<div class="empty">No word today.</div>'
 
     if todos:
         todos_html = "".join(
@@ -317,6 +327,68 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
 
     .empty {{ color: #383838; font-size: 14px; padding: 8px 0; }}
 
+    /* ── Russian Word ── */
+    .russian-section {{
+      border-bottom: 1px solid #1c1c1c;
+      padding: 28px 32px;
+    }}
+
+    .russian-inner {{
+      max-width: 860px;
+      margin: 0 auto;
+    }}
+
+    .russian-word {{
+      font-size: 42px;
+      font-weight: 300;
+      color: #fff;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      line-height: 1.1;
+    }}
+
+    .russian-translit {{
+      font-size: 16px;
+      color: #80cbc4;
+      font-style: italic;
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }}
+
+    .russian-english {{
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #666;
+      margin-bottom: 14px;
+    }}
+
+    .russian-explanation {{
+      font-size: 14px;
+      color: #777;
+      line-height: 1.65;
+      max-width: 600px;
+      margin-bottom: 16px;
+    }}
+
+    .russian-pronounce {{
+      background: none;
+      border: 1px solid #2a2a2a;
+      color: #666;
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      transition: border-color 0.15s, color 0.15s;
+    }}
+
+    .russian-pronounce:hover {{
+      border-color: #80cbc4;
+      color: #80cbc4;
+    }}
+
     /* ── News ── */
     .news-section {{
       border-top: 1px solid #1c1c1c;
@@ -428,6 +500,13 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
       <div class="weather-location">San Diego, CA — Today's High</div>
     </div>
     <div class="weather-icon">{weather_icon}</div>
+  </div>
+
+  <div class="russian-section">
+    <div class="russian-inner">
+      <div class="label">Russian Word of the Day</div>
+      {russian_html}
+    </div>
   </div>
 
   <div class="content">

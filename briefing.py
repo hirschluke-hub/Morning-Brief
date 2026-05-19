@@ -10,6 +10,7 @@ from sections.gcal    import get_calendar_service, get_todays_events
 from sections.html_gen import generate_html
 from sections.news    import get_news
 from sections.quotes  import get_quote
+from sections.russian import get_russian_word
 from sections.todos   import get_todos
 from sections.weather import get_weather
 
@@ -58,8 +59,9 @@ if __name__ == "__main__":
     temp, weather = get_weather()
     quote, author, image_url = get_quote()
     news          = get_news()
+    russian       = get_russian_word()
 
-    html = generate_html(events, todos, temp, weather, quote, author, image_url, news)
+    html = generate_html(events, todos, temp, weather, quote, author, image_url, news, russian)
     save_html(html)
 
     day = datetime.now().strftime("%A")
