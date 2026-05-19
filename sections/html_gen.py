@@ -37,26 +37,10 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
         todos_html = '<div class="empty">add &lt;item&gt; &nbsp;·&nbsp; done &lt;n&gt; &nbsp;·&nbsp; list &nbsp;·&nbsp; clear</div>'
 
     if news:
-        cards = []
-        for a in news:
-            tags_html = "".join(f'<span class="tag">{t}</span>' for t in (a.get("tags") or []))
-            score     = a.get("score", "")
-            category  = a.get("category", a.get("source", ""))
-            summary   = a.get("summary", "")
-            why       = a.get("why_it_matters", "")
-            cards.append(f"""
-        <div class="news-card">
-          <div class="news-card-meta">
-            <span class="news-category">{category}</span>
-            {f'<span class="news-score">{score}/10</span>' if score else ''}
-          </div>
-          <a class="news-headline" href="{a['link']}" target="_blank" rel="noopener">{a['title']}</a>
-          <div class="news-source-label">{a['source']}</div>
-          {f'<p class="news-summary">{summary}</p>' if summary else ''}
-          {f'<div class="news-why">Why it matters: {why}</div>' if why else ''}
-          {f'<div class="news-tags">{tags_html}</div>' if tags_html else ''}
-        </div>""")
-        news_html = "".join(cards)
+        news_html = "".join(
+            f'<a class="news-link" href="{a["link"]}" target="_blank" rel="noopener">{a["title"]}</a>'
+            for a in news
+        )
     else:
         news_html = '<div class="empty">No stories cleared the bar today.</div>'
 
@@ -269,8 +253,8 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
 
     /* ── News ── */
     .news-section {{
-      border-bottom: 1px solid #1c1c1c;
-      padding: 28px 32px;
+      border-top: 1px solid #1c1c1c;
+      padding: 28px 32px 48px;
     }}
 
     .news-inner {{
@@ -278,95 +262,18 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
       margin: 0 auto;
     }}
 
-    .news-intro {{
-      font-size: 13px;
-      color: #555;
-      margin-bottom: 20px;
-      font-style: italic;
-    }}
-
-    .news-card {{
-      background: #111;
-      border-radius: 12px;
-      border-left: 4px solid #2a2a2a;
-      padding: 16px 18px;
-      margin-bottom: 14px;
-    }}
-
-    .news-card-meta {{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 7px;
-    }}
-
-    .news-category {{
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #666;
-    }}
-
-    .news-score {{
-      font-size: 11px;
-      font-weight: 700;
-      color: #80cbc4;
-      background: rgba(128,203,196,0.08);
-      padding: 2px 8px;
-      border-radius: 10px;
-    }}
-
-    .news-headline {{
-      font-size: 15px;
-      font-weight: 600;
-      color: #e0e0e0;
-      text-decoration: none;
-      line-height: 1.4;
+    .news-link {{
       display: block;
-      margin-bottom: 3px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #c8c8c8;
+      text-decoration: none;
+      padding: 13px 0;
+      border-bottom: 1px solid #1a1a1a;
+      line-height: 1.45;
     }}
 
-    .news-headline:hover {{ color: #fff; }}
-
-    .news-source-label {{
-      font-size: 10px;
-      color: #3a3a3a;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 10px;
-    }}
-
-    .news-summary {{
-      font-size: 13px;
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 8px;
-    }}
-
-    .news-why {{
-      font-size: 12px;
-      color: #4a4a4a;
-      line-height: 1.5;
-      margin-bottom: 10px;
-      font-style: italic;
-    }}
-
-    .news-tags {{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }}
-
-    .tag {{
-      font-size: 10px;
-      color: #484848;
-      background: #161616;
-      border: 1px solid #242424;
-      border-radius: 4px;
-      padding: 2px 7px;
-      letter-spacing: 0.4px;
-    }}
+    .news-link:hover {{ color: #fff; }}
 
     .bottom {{
       text-align: center;
@@ -402,14 +309,6 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
     </div>
   </div>
 
-  <div class="news-section">
-    <div class="news-inner">
-      <div class="label">Top Stories Worth Knowing Today</div>
-      <div class="news-intro">Here are the few stories actually worth your attention.</div>
-      {news_html}
-    </div>
-  </div>
-
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
@@ -418,6 +317,13 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
     <div>
       <div class="label">To-Do</div>
       {todos_html}
+    </div>
+  </div>
+
+  <div class="news-section">
+    <div class="news-inner">
+      <div class="label">Top Stories</div>
+      {news_html}
     </div>
   </div>
 
