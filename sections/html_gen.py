@@ -5,12 +5,45 @@ from datetime import datetime
 from sections.gcal import fmt_time
 
 
+def _weather_icon(desc):
+    d = (desc or "").lower()
+    if "thunder" in d:
+        return '<svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 16H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/><polyline points="13 11 11 15 14 15 12 19"/></svg>'
+    elif "rain" in d or "drizzle" in d or "shower" in d:
+        return '<svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#7aafc9" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 16H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/><line x1="8" y1="19" x2="8" y2="21"/><line x1="12" y1="19" x2="12" y2="21"/><line x1="16" y1="19" x2="16" y2="21"/></svg>'
+    elif "fog" in d:
+        return '<svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="1.4" stroke-linecap="round"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5" y1="16" x2="19" y2="16"/></svg>'
+    elif "overcast" in d:
+        return '<svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>'
+    elif "partly" in d:
+        return '<svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="9" r="3" stroke="#d4a843"/><line x1="10" y1="3" x2="10" y2="5" stroke="#d4a843"/><line x1="16" y1="9" x2="14" y2="9" stroke="#d4a843"/><line x1="4" y1="9" x2="6" y2="9" stroke="#d4a843"/><line x1="14.24" y1="4.76" x2="12.83" y2="6.17" stroke="#d4a843"/><line x1="5.76" y1="4.76" x2="7.17" y2="6.17" stroke="#d4a843"/><path d="M16 19H9a5 5 0 1 1 4.78-6.47A3.5 3.5 0 1 1 16 19z" stroke="#888"/></svg>'
+    else:
+        return '<svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="17.66" y2="6.34"/><line x1="6.34" y1="17.66" x2="4.93" y2="19.07"/></svg>'
+
+
 def generate_html(events, todos, temp, weather_desc, quote, author, image_url, news=None):
     today        = datetime.now()
     day_name     = today.strftime("%A").upper()
     date_display = today.strftime("%B %-d, %Y")
     weather_str      = f"{temp}°" if temp else ""
     weather_desc_str = weather_desc if weather_desc else ""
+
+    weather_icon = _weather_icon(weather_desc)
+
+    if temp is None:
+        temp_color = "#444"
+    elif temp <= 65:
+        temp_color = "#FFCC80"
+    elif temp <= 70:
+        temp_color = "#FFA040"
+    elif temp <= 75:
+        temp_color = "#FF7A00"
+    elif temp <= 80:
+        temp_color = "#FF4C4C"
+    elif temp <= 85:
+        temp_color = "#D92020"
+    else:
+        temp_color = "#A00000"
 
     if events:
         rows = ""
@@ -164,6 +197,20 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
       display: flex;
       align-items: center;
       gap: 20px;
+    }}
+
+    .temp-bar {{
+      width: 4px;
+      height: 52px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }}
+
+    .weather-icon {{
+      margin-left: auto;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
     }}
 
     .weather-temp-big {{
@@ -374,11 +421,13 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
   </div>
 
   <div class="weather-strip">
+    <div class="temp-bar" style="background:{temp_color};"></div>
     <div class="weather-temp-big">{weather_str}</div>
     <div class="weather-right">
       <div class="weather-condition">{weather_desc_str}</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
     </div>
+    <div class="weather-icon">{weather_icon}</div>
   </div>
 
   <div class="content">
