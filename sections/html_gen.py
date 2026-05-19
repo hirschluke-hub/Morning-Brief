@@ -48,14 +48,17 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
                 if link else ""
             )
             items.append(f"""
-    <details class="news-item">
-      <summary class="news-toggle">{a["title"]}</summary>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">{a["title"]}</span>
+        <span class="news-plus">+</span>
+      </div>
       <div class="news-body">
         {f'<p class="news-summary-text">{summary}</p>' if summary else ""}
         {f'<p class="news-why-text">Why it matters: {why}</p>' if why else ""}
         <div class="news-source-note">Find it in your <strong>{source}</strong> email.{(" " + link_html) if link_html else ""}</div>
       </div>
-    </details>""")
+    </div>""")
         news_html = "".join(items)
     else:
         news_html = '<div class="empty">No stories cleared the bar today.</div>'
@@ -288,28 +291,29 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
       align-items: center;
       gap: 12px;
       padding: 14px 0;
+      cursor: pointer;
+      user-select: none;
+    }}
+
+    .news-title {{
       font-size: 15px;
       font-weight: 500;
       color: #c8c8c8;
-      cursor: pointer;
-      list-style: none;
       line-height: 1.45;
     }}
 
-    .news-toggle::-webkit-details-marker {{ display: none; }}
-
-    .news-toggle::after {{
-      content: '+';
-      font-size: 16px;
+    .news-plus {{
+      font-size: 18px;
       color: #444;
       flex-shrink: 0;
+      transition: color 0.15s;
     }}
 
-    .news-item[open] .news-toggle::after {{ content: '−'; color: #666; }}
-
-    .news-toggle:hover {{ color: #fff; }}
+    .news-toggle:hover .news-title {{ color: #fff; }}
+    .news-toggle:hover .news-plus {{ color: #666; }}
 
     .news-body {{
+      display: none;
       padding: 2px 0 18px;
     }}
 
