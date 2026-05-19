@@ -62,12 +62,20 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
         events_html = '<div class="empty">Free day — make it yours.</div>'
 
     if russian:
+        r_word   = russian.get('russian', '')
+        r_translit = russian.get('transliteration', '')
+        r_english  = russian.get('english', '')
+        r_explanation = russian.get('explanation', '')
         russian_html = f"""
-      <div class="russian-word">{russian.get('russian', '')}</div>
-      <div class="russian-translit">{russian.get('transliteration', '')}</div>
-      <div class="russian-english">{russian.get('english', '')}</div>
-      <div class="russian-explanation">{russian.get('explanation', '')}</div>
-      <button class="russian-pronounce" onclick="(function(){{var u=new SpeechSynthesisUtterance('{russian.get('russian', '')}');u.lang='ru-RU';u.rate=0.8;window.speechSynthesis.speak(u);}})()">&#9654; Pronounce</button>"""
+      <div class="russian-word">{r_word}</div>
+      <div class="russian-translit">{r_translit}</div>
+      <div class="russian-english">{r_english}</div>
+      <button class="russian-pronounce" onclick="(function(){{var u=new SpeechSynthesisUtterance('{r_word}');u.lang='ru-RU';u.rate=0.8;window.speechSynthesis.speak(u);}})()">&#9654; Pronounce</button>
+      <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
+        <span class="russian-expand-label">Explanation</span>
+        <span class="russian-plus">+</span>
+      </div>
+      <div class="russian-explanation">{r_explanation}</div>"""
     else:
         russian_html = '<div class="empty">No word today.</div>'
 
@@ -364,12 +372,39 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
       margin-bottom: 14px;
     }}
 
+    .russian-expand {{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+      cursor: pointer;
+      user-select: none;
+      width: fit-content;
+    }}
+
+    .russian-expand-label {{
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #444;
+    }}
+
+    .russian-plus {{
+      font-size: 16px;
+      color: #444;
+    }}
+
+    .russian-expand:hover .russian-expand-label,
+    .russian-expand:hover .russian-plus {{ color: #666; }}
+
     .russian-explanation {{
+      display: none;
       font-size: 14px;
       color: #777;
       line-height: 1.65;
       max-width: 600px;
-      margin-bottom: 16px;
+      margin-top: 12px;
     }}
 
     .russian-pronounce {{
@@ -502,13 +537,6 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
     <div class="weather-icon">{weather_icon}</div>
   </div>
 
-  <div class="russian-section">
-    <div class="russian-inner">
-      <div class="label">Russian Word of the Day</div>
-      {russian_html}
-    </div>
-  </div>
-
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
@@ -517,6 +545,13 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
     <div>
       <div class="label">To-Do</div>
       {todos_html}
+    </div>
+  </div>
+
+  <div class="russian-section">
+    <div class="russian-inner">
+      <div class="label">Russian Word of the Day</div>
+      {russian_html}
     </div>
   </div>
 
