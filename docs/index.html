@@ -219,6 +219,68 @@
 
     .empty { color: #383838; font-size: 14px; padding: 8px 0; }
 
+    /* ── Russian Word ── */
+    .russian-section {
+      border-bottom: 1px solid #1c1c1c;
+      padding: 28px 32px;
+    }
+
+    .russian-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .russian-word {
+      font-size: 42px;
+      font-weight: 300;
+      color: #fff;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      line-height: 1.1;
+    }
+
+    .russian-translit {
+      font-size: 16px;
+      color: #80cbc4;
+      font-style: italic;
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .russian-english {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #666;
+      margin-bottom: 14px;
+    }
+
+    .russian-explanation {
+      font-size: 14px;
+      color: #777;
+      line-height: 1.65;
+      max-width: 600px;
+      margin-bottom: 16px;
+    }
+
+    .russian-pronounce {
+      background: none;
+      border: 1px solid #2a2a2a;
+      color: #666;
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .russian-pronounce:hover {
+      border-color: #80cbc4;
+      color: #80cbc4;
+    }
+
     /* ── News ── */
     .news-section {
       border-top: 1px solid #1c1c1c;
@@ -332,6 +394,18 @@
     <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
   </div>
 
+  <div class="russian-section">
+    <div class="russian-inner">
+      <div class="label">Russian Word of the Day</div>
+      
+      <div class="russian-word">горячий</div>
+      <div class="russian-translit">gah-RAH-chee-ee</div>
+      <div class="russian-english">hot</div>
+      <div class="russian-explanation">Use this adjective to describe something with high temperature, like hot water, hot food, or hot weather. It's one of the most common temperature words and agrees with the gender and case of the noun it modifies. Example: «Кофе очень горячий» (The coffee is very hot.)</div>
+      <button class="russian-pronounce" onclick="(function(){var u=new SpeechSynthesisUtterance('горячий');u.lang='ru-RU';u.rate=0.8;window.speechSynthesis.speak(u);})()">&#9654; Pronounce</button>
+    </div>
+  </div>
+
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
@@ -359,12 +433,34 @@
       
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Hotel Renovation Locks In $103M, Santa Monica Apartments Get $170M Construction Loan</span>
+        <span class="news-title">Hotel Renovation Locks In $103M; Santa Monica Apartments Get $170M Construction Loan</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">SoCal hotel and multifamily assets continue attracting institutional capital despite broader lending headwinds. The $170M Santa Monica construction loan and $103M hotel renovation financing signal sustained investor confidence in high-barrier-to-entry coastal markets, though construction cost pressures remain a constraint on deal margins.</p>
-        <p class="news-why-text">Why it matters: Direct window into SoCal construction lending conditions and multifamily capital flows—critical for understanding your local investment environment and acquisition timing.</p>
+        <p class="news-summary-text">Major financing activity in SoCal real estate market with $103M renovation funding for hotel assets and $170M construction loan for Santa Monica multifamily project. Demonstrates continued institutional capital deployment in premium coastal markets despite broader lending headwinds.</p>
+        <p class="news-why-text">Why it matters: Direct SoCal deal activity and construction lending trends signal investor confidence in high-barrier multifamily and hospitality assets near your market.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">NextEra, Dominion To Merge As Demand For Data Center Power Spikes</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Major utilities merger between NextEra Energy and Dominion Energy driven by surging data center power demand from AI buildout. Signals infrastructure scarcity and potential regulatory/pricing impacts on large-scale CRE development costs.</p>
+        <p class="news-why-text">Why it matters: This merger reshapes energy infrastructure financing and operational costs for data center and industrial CRE development—critical for understanding future cap rates and development feasibility.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">CIM Group Launches Platform To Invest In Rural QOZ Power Projects</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">CIM Group creating new investment platform targeting Opportunity Zone power/energy projects in rural markets. Signals institutional reallocation toward infrastructure and energy assets with tax-advantaged structures.</p>
+        <p class="news-why-text">Why it matters: Shows evolving institutional strategy around energy infrastructure financing and QOZ utilization—relevant for understanding alternative CRE/infrastructure opportunities and capital deployment patterns.</p>
         <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
       </div>
     </div>
@@ -374,31 +470,9 @@
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">New Census data reveals a structural shift: buyers and renters are fleeing urban cores for fast-growing exurbs and master-planned communities around Dallas, Phoenix, and Charlotte. This trend has major implications for land acquisition, multifamily positioning, and where institutional capital is flowing in the next cycle.</p>
-        <p class="news-why-text">Why it matters: Exurban growth is reshaping where deals get made and where debt/equity will flow; understanding this macro trend is essential for acquisition strategy and long-term portfolio positioning.</p>
+        <p class="news-summary-text">Census data confirms demographic migration surge to exurbs and master-planned communities around Dallas, Phoenix, and Charlotte—fastest growth now happening 30-60 miles from major metros. Reflects workforce housing demand and land development opportunities in secondary rings.</p>
+        <p class="news-why-text">Why it matters: While San Diego isn't highlighted, this trend validates the development/acquisition opportunity in higher-growth exurban and secondary markets—important context for your long-term deployment strategy and competitive market analysis.</p>
         <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email.</div>
-      </div>
-    </div>
-    <div class="news-item">
-      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">NextEra, Dominion To Merge As Demand For Data Center Power Spikes</span>
-        <span class="news-plus">+</span>
-      </div>
-      <div class="news-body">
-        <p class="news-summary-text">NextEra Energy's acquisition of Dominion Energy signals accelerating infrastructure consolidation driven by AI/data center power demand. This $60B+ deal underscores how energy capacity constraints are becoming a primary real estate constraint—affecting where data centers, industrial, and tech campuses can locate.</p>
-        <p class="news-why-text">Why it matters: Energy infrastructure is now a deal driver and constraint; understanding utility capacity will be critical for industrial/data center acquisitions and development feasibility analysis.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
-      </div>
-    </div>
-    <div class="news-item">
-      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Amazon Rolls Out 3PL Competitor, Targeting Growth Engine Of Warehouse Leasing</span>
-        <span class="news-plus">+</span>
-      </div>
-      <div class="news-body">
-        <p class="news-summary-text">Amazon's new third-party logistics service directly threatens the fastest-growing customer segment for warehouse operators. This competitive move signals margin pressure ahead for industrial landlords reliant on 3PL tenant growth and could reshape industrial leasing fundamentals.</p>
-        <p class="news-why-text">Why it matters: Industrial acquisition thesis may face headwinds if Amazon captures 3PL market share; you need to model tenant diversification and lease quality more carefully in industrial deals.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
       </div>
     </div>
     </div>
