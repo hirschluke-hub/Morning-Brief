@@ -256,12 +256,39 @@
       margin-bottom: 14px;
     }
 
+    .russian-expand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+      cursor: pointer;
+      user-select: none;
+      width: fit-content;
+    }
+
+    .russian-expand-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #444;
+    }
+
+    .russian-plus {
+      font-size: 16px;
+      color: #444;
+    }
+
+    .russian-expand:hover .russian-expand-label,
+    .russian-expand:hover .russian-plus { color: #666; }
+
     .russian-explanation {
+      display: none;
       font-size: 14px;
       color: #777;
       line-height: 1.65;
       max-width: 600px;
-      margin-bottom: 16px;
+      margin-top: 12px;
     }
 
     .russian-pronounce {
@@ -394,18 +421,6 @@
     <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
   </div>
 
-  <div class="russian-section">
-    <div class="russian-inner">
-      <div class="label">Russian Word of the Day</div>
-      
-      <div class="russian-word">горячий</div>
-      <div class="russian-translit">gah-RAH-chee-ee</div>
-      <div class="russian-english">hot</div>
-      <div class="russian-explanation">Use this adjective to describe something with high temperature, like hot water, hot food, or hot weather. It's one of the most common temperature words and agrees with the gender and case of the noun it modifies. Example: «Кофе очень горячий» (The coffee is very hot.)</div>
-      <button class="russian-pronounce" onclick="(function(){var u=new SpeechSynthesisUtterance('горячий');u.lang='ru-RU';u.rate=0.8;window.speechSynthesis.speak(u);})()">&#9654; Pronounce</button>
-    </div>
-  </div>
-
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
@@ -427,6 +442,22 @@
     </div>
   </div>
 
+  <div class="russian-section">
+    <div class="russian-inner">
+      <div class="label">Russian Word of the Day</div>
+      
+      <div class="russian-word">горячий</div>
+      <div class="russian-translit">ga-RYA-chiy</div>
+      <div class="russian-english">hot</div>
+      <button class="russian-pronounce" onclick="(function(){var u=new SpeechSynthesisUtterance('горячий');u.lang='ru-RU';u.rate=0.8;window.speechSynthesis.speak(u);})()">&#9654; Pronounce</button>
+      <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
+        <span class="russian-expand-label">Explanation</span>
+        <span class="russian-plus">+</span>
+      </div>
+      <div class="russian-explanation">An essential adjective for describing temperature of objects, food, or weather. It's a soft adjective that changes ending based on gender and case. Use it when something is uncomfortably or dangerously hot. Example: «Кофе очень горячий» (The coffee is very hot.)</div>
+    </div>
+  </div>
+
   <div class="news-section">
     <div class="news-inner">
       <div class="label">Top Stories</div>
@@ -437,20 +468,20 @@
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Major financing activity in SoCal real estate market with $103M renovation funding for hotel assets and $170M construction loan for Santa Monica multifamily project. Demonstrates continued institutional capital deployment in premium coastal markets despite broader lending headwinds.</p>
-        <p class="news-why-text">Why it matters: Direct SoCal deal activity and construction lending trends signal investor confidence in high-barrier multifamily and hospitality assets near your market.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
+        <p class="news-summary-text">SoCal deal sheet shows continued construction financing activity with a $103M hotel renovation and $170M Santa Monica multifamily construction loan closing. Demonstrates ongoing capital availability for value-add and new development despite broader market uncertainty.</p>
+        <p class="news-why-text">Why it matters: Direct SoCal market signals on construction lending appetite and deal flow—key for understanding regional acquisition and development opportunities.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://www.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">NextEra, Dominion To Merge As Demand For Data Center Power Spikes</span>
+        <span class="news-title">Amazon Rolls Out 3PL Competitor, Targeting Growth Engine Of Warehouse Leasing</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Major utilities merger between NextEra Energy and Dominion Energy driven by surging data center power demand from AI buildout. Signals infrastructure scarcity and potential regulatory/pricing impacts on large-scale CRE development costs.</p>
-        <p class="news-why-text">Why it matters: This merger reshapes energy infrastructure financing and operational costs for data center and industrial CRE development—critical for understanding future cap rates and development feasibility.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
+        <p class="news-summary-text">Amazon is launching a third-party logistics (3PL) service that directly competes with warehouse operators' fastest-growing customer segment. This threatens structural demand from e-commerce fulfillment tenants and could compress industrial rent growth.</p>
+        <p class="news-why-text">Why it matters: Major structural headwind for industrial investors—Amazon's vertical integration into logistics services could reduce outsourced warehouse demand and cap tenant pricing power.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://www.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
@@ -459,9 +490,9 @@
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">CIM Group creating new investment platform targeting Opportunity Zone power/energy projects in rural markets. Signals institutional reallocation toward infrastructure and energy assets with tax-advantaged structures.</p>
-        <p class="news-why-text">Why it matters: Shows evolving institutional strategy around energy infrastructure financing and QOZ utilization—relevant for understanding alternative CRE/infrastructure opportunities and capital deployment patterns.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
+        <p class="news-summary-text">CIM Group rolled out a new platform targeting Qualified Opportunity Zone (QOZ) power infrastructure projects in rural markets. Combines energy infrastructure demand with tax-incentivized capital deployment—increasingly relevant as AI/data center power demands spike.</p>
+        <p class="news-why-text">Why it matters: Emerging alternative asset class intersection—energy infrastructure + QOZ tax benefits + data center power demand creates new acquisition/development thesis you should track.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://www.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
@@ -470,9 +501,20 @@
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Census data confirms demographic migration surge to exurbs and master-planned communities around Dallas, Phoenix, and Charlotte—fastest growth now happening 30-60 miles from major metros. Reflects workforce housing demand and land development opportunities in secondary rings.</p>
-        <p class="news-why-text">Why it matters: While San Diego isn't highlighted, this trend validates the development/acquisition opportunity in higher-growth exurban and secondary markets—important context for your long-term deployment strategy and competitive market analysis.</p>
+        <p class="news-summary-text">Census data shows residential demand and investment shifting to fast-growing exurbs and master-planned communities around Dallas, Phoenix, and Charlotte versus traditional urban cores. Reflects broader demographic/employment decentralization trends.</p>
+        <p class="news-why-text">Why it matters: Validates long-term suburban/exurban development thesis—relevant for understanding where institutional capital is deploying and which markets/submarkets will lead appreciation.</p>
         <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">NextEra, Dominion To Merge As Demand For Data Center Power Spikes</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">NextEra Energy intends to acquire Dominion Energy in a major utilities merger driven by surging data center power demand. Deal raises questions about utility capacity buildout speed and who bears costs of infrastructure expansion.</p>
+        <p class="news-why-text">Why it matters: Critical for data center real estate thesis—utility consolidation and power availability could be the bottleneck for next-phase data center development; affects cap rates and development feasibility.</p>
+        <div class="news-source-note">Find it in your <strong>Straight Arrow / Bisnow</strong> email.</div>
       </div>
     </div>
     </div>
