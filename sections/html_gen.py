@@ -37,10 +37,26 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
         todos_html = '<div class="empty">add &lt;item&gt; &nbsp;·&nbsp; done &lt;n&gt; &nbsp;·&nbsp; list &nbsp;·&nbsp; clear</div>'
 
     if news:
-        news_html = "".join(
-            f'<a class="news-link" href="{a["link"]}" target="_blank" rel="noopener">{a["title"]}</a>'
-            for a in news
-        )
+        items = []
+        for a in news:
+            summary = a.get("summary", "")
+            why     = a.get("why_it_matters", "")
+            source  = a.get("source", "")
+            link    = a.get("link", "")
+            link_html = (
+                f'<a class="news-article-link" href="{link}" target="_blank" rel="noopener">Try article →</a>'
+                if link else ""
+            )
+            items.append(f"""
+    <details class="news-item">
+      <summary class="news-toggle">{a["title"]}</summary>
+      <div class="news-body">
+        {f'<p class="news-summary-text">{summary}</p>' if summary else ""}
+        {f'<p class="news-why-text">Why it matters: {why}</p>' if why else ""}
+        <div class="news-source-note">Find it in your <strong>{source}</strong> email.{(" " + link_html) if link_html else ""}</div>
+      </div>
+    </details>""")
+        news_html = "".join(items)
     else:
         news_html = '<div class="empty">No stories cleared the bar today.</div>'
 
@@ -262,18 +278,70 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
       margin: 0 auto;
     }}
 
-    .news-link {{
-      display: block;
+    .news-item {{
+      border-bottom: 1px solid #1a1a1a;
+    }}
+
+    .news-toggle {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 0;
       font-size: 15px;
       font-weight: 500;
       color: #c8c8c8;
-      text-decoration: none;
-      padding: 13px 0;
-      border-bottom: 1px solid #1a1a1a;
+      cursor: pointer;
+      list-style: none;
       line-height: 1.45;
     }}
 
-    .news-link:hover {{ color: #fff; }}
+    .news-toggle::-webkit-details-marker {{ display: none; }}
+
+    .news-toggle::after {{
+      content: '+';
+      font-size: 16px;
+      color: #444;
+      flex-shrink: 0;
+    }}
+
+    .news-item[open] .news-toggle::after {{ content: '−'; color: #666; }}
+
+    .news-toggle:hover {{ color: #fff; }}
+
+    .news-body {{
+      padding: 2px 0 18px;
+    }}
+
+    .news-summary-text {{
+      font-size: 13px;
+      color: #888;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }}
+
+    .news-why-text {{
+      font-size: 12px;
+      color: #555;
+      line-height: 1.5;
+      font-style: italic;
+      margin-bottom: 12px;
+    }}
+
+    .news-source-note {{
+      font-size: 12px;
+      color: #444;
+    }}
+
+    .news-source-note strong {{ color: #666; }}
+
+    .news-article-link {{
+      color: #5a7a8a;
+      text-decoration: none;
+      font-size: 12px;
+    }}
+
+    .news-article-link:hover {{ color: #80cbc4; }}
 
     .bottom {{
       text-align: center;
