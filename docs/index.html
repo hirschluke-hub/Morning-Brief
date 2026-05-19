@@ -226,28 +226,29 @@
       align-items: center;
       gap: 12px;
       padding: 14px 0;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .news-title {
       font-size: 15px;
       font-weight: 500;
       color: #c8c8c8;
-      cursor: pointer;
-      list-style: none;
       line-height: 1.45;
     }
 
-    .news-toggle::-webkit-details-marker { display: none; }
-
-    .news-toggle::after {
-      content: '+';
-      font-size: 16px;
+    .news-plus {
+      font-size: 18px;
       color: #444;
       flex-shrink: 0;
+      transition: color 0.15s;
     }
 
-    .news-item[open] .news-toggle::after { content: '−'; color: #666; }
-
-    .news-toggle:hover { color: #fff; }
+    .news-toggle:hover .news-title { color: #fff; }
+    .news-toggle:hover .news-plus { color: #666; }
 
     .news-body {
+      display: none;
       padding: 2px 0 18px;
     }
 
@@ -340,38 +341,50 @@
     <div class="news-inner">
       <div class="label">Top Stories</div>
       
-    <details class="news-item">
-      <summary class="news-toggle">Hotel Renovation Locks In $103M, Santa Monica Apartments Get $170M Construction Loan</summary>
-      <div class="news-body">
-        <p class="news-summary-text">SoCal deal sheet tracking hotel and multifamily financing activity, with a $103M hotel renovation deal and $170M Santa Monica apartment construction loan. This reflects active construction lending and value-add development in the coastal CA market despite broader lending headwinds.</p>
-        <p class="news-why-text">Why it matters: Direct San Diego/SoCal market data on construction financing, lending appetite for hospitality and multifamily, and comparable deal sizing for your local market analysis.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Hotel Renovation Locks In $103M; Santa Monica Apartments Get $170M Construction Loan</span>
+        <span class="news-plus">+</span>
       </div>
-    </details>
-    <details class="news-item">
-      <summary class="news-toggle">America's Hottest Markets Are Exurban</summary>
       <div class="news-body">
-        <p class="news-summary-text">Census data reveals migration surge toward exurbs and master-planned communities around Dallas, Phoenix, and Charlotte, signaling a structural shift away from dense urban cores. This growth thesis is reshaping where institutional capital flows and where developers see highest ROI potential.</p>
-        <p class="news-why-text">Why it matters: Critical market-level data for understanding national CRE capital deployment patterns and whether San Diego's coastal/urban markets remain attractive relative to emerging exurban/suburban growth nodes.</p>
-        <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email.</div>
+        <p class="news-summary-text">SoCal deal flow heating up with major construction financing closing: $103M hotel renovation and $170M Santa Monica multifamily construction loan signal active lender appetite and strong property-level fundamentals in coastal CA markets despite macro headwinds. These mid-market deals reflect healthy debt availability and investor confidence in premium hospitality and multifamily assets.</p>
+        <p class="news-why-text">Why it matters: Direct read on SoCal cap markets, construction lending environment, and deal velocity in your backyard—validates whether debt markets are actually loosening or if these are cherry-picked assets.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://www.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
-    </details>
-    <details class="news-item">
-      <summary class="news-toggle">NextEra Energy To Acquire Dominion Energy; Major Utilities Merger Could Affect AI/Data Center Power</summary>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">NextEra, Dominion To Merge As Demand For Data Center Power Spikes</span>
+        <span class="news-plus">+</span>
+      </div>
       <div class="news-body">
-        <p class="news-summary-text">NextEra Energy's acquisition of Dominion Energy is a transformative utilities merger that will reshape how fast utilities can build transmission infrastructure and how much consumers pay for power—critical for data center and energy infrastructure development. The deal directly impacts CRE's fastest-growing asset class.</p>
-        <p class="news-why-text">Why it matters: Data centers are a major CRE investment theme, and this utilities consolidation will affect power availability, costs, and buildout speed across regions—essential context for evaluating data center and energy infrastructure deals.</p>
-        <div class="news-source-note">Find it in your <strong>Straight Arrow News / Bisnow</strong> email.</div>
+        <p class="news-summary-text">$62B utility merger driven by explosive data center power demand as AI buildout accelerates—NextEra acquiring Dominion signals utilities consolidating to scale transmission infrastructure. This M&A activity directly impacts real estate development timelines, land acquisition costs, and viability of data center/AI projects competing for scarce grid capacity.</p>
+        <p class="news-why-text">Why it matters: Data center power constraints are now a deal-killer for CRE development; this merger reshapes the utility landscape and could unlock or throttle major tech real estate deals you'll encounter in acquisitions.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow National</strong> email. <a class="news-article-link" href="http://links.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
-    </details>
-    <details class="news-item">
-      <summary class="news-toggle">CIM Group Launches Platform To Invest In Rural QOZ Power Projects</summary>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">America's Hottest Markets Are Exurban—Census Data Shows Buyers & Renters Flocking to Fast-Growing Exurbs</span>
+        <span class="news-plus">+</span>
+      </div>
       <div class="news-body">
-        <p class="news-summary-text">CIM Group's new QOZ power platform targets rural opportunity zone renewable energy projects, combining tax incentives with infrastructure investment. This represents institutional capital moving into energy infrastructure through a tax-advantaged CRE-adjacent vehicle.</p>
-        <p class="news-why-text">Why it matters: Shows how top-tier sponsors are using QOZs and proptech/infrastructure angles to deploy capital in underutilized markets—relevant for understanding alternative CRE strategies and where investor dollars are flowing beyond traditional asset classes.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
+        <p class="news-summary-text">New Census data confirms exurban boom: master-planned communities around Dallas, Phoenix, and Charlotte outpacing urban cores as populations shift outward. This validates workforce housing thesis and suburban development models—critical for understanding where institutional capital is flowing and which developers are winning on land assembly and entitlements.</p>
+        <p class="news-why-text">Why it matters: Directly relevant to your long-term investing lens: exurban migration is reshaping where value accrues in CRE; if you're building acquisition thesis, focus on suburban infill and last-mile logistics near these booming exurbs rather than dense urban core plays.</p>
+        <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email. <a class="news-article-link" href="https://media.beehiiv.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
-    </details>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">CIM Group Launches Platform To Invest In Rural QOZ Power Projects</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">CIM Group launching dedicated platform for rural Qualified Opportunity Zone power/energy infrastructure—exploiting tax incentive arbitrage by pairing energy development with QOZ designation. Signals major institutional appetite for energy infrastructure as alternative asset class and reveals gap in current deal infrastructure for atomizing these deals.</p>
+        <p class="news-why-text">Why it matters: Emerging playbook combining tax-efficient structures (QOZ) with essential infrastructure; shows how institutional CRE players are diversifying into energy and how incentive mismatches create investment opportunities you should track.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow National</strong> email. <a class="news-article-link" href="http://links.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
     </div>
   </div>
 
