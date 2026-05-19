@@ -207,8 +207,8 @@
 
     /* ── News ── */
     .news-section {
-      border-bottom: 1px solid #1c1c1c;
-      padding: 28px 32px;
+      border-top: 1px solid #1c1c1c;
+      padding: 28px 32px 48px;
     }
 
     .news-inner {
@@ -216,95 +216,18 @@
       margin: 0 auto;
     }
 
-    .news-intro {
-      font-size: 13px;
-      color: #555;
-      margin-bottom: 20px;
-      font-style: italic;
-    }
-
-    .news-card {
-      background: #111;
-      border-radius: 12px;
-      border-left: 4px solid #2a2a2a;
-      padding: 16px 18px;
-      margin-bottom: 14px;
-    }
-
-    .news-card-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 7px;
-    }
-
-    .news-category {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #666;
-    }
-
-    .news-score {
-      font-size: 11px;
-      font-weight: 700;
-      color: #80cbc4;
-      background: rgba(128,203,196,0.08);
-      padding: 2px 8px;
-      border-radius: 10px;
-    }
-
-    .news-headline {
-      font-size: 15px;
-      font-weight: 600;
-      color: #e0e0e0;
-      text-decoration: none;
-      line-height: 1.4;
+    .news-link {
       display: block;
-      margin-bottom: 3px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #c8c8c8;
+      text-decoration: none;
+      padding: 13px 0;
+      border-bottom: 1px solid #1a1a1a;
+      line-height: 1.45;
     }
 
-    .news-headline:hover { color: #fff; }
-
-    .news-source-label {
-      font-size: 10px;
-      color: #3a3a3a;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 10px;
-    }
-
-    .news-summary {
-      font-size: 13px;
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 8px;
-    }
-
-    .news-why {
-      font-size: 12px;
-      color: #4a4a4a;
-      line-height: 1.5;
-      margin-bottom: 10px;
-      font-style: italic;
-    }
-
-    .news-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
-
-    .tag {
-      font-size: 10px;
-      color: #484848;
-      background: #161616;
-      border: 1px solid #242424;
-      border-radius: 4px;
-      padding: 2px 7px;
-      letter-spacing: 0.4px;
-    }
+    .news-link:hover { color: #fff; }
 
     .bottom {
       text-align: center;
@@ -340,58 +263,6 @@
     </div>
   </div>
 
-  <div class="news-section">
-    <div class="news-inner">
-      <div class="label">Top Stories Worth Knowing Today</div>
-      <div class="news-intro">Here are the few stories actually worth your attention.</div>
-      
-        <div class="news-card">
-          <div class="news-card-meta">
-            <span class="news-category">CRE Capital Markets & Development</span>
-            <span class="news-score">9/10</span>
-          </div>
-          <a class="news-headline" href="" target="_blank" rel="noopener">America's Hottest Markets Are Exurban — Census Data Shows Buyers Fleeing to Master-Planned Communities</a>
-          <div class="news-source-label">CRE Daily</div>
-          <p class="news-summary">New Census data reveals a significant shift in real estate demand away from urban cores toward fast-growing exurbs and master-planned communities surrounding major metros like Dallas, Phoenix, and Charlotte. This trend reflects changing buyer and renter preferences post-pandemic, with implications for development pipelines, land values, and institutional capital allocation. The movement carries strategic importance for understanding where demographic and economic growth is concentrating.</p>
-          <div class="news-why">Why it matters: Understanding exurban growth patterns is critical for identifying emerging development and acquisition opportunities—San Diego's North County and inland areas may see similar migration, affecting your investment thesis on future growth corridors.</div>
-          <div class="news-tags"><span class="tag">market trends</span><span class="tag">demographic migration</span><span class="tag">master-planned communities</span><span class="tag">development opportunity</span><span class="tag">investment strategy</span></div>
-        </div>
-        <div class="news-card">
-          <div class="news-card-meta">
-            <span class="news-category">CRE Capital Markets & Lending</span>
-            <span class="news-score">8/10</span>
-          </div>
-          <a class="news-headline" href="" target="_blank" rel="noopener">Santa Monica Apartments Secure $170M Construction Loan; Hotel Renovation Locks In $103M Financing</a>
-          <div class="news-source-label">Bisnow SoCal Morning Brief</div>
-          <p class="news-summary">Two major SoCal construction deals closed recently: a $170M construction loan for a Santa Monica apartment project and a $103M hotel renovation financing. These deals signal lender appetite for multifamily and hospitality renovation in the region despite broader rate uncertainty. Deal flow and pricing in this window are valuable benchmarks for cap rate trends and construction cost data.</p>
-          <div class="news-why">Why it matters: These SoCal deals provide direct market comps for construction lending rates, loan-to-value ratios, and lender underwriting standards—crucial data for evaluating San Diego multifamily and hospitality development financing opportunities.</div>
-          <div class="news-tags"><span class="tag">construction financing</span><span class="tag">multifamily</span><span class="tag">hospitality</span><span class="tag">SoCal deals</span><span class="tag">lending trends</span><span class="tag">capital markets</span></div>
-        </div>
-        <div class="news-card">
-          <div class="news-card-meta">
-            <span class="news-category">CRE Capital Markets & Industrial</span>
-            <span class="news-score">7/10</span>
-          </div>
-          <a class="news-headline" href="" target="_blank" rel="noopener">Amazon Logistics Service Puts Warehouses' Fastest-Growing Customers In The Crosshairs</a>
-          <div class="news-source-label">Bisnow SoCal Morning Brief</div>
-          <p class="news-summary">Amazon's new logistics service offering is creating competitive pressure on third-party logistics providers and warehouse operators by directly competing for their fastest-growing customer segments. This shift has implications for industrial real estate occupancy, lease rates, and tenant mix as Amazon internalizes more of the logistics value chain. Operators may face shorter lease terms and pricing pressure from existing tenants.</p>
-          <div class="news-why">Why it matters: Industrial property fundamentals in San Diego and SoCal depend heavily on logistics tenant demand; Amazon's vertical integration into last-mile logistics could pressure warehouse lease rates and occupancy if tenants shift operations in-house or to Amazon-controlled facilities.</div>
-          <div class="news-tags"><span class="tag">industrial real estate</span><span class="tag">logistics</span><span class="tag">Amazon</span><span class="tag">tenant risk</span><span class="tag">occupancy trends</span><span class="tag">lease economics</span></div>
-        </div>
-        <div class="news-card">
-          <div class="news-card-meta">
-            <span class="news-category">CRE Capital Markets & Energy Infrastructure</span>
-            <span class="news-score">7/10</span>
-          </div>
-          <a class="news-headline" href="" target="_blank" rel="noopener">CIM Group Launches Platform To Invest In Rural QOZ Power Projects</a>
-          <div class="news-source-label">Bisnow SoCal Morning Brief</div>
-          <p class="news-summary">CIM Group has created a new investment platform targeting Opportunity Zone (QOZ) power generation projects in rural areas, combining tax-advantaged investing with energy infrastructure exposure. This represents institutional capital redeployment into energy and infrastructure assets, reflecting broader trends in ESG-driven and inflation-hedged real estate alternatives. Energy projects in QOZ-eligible rural areas now have dedicated institutional capital.</p>
-          <div class="news-why">Why it matters: The emergence of structured QOZ platforms for energy projects shows how institutional capital is rotating into alternative CRE segments; understanding these trends helps you identify emerging sub-asset classes and capital formation structures for future deal sourcing.</div>
-          <div class="news-tags"><span class="tag">energy infrastructure</span><span class="tag">opportunity zones</span><span class="tag">tax-advantaged investing</span><span class="tag">alternative assets</span><span class="tag">institutional capital</span><span class="tag">platform development</span></div>
-        </div>
-    </div>
-  </div>
-
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
@@ -410,6 +281,13 @@
     <div>
       <div class="label">To-Do</div>
       <div class="todo-item"><div class="circle"></div>do more research on BrightSky</div><div class="todo-item"><div class="circle"></div>look into omega 3 pills</div>
+    </div>
+  </div>
+
+  <div class="news-section">
+    <div class="news-inner">
+      <div class="label">Top Stories</div>
+      <a class="news-link" href="https://www.bisnow.com" target="_blank" rel="noopener">Hotel Renovation Locks In $103M, Santa Monica Apartments Get $170M Construction Loan</a><a class="news-link" href="https://www.bisnow.com" target="_blank" rel="noopener">Amazon Rolls Out 3PL Competitor, Targeting Growth Engine of Warehouse Leasing</a><a class="news-link" href="https://www.bisnow.com" target="_blank" rel="noopener">NextEra, Dominion To Merge As Demand For Data Center Power Spikes</a><a class="news-link" href="https://credaily.com" target="_blank" rel="noopener">America's Hottest Markets Are Exurban</a><a class="news-link" href="https://www.bisnow.com" target="_blank" rel="noopener">CIM Group Launches Platform To Invest In Rural QOZ Power Projects</a>
     </div>
   </div>
 
