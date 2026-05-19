@@ -56,7 +56,7 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
                     dt_start = datetime.fromisoformat(e["start"])
                     dt_end   = datetime.fromisoformat(e["end"])
                     mins     = (dt_end - dt_start).total_seconds() / 60
-                    height   = max(62, round(mins / 60 * 72))
+                    height   = max(52, round(mins / 60 * 30))
                 else:
                     height = 62
             except Exception:
