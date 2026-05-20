@@ -20,7 +20,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/139/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/140/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -403,17 +403,17 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">TUESDAY</div>
-        <div class="hero-date">May 19, 2026</div>
-        <div class="hero-quote">"Life is not measured by the number of breaths we take, but by the moments that take our breath away."</div>
-        <div class="hero-author">— Maya Angelou</div>
+        <div class="hero-day">WEDNESDAY</div>
+        <div class="hero-date">May 20, 2026</div>
+        <div class="hero-quote">"Wherever you go, go with all your heart."</div>
+        <div class="hero-author">— Confucius</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
     <div class="temp-bar" style="background:#FF4C4C;"></div>
-    <div class="weather-temp-big">76°</div>
+    <div class="weather-temp-big">78°</div>
     <div class="weather-right">
       <div class="weather-condition">Overcast</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
@@ -425,25 +425,30 @@
     <div>
       <div class="label">Today's Schedule</div>
       
+          <div class="event" style="border-left-color:#b39ddb;min-height:120px;">
+            <div class="event-time">8:30am — 12:30pm</div>
+            <div class="event-name">Interwest Capital Internship</div>
+            <div class="event-category" style="color:#b39ddb">Work</div>
+          </div>
           <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
-            <div class="event-time">2pm — 2:30pm</div>
-            <div class="event-name">Interview with Luke Hirsch</div>
+            <div class="event-time">1pm — 1:45pm</div>
+            <div class="event-name">Catch up lunch - Sean/Luke</div>
             <div class="event-category" style="color:#80cbc4">Personal</div>
           </div>
           <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
-            <div class="event-time">3:30pm — 4pm</div>
-            <div class="event-name">Luke Hirsch and Julia Turpit</div>
+            <div class="event-time">3pm — 3:30pm</div>
+            <div class="event-name">Luke Hirsch + Dragana Djukelic - Discuss Analyst, Investments and Portfolio Management Role </div>
             <div class="event-category" style="color:#80cbc4">Personal</div>
           </div>
-          <div class="event" style="border-left-color:#81c784;min-height:60px;">
-            <div class="event-time">4pm — 6pm</div>
-            <div class="event-name">Sustainability Class</div>
-            <div class="event-category" style="color:#81c784">School</div>
+          <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
+            <div class="event-time">3:40pm — 4:15pm</div>
+            <div class="event-name">Catch up -Hirsch & Dr. Arnold</div>
+            <div class="event-category" style="color:#80cbc4">Personal</div>
           </div>
     </div>
     <div>
       <div class="label">To-Do</div>
-      <div class="todo-item"><div class="circle"></div>do more research on BrightSky</div><div class="todo-item"><div class="circle"></div>look into omega 3 pills</div>
+      <div class="todo-item"><div class="circle"></div>text Kolcum</div>
     </div>
   </div>
 
@@ -451,15 +456,15 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">холодная вода</div>
-      <div class="russian-translit">KHOL-od-nah-ya VO-dah</div>
-      <div class="russian-english">cold water</div>
-      <button class="russian-pronounce" onclick="(function(){var u=new SpeechSynthesisUtterance('холодная вода');u.lang='ru-RU';u.rate=0.8;window.speechSynthesis.speak(u);})()">&#9654; Pronounce</button>
+      <div class="russian-word">Где ближайшая станция метро?</div>
+      <div class="russian-translit">Gdye BLIZH-ay-shuh-yuh stan-TSI-uh MET-ro?</div>
+      <div class="russian-english">Where is the nearest metro station?</div>
+      <button class="russian-pronounce" onclick="(function(){var u=new SpeechSynthesisUtterance('Где ближайшая станция метро?');u.lang='ru-RU';u.rate=0.8;window.speechSynthesis.speak(u);})()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">This is a practical phrase for everyday use — you'll need it when asking for or describing water temperature. 'Холодная' is the feminine form of the adjective 'холодный' (cold), matching the feminine noun 'вода' (water). Example: 'Можно холодную воду?' (Can I have cold water?)</div>
+      <div class="russian-explanation">This is one of the most practical phrases for getting around Russian cities, especially Moscow and St. Petersburg where the metro is the main transportation. Use it when you're lost and need to find the subway quickly. The word 'ближайшая' (nearest) is very useful for any location question. Example: 'Извините, где ближайшая станция метро?' (Excuse me, where is the nearest metro station?)</div>
     </div>
   </div>
 
@@ -469,34 +474,56 @@
       
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Bond Yields Splitting: SOFR Relief vs. Rising Treasury Costs Create Divergent CRE Lending Environment</span>
+        <span class="news-title">CRE Lenders Move From Extensions to Foreclosures as $132B Distressed Debt Finally Clears</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Falling SOFR rates are providing relief to floating-rate borrowers while surging Treasury yields are pushing long-term fixed-rate financing costs higher, creating a bifurcated debt market. Bond volatility, inflation concerns, and rising oil prices are compounding uncertainty for CRE lenders and borrowers navigating refinancing decisions. This dynamic is reshaping deal economics across asset classes.</p>
-        <p class="news-why-text">Why it matters: Understanding the SOFR/Treasury divergence is critical for evaluating construction financing and refinancing strategies—floating-rate deals may look attractive short-term, but long-term fixed-rate locks are getting expensive.</p>
-        <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email.</div>
+        <p class="news-summary-text">After years of extend-and-pretend, major lenders including Goldman Sachs and Deutsche Bank are now unloading distressed CRE debt at steep discounts and foreclosing on troubled properties. Shanghai Commercial Bank recently sold Manhattan condo debt at an 85% discount, signaling accelerated market cleanup of nearly $132B in distressed assets with office properties hit hardest.</p>
+        <p class="news-why-text">Why it matters: This market reset is critical for understanding where cap rates are heading and which distressed assets might become acquisition opportunities—essential intel for your long-term investment thesis.</p>
+        <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email. <a class="news-article-link" href="https://www.credaily.com/briefs/cre-lenders-finally-cut-losses-on-distressed-debt/" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">SoCal Industrial Deals Heat Up: Commerce Warehouse Sells for $34M, JV Snags OC Park for $81M</span>
+        <span class="news-title">Bond Yields Surge Past 4.6% as 10-Year Treasury Clears 4.5% Ceiling, Complicating CRE Financing</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Southern California industrial remains active with a $34M flower wholesaler acquisition in Commerce and an $81M joint venture industrial park purchase in Orange County, signaling continued investor appetite for last-mile logistics and supply-chain assets. Pricing suggests stabilized cap rates in the 5.5-6.5% range for Class B/C industrial properties. Deal flow indicates institutional investors remain committed to West Coast logistics despite broader market uncertainty.</p>
-        <p class="news-why-text">Why it matters: SoCal industrial fundamentals—driven by e-commerce, nearshoring, and port proximity—remain resilient; these deals provide comp data for acquisition targeting and cap rate expectations in your market.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow SoCal</strong> email.</div>
+        <p class="news-summary-text">Treasury yields have spiked above 4.6% with the 10-year clearing a 4.5% ceiling, creating divergent pressures on CRE lending: floating-rate borrowers get SOFR relief while fixed-rate financing costs surge. Bond market volatility, inflation fears, and rising oil prices are compounding the complexity for new acquisitions and refinancings.</p>
+        <p class="news-why-text">Why it matters: Rising long-term rates directly impact your cap rate assumptions and cost of capital for development deals; understanding this bifurcation is critical for underwriting and loan structuring decisions.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">America's Growth Boom Moving Exurban: Census Data Shows Flight to Fast-Growing Master-Planned Communities</span>
+        <span class="news-title">Jamison Converts Former IBM Koreatown Office into 260-Unit Multifamily Development</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">New Census data reveals population and economic growth accelerating in exurban markets and master-planned communities surrounding major metros like Dallas, Phoenix, and Charlotte, outpacing core urban migration trends. This shift is reshaping retail, multifamily, and industrial demand patterns far beyond traditional CBD boundaries. Developers and investors are following capital and demographic flows outward to these emerging secondary markets.</p>
-        <p class="news-why-text">Why it matters: The exurban trend signals long-term land appreciation potential and development opportunity in San Diego County's North County and Inland Empire corridors—understanding where growth is concentrating helps position for future institutional deals.</p>
+        <p class="news-summary-text">Developer Jamison is converting a former IBM office building in Koreatown into 260 apartments, exemplifying the office-to-resi conversion trend gaining momentum across major metros. This adaptive reuse play capitalizes on softening office fundamentals and strong multifamily demand in urban core markets.</p>
+        <p class="news-why-text">Why it matters: Office-to-resi conversions represent significant acquisition and development opportunities in San Diego's urban submarkets; understanding conversion economics and zoning dynamics is critical for your investment strategy.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">West Marine Bankruptcy Filing Underscores Retail Distress Driven by Escalating Lease Costs</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">West Marine is seeking bankruptcy protection with plans for significant store closures, citing unsustainable retail lease costs as a primary driver. The filing reflects broader retail real estate stress as traditional retailers struggle with inflated rental rates locked in during better times.</p>
+        <p class="news-why-text">Why it matters: Retail distress creates both risks for landlords with expiring leases and opportunities in secondary market rent resets; relevant for understanding tenant credit quality and lease negotiation leverage.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Bond Market Volatility and Rising Rates Split CRE Lending Outlook as SOFR Falls but Treasuries Surge</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">CRE debt markets are experiencing contradictory pressures with falling SOFR providing relief to floating-rate borrowers while surging Treasury yields push fixed-rate financing costs significantly higher. This divergence, combined with bond volatility and inflation concerns, creates uncertainty for both new and refinancing transactions.</p>
+        <p class="news-why-text">Why it matters: Understanding this rate bifurcation is crucial for modeling different financing scenarios and determining optimal debt structures for acquisitions and developments.</p>
         <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email.</div>
       </div>
     </div>
