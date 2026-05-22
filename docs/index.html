@@ -413,7 +413,7 @@
 
   <div class="weather-strip">
     <div class="temp-bar" style="background:#FFA040;"></div>
-    <div class="weather-temp-big">69°</div>
+    <div class="weather-temp-big">68°</div>
     <div class="weather-right">
       <div class="weather-condition">Foggy</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
@@ -441,22 +441,77 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Говорите медленнее</div>
-      <div class="russian-translit">ga-va-REE-tye MED-len-nay-ye</div>
-      <div class="russian-english">Speak more slowly</div>
-      <button class="russian-pronounce" onclick="(function(){var u=new SpeechSynthesisUtterance('Говорите медленнее');u.lang='ru-RU';u.rate=0.8;window.speechSynthesis.speak(u);})()">&#9654; Pronounce</button>
+      <div class="russian-word">Говорите медленнее, пожалуйста</div>
+      <div class="russian-translit">guh-vah-REE-tye MED-len-nay-yuh, pah-ZHAHL-stuh</div>
+      <div class="russian-english">Please speak more slowly</div>
+      <button class="russian-pronounce" onclick="(function(){var u=new SpeechSynthesisUtterance('Говорите медленнее, пожалуйста');u.lang='ru-RU';u.rate=0.8;window.speechSynthesis.speak(u);})()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">This is one of the most essential phrases for a beginner learner when someone is speaking too fast to understand. Use it politely and frequently—native speakers expect to hear this from language learners and won't be offended. The phrase uses the imperative form of 'говорить' (to speak) and the comparative form of 'медленный' (slow). Example: Говорите медленнее, пожалуйста (Speak more slowly, please.)</div>
+      <div class="russian-explanation">This is an essential phrase for beginners when native speakers talk too fast. 'Говорите' (speak) is the formal/plural imperative form, 'медленнее' (more slowly) is the comparative form of the adjective. Use this whenever you need someone to slow down their speech so you can process the words. Example: 'Говорите медленнее, я только начинаю учить русский' (Speak more slowly, I'm just beginning to learn Russian).</div>
     </div>
   </div>
 
   <div class="news-section">
     <div class="news-inner">
       <div class="label">Top Stories</div>
-      <div class="empty">No stories cleared the bar today.</div>
+      
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">AvalonBay, Equity Residential Strike Largest REIT Merger In U.S. History</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">AvalonBay Communities and Equity Residential agreed to an all-stock merger creating a 180,000-unit REIT with $69B enterprise value—the largest REIT merger on record, 50% larger than the 2022 Prologis-Duke Realty deal. The combined entity expects ~$125M in net synergies and will maintain dual HQs in Chicago and Arlington while generating ~$2B in annual cash flow, positioning it as the country's dominant multifamily operator.</p>
+        <p class="news-why-text">Why it matters: This mega-merger signals institutional capital consolidation in multifamily and demonstrates how scale creates financing flexibility and cost-of-capital advantages—critical lessons for your capital markets and long-term investing thesis.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow</strong> email. <a class="news-article-link" href="https://www.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Bond Spike Tests CRE's Recovery Nerves As 10-Year Nears 4.7%</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Rising Treasury yields (10-year approaching 4.7%) are pressuring CRE deal activity and refinancing plans across all asset classes, threatening to derail momentum from Q1's improvement. Higher borrowing costs are slowing transaction velocity as cap rates must adjust upward, particularly affecting stressed assets and development projects dependent on low-cost debt.</p>
+        <p class="news-why-text">Why it matters: Interest rate environments directly compress deal margins and acquisition ROIs—understanding this yield curve sensitivity is essential for modeling cash flows and identifying distressed opportunities in your pipeline.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow</strong> email. <a class="news-article-link" href="https://www.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Largest U.S. Grid Operator Accelerates Timeline For Powering New Data Centers</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">The nation's largest grid operator is expediting power infrastructure development to meet surging demand from AI/hyperscale data center construction. This acceleration removes a major constraint on data center development feasibility and signals grid operators' commitment to supporting critical infrastructure growth.</p>
+        <p class="news-why-text">Why it matters: Data center development is constrained by power availability and interconnection timelines—faster grid deployment directly increases the feasibility and speed-to-market for major data center projects and related industrial real estate.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow</strong> email. <a class="news-article-link" href="https://www.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">SpaceX Files for Historic IPO, Could Become Largest U.S. IPO on Record</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">SpaceX filed its S-1 for IPO targeting Nasdaq listing under ticker SPCX with up to $80B raise at potential $2T valuation—surpassing Saudi Aramco for largest IPO. Company reported $4.69B Q1 2026 revenue but $4.3B net loss; Starlink (69% of revenue) is profitable while space/AI units post steep losses; Elon Musk will retain 85.1% voting control.</p>
+        <p class="news-why-text">Why it matters: While not direct CRE, SpaceX's IPO signals mega-cap private company capital raises and demonstrates how venture-backed infrastructure plays attract institutional capital—relevant to understanding alternative capital deployment patterns away from traditional real estate.</p>
+        <div class="news-source-note">Find it in your <strong>Straight Arrow / Morning Brew</strong> email. <a class="news-article-link" href="https://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">LA's 'Mansion Tax' (Measure ULA) Is Slowing Multifamily Construction Across the City</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">LA's Measure ULA tax on luxury home sales, intended to fund affordable housing, is increasingly blamed by developers for slowing multifamily apartment construction across the city during an acute supply shortage. Developers argue the tax economics are making new rental housing development unviable and pushing capital to other markets.</p>
+        <p class="news-why-text">Why it matters: Tax policy directly impacts development feasibility and returns—understanding how property taxes, transfer taxes, and inclusionary housing mandates affect underwriting is critical for evaluating San Diego's competitive positioning versus LA and predicting where multifamily capital will flow.</p>
+        <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email. <a class="news-article-link" href="https://www.credaily.com" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
     </div>
   </div>
 
