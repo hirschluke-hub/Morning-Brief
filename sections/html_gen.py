@@ -72,15 +72,20 @@ def generate_html(events, todos, temp, weather_desc, quote, author, image_url, n
         events_html = '<div class="empty">Free day — make it yours.</div>'
 
     if russian:
-        r_word   = russian.get('russian', '')
-        r_translit = russian.get('transliteration', '')
-        r_english  = russian.get('english', '')
+        r_word        = russian.get('russian', '')
+        r_translit    = russian.get('transliteration', '')
+        r_english     = russian.get('english', '')
         r_explanation = russian.get('explanation', '')
+        r_audio       = russian.get('audio_file', '')
+        if r_audio:
+            audio_html = f'<audio id="russian-audio" src="Russian Words/{r_audio}.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById(\'russian-audio\').play()">&#9654; Pronounce</button>'
+        else:
+            audio_html = f'<button class="russian-pronounce" onclick="(function(){{var u=new SpeechSynthesisUtterance(\'{r_word}\');u.lang=\'ru-RU\';u.rate=0.8;window.speechSynthesis.speak(u);}})()">&#9654; Pronounce</button>'
         russian_html = f"""
       <div class="russian-word">{r_word}</div>
       <div class="russian-translit">{r_translit}</div>
       <div class="russian-english">{r_english}</div>
-      <button class="russian-pronounce" onclick="(function(){{var u=new SpeechSynthesisUtterance('{r_word}');u.lang='ru-RU';u.rate=0.8;window.speechSynthesis.speak(u);}})()">&#9654; Pronounce</button>
+      {audio_html}
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
