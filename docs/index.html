@@ -413,7 +413,7 @@
 
   <div class="weather-strip">
     <div class="temp-bar" style="background:#FFA040;"></div>
-    <div class="weather-temp-big">70°</div>
+    <div class="weather-temp-big">69°</div>
     <div class="weather-right">
       <div class="weather-condition">Overcast</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
@@ -433,7 +433,7 @@
     </div>
     <div>
       <div class="label">To-Do</div>
-      <div class="todo-item"><div class="circle"></div>look into online retailer third party</div>
+      <div class="empty">add &lt;item&gt; &nbsp;·&nbsp; done &lt;n&gt; &nbsp;·&nbsp; list &nbsp;·&nbsp; clear</div>
     </div>
   </div>
 
@@ -441,33 +441,22 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Пожалуйста</div>
-      <div class="russian-translit">pa-ZHAHL-stuh</div>
-      <div class="russian-english">Please</div>
-      <button class="russian-pronounce" onclick="(function(){var u=new SpeechSynthesisUtterance('Пожалуйста');u.lang='ru-RU';u.rate=0.8;window.speechSynthesis.speak(u);})()">&#9654; Pronounce</button>
+      <div class="russian-word">Повторите, пожалуйста</div>
+      <div class="russian-translit">PAH-JAH-OOSTA   PAV-TAD-EETEE</div>
+      <div class="russian-english">Please repeat</div>
+      <audio id="russian-audio" src="Russian Words/Please repeat.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">This is one of the most essential politeness words in Russian, used when making requests or offering something. It softens your request and makes you sound respectful. Use it after asking for something (Воду, пожалуйста / Water, please) or when offering (Пожалуйста, возьми печенье / Please, take a cookie).</div>
+      <div class="russian-explanation">Add пожалуйста (please) to sound polite rather than demanding</div>
     </div>
   </div>
 
   <div class="news-section">
     <div class="news-inner">
       <div class="label">Top Stories</div>
-      
-    <div class="news-item">
-      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">The K-Shaped Economy Is Reshaping Travel: Premium Segments Surge While Budget Airlines Collapse</span>
-        <span class="news-plus">+</span>
-      </div>
-      <div class="news-body">
-        <p class="news-summary-text">Airlines and hotels are increasingly bifurcating their offerings toward high-income travelers, with Delta's premium ticket sales surpassing economy for the first time. Luxury hotel revenue per available room grew 2.9% while midscale and economy properties declined 2.6–4.1%, and budget carriers like Spirit are collapsing due to rising fuel costs from the Iran war. This K-shaped travel trend reflects broader consumer polarization and has implications for hospitality real estate valuations and development pipelines.</p>
-        <p class="news-why-text">Why it matters: Understanding which hospitality segments are resilient during inflationary periods and geopolitical disruption is critical for acquisition and development strategy; luxury-focused assets are outperforming while economy plays face structural headwinds.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
-      </div>
-    </div>
+      <div class="empty">No stories cleared the bar today.</div>
     </div>
   </div>
 
