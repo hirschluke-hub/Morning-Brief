@@ -24,7 +24,7 @@ def _weather_icon(desc):
 def generate_html(events, todos, temp, weather_desc, quote, author, image_url, news=None, russian=None):
     today        = datetime.now()
     day_name     = today.strftime("%A").upper()
-    date_display = today.strftime("%B %-d, %Y")
+    date_display = today.strftime("%B %d, %Y").replace(" 0", " ")
     weather_str      = f"{temp}°" if temp else ""
     weather_desc_str = weather_desc if weather_desc else ""
 
