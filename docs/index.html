@@ -20,7 +20,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/145/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/147/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -403,22 +403,22 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">MONDAY</div>
-        <div class="hero-date">May 25, 2026</div>
-        <div class="hero-quote">"You have brains in your head. You have feet in your shoes. You can steer yourself any direction you choose."</div>
-        <div class="hero-author">— Dr. Seuss</div>
+        <div class="hero-day">WEDNESDAY</div>
+        <div class="hero-date">May 27, 2026</div>
+        <div class="hero-quote">"With the new day comes new strength and new thoughts."</div>
+        <div class="hero-author">— Eleanor Roosevelt</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
     <div class="temp-bar" style="background:#FFA040;"></div>
-    <div class="weather-temp-big">69°</div>
+    <div class="weather-temp-big">67°</div>
     <div class="weather-right">
-      <div class="weather-condition">Overcast</div>
+      <div class="weather-condition">Light drizzle</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
     </div>
-    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
+    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#7aafc9" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 16H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/><line x1="8" y1="19" x2="8" y2="21"/><line x1="12" y1="19" x2="12" y2="21"/><line x1="16" y1="19" x2="16" y2="21"/></svg></div>
   </div>
 
   <div class="content">
@@ -433,7 +433,7 @@
     </div>
     <div>
       <div class="label">To-Do</div>
-      <div class="empty">add &lt;item&gt; &nbsp;·&nbsp; done &lt;n&gt; &nbsp;·&nbsp; list &nbsp;·&nbsp; clear</div>
+      <div class="todo-item"><div class="circle"></div>follow up with kevin and newmark</div><div class="todo-item"><div class="circle"></div>follow up w Peter</div><div class="todo-item"><div class="circle"></div>Email Bateman follow up</div><div class="todo-item"><div class="circle"></div>fill out tax sheet for Aidan</div>
     </div>
   </div>
 
@@ -441,22 +441,77 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Повторите, пожалуйста</div>
-      <div class="russian-translit">PAH-JAH-OOSTA   PAV-TAD-EETEE</div>
-      <div class="russian-english">Please repeat</div>
-      <audio id="russian-audio" src="Russian Words/Please repeat.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Я не понимаю</div>
+      <div class="russian-translit">YA NE-UH PU-KNEE MY-YOO</div>
+      <div class="russian-english">I don't understand</div>
+      <audio id="russian-audio" src="Russian Words/I don't understand'.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Add пожалуйста (please) to sound polite rather than demanding</div>
+      <div class="russian-explanation">The 'не' (ne) means 'not' — very useful when lost in conversation</div>
     </div>
   </div>
 
   <div class="news-section">
     <div class="news-inner">
       <div class="label">Top Stories</div>
-      <div class="empty">No stories cleared the bar today.</div>
+      
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">AvalonBay, Equity Residential Strike Largest REIT Merger In U.S. History</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">AvalonBay and Equity Residential announced the largest REIT merger ever, creating a 180,000-unit apartment REIT with $69B enterprise value and expected $125M in net synergies. The all-stock transaction, expected to close before year-end, positions the combined entity as the most efficient apartment operator in the industry with dual HQ in Chicago and Arlington, Virginia, and positions it to fund acquisitions and development internally through ~$2B in annual cash flow.</p>
+        <p class="news-why-text">Why it matters: This mega-merger signals institutional capital's confidence in multifamily despite macro headwinds and demonstrates consolidation as a value-creation strategy—critical context for understanding competitive dynamics and capital deployment trends in residential CRE.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow CRE Finance</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Treasury Market Ushers In Warsh Era With Bets On 2026 Rate Hike</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Bond markets are pricing in rate hikes in 2026 following Warsh's appointment to lead the Fed, with geopolitical tensions from Iran conflicts pushing inflation expectations toward 4% and keeping long-term yields elevated. Strategists warn yields will remain sticky even if Middle East tensions ease, suggesting structural headwinds for CRE financing costs.</p>
+        <p class="news-why-text">Why it matters: Fed policy direction and interest rate expectations are foundational to underwriting cap rates and debt service coverage—this shift to 2026 hike pricing directly impacts your acquisition models and financing assumptions for deals closing in 2026-2027.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow CRE Investor</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Grocery REIT Considering Sale After Unsolicited Takeover Bid</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">A major grocery REIT is exploring strategic alternatives after receiving an unsolicited takeover bid, signaling potential M&A activity in the retail CRE sector. This represents investor appetite for consolidation or repricing of assets in the grocery-anchored retail space.</p>
+        <p class="news-why-text">Why it matters: Retail REIT M&A activity indicates where institutional capital sees value opportunities; understanding grocery retail fundamentals and valuation multiples is critical if you're evaluating retail portfolios or development conversions.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow CRE Finance</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">LA Hotels Are Still Waiting For A World Cup Demand Surge</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">With 2 months until World Cup kickoff, 80% of surveyed hotels report bookings lagging forecasts despite 5M+ tickets sold, driven by visa complications, higher airfares from Iran conflict, and FIFA's hotel room over-commitment that was subsequently canceled. LA hotels cite geographic distance from SoFi Stadium and geopolitical concerns as additional headwinds.</p>
+        <p class="news-why-text">Why it matters: This demonstrates event-driven demand forecasting risks and shows how external factors (visa policy, energy prices, geopolitics) can crater hospitality revenue assumptions—relevant if you're underwriting hotel developments or repositioning properties near major venues.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">As Investors Ask AI For Broker Picks, A New Visibility Race Emerges</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">CRE investors increasingly use AI platforms to identify and evaluate brokers, creating a new competitive dynamic where broker visibility in AI training data and recommendation algorithms becomes critical to deal flow. This shift is reshaping how institutional capital discovers and engages with investment intermediaries.</p>
+        <p class="news-why-text">Why it matters: This emerging trend highlights how AI is reshaping broker/investor discovery and relationship-building in CRE—understanding how algorithms surface investment opportunities and advisory talent will become a competitive advantage in deal sourcing.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
+      </div>
+    </div>
     </div>
   </div>
 
