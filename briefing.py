@@ -29,10 +29,11 @@ def save_html(html):
 
 
 def send_notification(title, body):
+    today = datetime.now().strftime("%Y%m%d")
     req = urllib.request.Request(
         f"https://ntfy.sh/{NTFY_TOPIC}",
         data=body.encode(),
-        headers={"Title": title, "Click": PAGE_URL, "Priority": "high"},
+        headers={"Title": title, "Click": f"{PAGE_URL}?d={today}", "Priority": "high"},
     )
     urllib.request.urlopen(req, timeout=5)
 
