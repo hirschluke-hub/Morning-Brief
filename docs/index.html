@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/151/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/152/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,28 +406,38 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">SUNDAY</div>
-        <div class="hero-date">May 31, 2026</div>
-        <div class="hero-quote">"Morning is when I am awake and there is a dawn in me."</div>
-        <div class="hero-author">— Henry David Thoreau</div>
+        <div class="hero-day">MONDAY</div>
+        <div class="hero-date">June 1, 2026</div>
+        <div class="hero-quote">"The sun is a daily reminder that we too can rise again from the darkness, that we too can shine our own light."</div>
+        <div class="hero-author">— S. Ajna</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
-    <div class="temp-bar" style="background:#444;"></div>
-    <div class="weather-temp-big"></div>
+    <div class="temp-bar" style="background:#FF7A00;"></div>
+    <div class="weather-temp-big">72°</div>
     <div class="weather-right">
-      <div class="weather-condition"></div>
+      <div class="weather-condition">Foggy</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
     </div>
-    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="17.66" y2="6.34"/><line x1="6.34" y1="17.66" x2="4.93" y2="19.07"/></svg></div>
+    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="1.4" stroke-linecap="round"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5" y1="16" x2="19" y2="16"/></svg></div>
   </div>
 
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
-      <div class="empty">Free day — make it yours.</div>
+      
+          <div class="event" style="border-left-color:#b39ddb;min-height:120px;">
+            <div class="event-time">8:30am — 12:30pm</div>
+            <div class="event-name">Interwest Capital Internship</div>
+            <div class="event-category" style="color:#b39ddb">Work</div>
+          </div>
+          <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
+            <div class="event-time">12:30pm — 1pm</div>
+            <div class="event-name">Interview with Luke Hirsch</div>
+            <div class="event-category" style="color:#80cbc4">Personal</div>
+          </div>
     </div>
     <div>
       <div class="label">To-Do</div>
@@ -439,15 +449,15 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Друг</div>
-      <div class="russian-translit">DROOG & PUH-DROOGA</div>
-      <div class="russian-english">Friend</div>
-      <audio id="russian-audio" src="Russian Words/friend.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Удачи</div>
+      <div class="russian-translit">OO-DAH-CHI</div>
+      <div class="russian-english">Good luck</div>
+      <audio id="russian-audio" src="Russian Words/good luck.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Sounds like English 'drug' but means friend. FIRST ONE MALE, SECOND ONE FEMALE</div>
+      <div class="russian-explanation">Said as a warm send-off — equivalent to 'best of luck'</div>
     </div>
   </div>
 
@@ -457,35 +467,46 @@
       
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Dell Shares Up 35% Over AI-Fueled Sales Jump</span>
+        <span class="news-title">Sterling Bay Lands $290M Refi On SoCal Life Sciences Campus</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Dell reported an 88% YoY sales increase to $43.8B, driven by $16.1B in AI server revenue that now exceeds PC sales. The company raised FY2027 revenue guidance to $167B (from $140B), with $60B expected from AI servers as CoreWeave, Nscale, and other AI infrastructure companies rapidly scale compute capacity. Dell's 225% YTY stock appreciation reflects institutional conviction that AI infrastructure buildout will remain a multi-year capex cycle.</p>
-        <p class="news-why-text">Why it matters: AI infrastructure demand is reshaping capital allocation across CRE—data centers and power-adjacent real estate will be the largest beneficiary of this server buildout cycle, directly affecting your thesis on energy infrastructure and industrial properties.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">Sterling Bay secured a $290M refinancing on a Southern California life sciences campus, signaling continued institutional appetite for life sciences real estate despite broader market volatility. This deal demonstrates strong fundamentals in the life sciences sector with lenders willing to provide substantial capital at competitive terms for quality assets.</p>
+        <p class="news-why-text">Why it matters: Life sciences is a cornerstone of San Diego's real estate market; this large SoCal refinance shows the sector remains attractive to lenders and provides comparable market data for SD asset valuations and financing conditions.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a1af2da660ca" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Companies Want Workers to Stop Using So Much AI</span>
+        <span class="news-title">Data Center Land Deals Surge 141%, Reshaping US Real Estate Market</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Enterprise adoption of AI tools is creating productivity concerns and cost overruns as companies realize unchecked AI usage is draining resources and creating security/compliance risks. This signals a moderation phase in AI capex spending as companies establish governance frameworks and training protocols. The shift from 'deploy everything' to 'deploy strategically' may temper the explosive growth projections that have driven recent tech valuations.</p>
-        <p class="news-why-text">Why it matters: If enterprise AI spending moderates, it could impact demand growth assumptions for data center real estate and reduce the intensity of power infrastructure development timelines you're tracking.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">Data center land transactions exploded 141% year-over-year as power availability becomes the critical constraint in site selection, driving unprecedented competition for developable land in key markets. This structural shift reflects massive capital redeployment toward energy infrastructure and AI-driven real estate demand.</p>
+        <p class="news-why-text">Why it matters: San Diego's emerging data center market and power constraints (SDGE capacity limits) make this national trend directly relevant to acquisition and development strategy; understanding land pricing dynamics is critical for deal underwriting.</p>
+        <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email.</div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">ICE Agent's Arrest in Minnesota Shooting Highlights Federal-State Conflict</span>
+        <span class="news-title">Industrial Markets Start Tilting Toward Landlords; 1031 Exchange Market 'Fundamentally Different'</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Minnesota arrested an ICE agent for shooting a Venezuelan immigrant and falsifying reports, escalating a federal-state dispute over immigration enforcement jurisdiction. This is the second ICE agent charged in connection with Operation Metro Surge, establishing a precedent that state attorneys general view federal immigration agents as subject to state criminal law. The conflict signals potential litigation risk for federal agencies and could create regulatory uncertainty around border/immigration-adjacent real estate and logistics.</p>
-        <p class="news-why-text">Why it matters: Federal-state legal conflicts over immigration enforcement could create policy uncertainty affecting real estate values in border regions, logistics hubs, and industrial properties serving immigration-sensitive industries.</p>
-        <div class="news-source-note">Find it in your <strong>Straight Arrow</strong> email.</div>
+        <p class="news-summary-text">Industrial real estate is shifting from tenant-favorable conditions toward landlord leverage as supply constraints ease and demand softens, while unprecedented volatility is fundamentally reshaping 1031 exchange investment strategies. Investors are facing difficulty executing exchange timelines due to unpredictable market pricing and financing conditions.</p>
+        <p class="news-why-text">Why it matters: San Diego's industrial market (Otay Mesa, Chula Vista corridors) remains acquisition-sensitive; understanding landlord/tenant dynamics and 1031 market constraints is essential for capital markets positioning and seller outreach strategies.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a1a08b7bb976" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Home Insurance Nonpayment Rates Hit 44%, Rising from 36% in 2015</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Major U.S. homeowners insurers are denying claims at significantly higher rates due to stricter risk assessment methods and climate-related underwriting shifts, with the five largest carriers rejecting over 44% of resolved claims. This trend reflects structural underwriting tightening that affects property valuation risk models and construction lending.</p>
+        <p class="news-why-text">Why it matters: Rising insurance claim denials impact multifamily and residential development underwriting costs, construction financing terms, and long-term asset yields; relevant to San Diego development acquisitions and feasibility studies.</p>
+        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     </div>
