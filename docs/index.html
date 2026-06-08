@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/158/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/159/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,17 +406,17 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">SUNDAY</div>
-        <div class="hero-date">June 7, 2026</div>
-        <div class="hero-quote">"First thing every morning before you arise say out loud, 'I believe,' three times."</div>
-        <div class="hero-author">— Ovid</div>
+        <div class="hero-day">MONDAY</div>
+        <div class="hero-date">June 8, 2026</div>
+        <div class="hero-quote">"Every day I wake up and I feel lucky."</div>
+        <div class="hero-author">— Reba McEntire</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
     <div class="temp-bar" style="background:#FF7A00;"></div>
-    <div class="weather-temp-big">73°</div>
+    <div class="weather-temp-big">72°</div>
     <div class="weather-right">
       <div class="weather-condition">Overcast</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
@@ -427,11 +427,21 @@
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
-      <div class="empty">Free day — make it yours.</div>
+      
+          <div class="event" style="border-left-color:#b39ddb;min-height:120px;">
+            <div class="event-time">8:30am — 12:30pm</div>
+            <div class="event-name">Interwest Capital Internship</div>
+            <div class="event-category" style="color:#b39ddb">Work</div>
+          </div>
+          <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
+            <div class="event-time">2pm — 2:45pm</div>
+            <div class="event-name">Luke Hirsch + Scott Rykovich - Analyst, Investments and Portfolio Management, On-Site Interview </div>
+            <div class="event-category" style="color:#80cbc4">Personal</div>
+          </div>
     </div>
     <div>
       <div class="label">To-Do</div>
-      <div class="empty">add &lt;item&gt; &nbsp;·&nbsp; done &lt;n&gt; &nbsp;·&nbsp; list &nbsp;·&nbsp; clear</div>
+      <div class="todo-item"><div class="circle"></div>get back to guys moll connected me with</div><div class="todo-item"><div class="circle"></div>email Bateman</div><div class="todo-item"><div class="circle"></div>email Arnold</div>
     </div>
   </div>
 
@@ -439,15 +449,15 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Жена</div>
-      <div class="russian-translit">JIENA</div>
-      <div class="russian-english">Wife</div>
-      <audio id="russian-audio" src="Russian Words/Recording (13).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Тихий</div>
+      <div class="russian-translit">TEE-HEE</div>
+      <div class="russian-english">Quiet</div>
+      <audio id="russian-audio" src="Russian Words/Recording (55).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Ж sounds like the 's' in 'measure' — a softer zh sound</div>
+      <div class="russian-explanation">'Тихий океан' = Pacific Ocean — literally 'quiet ocean'</div>
     </div>
   </div>
 
@@ -457,35 +467,57 @@
       
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Hiring surged well beyond all expectations in May — 172,000 jobs added</span>
+        <span class="news-title">Goldman Sachs Launches Tokenized Real Estate Fund, Signaling Institutional Adoption of Blockchain Property Investments</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">The US added 172,000 jobs in May, more than double analyst expectations of 80,000, with leisure/hospitality and local government leading gains (likely World Cup-related hiring). The strong report pushed unemployment to hold steady at 4.3%, but longer-term unemployment rose to 27.5%—the highest since the pandemic. This better-than-expected labor strength likely delays Fed rate cuts, keeping borrowing costs elevated for real estate developers and cap rates competitive.</p>
-        <p class="news-why-text">Why it matters: A stronger labor market and delayed rate cuts directly impact your acquisition timeline, financing spreads, and cap rate compression expectations for institutional deals.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">Goldman Sachs is partnering with Apex Group and Archax to launch a tokenized real estate fund using blockchain-native shares on its GS DAP platform, marking a major institutional endorsement of digital asset infrastructure for real estate. This demonstrates growing confidence that tokenization can improve efficiency, transparency, and liquidity in property investing—a trend reshaping how institutional capital flows into CRE.</p>
+        <p class="news-why-text">Why it matters: Tokenization represents the convergence of AI/proptech and capital markets you're focused on; understanding this evolution is critical for future deal structures and investor preferences.</p>
+        <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email.</div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">White House's $700 million push for coal revives decade-long fight in Oakland</span>
+        <span class="news-title">Brookfield Raises $900M for Fund Targeting CRE Liquidity Needs</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">The Trump administration allocated $700 million to revive coal infrastructure, including a $75M grant for West Gateway Terminal in Oakland to export coal to Asia. The Defense Production Act invocation signals federal intent to support coal as part of the energy portfolio. This infrastructure play faces significant local environmental resistance but demonstrates federal willingness to back industrial real estate and supply chain projects.</p>
-        <p class="news-why-text">Why it matters: Federal infrastructure spending and Defense Production Act deployment signal potential expansion of industrial real estate demand; monitor how this shifts investor appetite for industrial/logistics assets and port-adjacent development.</p>
-        <div class="news-source-note">Find it in your <strong>Straight Arrow</strong> email. <a class="news-article-link" href="https://clicks.san.com/f/a/RCP6bsEMzJ0eSJd3GHSFJg~~/AAQRxRA~/NP_jpEgvfMp-_7-kariyeLK3XXVPVnk7cfrh0aARZBAuXLjyD6FYvyH6eVginBWjdSQtYZeuyMPiKYWbyf2c6kyK5i8JEN6FJ5_YGh0-s3FHesHY0_J6lMj8664ZOYN_kk_FuSjqfB8vYqnlwITWLMlOMgZRgG9YskpVLzIJXh2sfleAYUKgVy1UAlS6ypkUnnQb2JdmPuZxstA34cd4TVf6mXO2nTtAQ1yzVyqqT7QF-zmanyU8xfJv57tOo_sNwUqATF7sm-viZEoQjj2jWp88WBCt_1yibuVvRkJ1LiBjPhCYnJfRsDDPSUyWzmKcfcLwmlVXcl1LVtuY0KPm9guWw_FS_EmykYAREYEF2U2DQOMi0qvM2rBBRiZgMtNV" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">Brookfield has closed a $900M fund specifically designed to address liquidity pressures across the commercial real estate market. This reflects continued institutional appetite to deploy capital into stressed CRE assets and refinancing opportunities as rate environment persists.</p>
+        <p class="news-why-text">Why it matters: Direct signal of where major institutional investors see opportunity in the current CRE cycle—critical context for understanding bid-ask spreads, distressed asset timing, and capital markets dynamics.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal</strong> email.</div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Can you tax social media? Illinois faces legal questions over proposed law — $200M tax initiative</span>
+        <span class="news-title">Real Estate-Backed Candidates See Mixed Election Success in California Primary; Developer Zach Sokoloff Loses LA Controller Race</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Illinois proposes a novel monthly tiered tax on social media companies based on in-state active users, targeting $200M in revenue as the state faces federal funding uncertainty under the Trump administration. The proposal has drawn criticism for vague definitions (what constitutes a 'user'?) and potential First Amendment issues, though Gov. Pritzker champions it as necessary revenue. If upheld, this sets precedent for state-level taxation of digital platforms and could impact commercial tenant mix and office real estate in tech hubs.</p>
-        <p class="news-why-text">Why it matters: Novel state tax structures on tech platforms could trigger competitive responses in other states and affect office/commercial demand in tech centers; monitor whether California explores similar strategies.</p>
-        <div class="news-source-note">Find it in your <strong>Straight Arrow</strong> email. <a class="news-article-link" href="https://clicks.san.com/f/a/ebY6hqGy6aJ0ma3sgPf9Lw~~/AAQRxRA~/iCulY5kYDlBzrQSi7JBJWMDk49dpq_HHQIkylOHRpjjx_uzv53l8je3iBOrSHStOe4hSNdII0jOvTaYaVWpRQyx7IfbfVBV3YYAFu6m-xqT6fT2FPiOrvY1D0Be-orZ8064GeTnAA9amGauyxNSLCqx8veBijCLtZtAaGA_hms-YK4BMUb0W9V_nsD4KUgHQ7wAHEBFSEHOkOMw1hzFlR06Uh3FWhpC38jxwJKk8YGCU34TGcjDYuunpcrJLFOq-6ag6yTQj7ZYvj4rQNx11ycHtlm1CaTL9F4EvyhPrdXOPGkayz983iEx1lJjNAPiMX3yRurdxcRcCVtTOY_f9L6x6CsQl7WorcH-UM2cBXr0n5mj_DzXQaeFMGdBdKSPp" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">Despite significant real estate industry funding, candidates backed by CRE players had mixed results: San Jose Mayor Matt Mahan (supported by Rick Caruso and others) garnered only 4% in CA governor race and conceded immediately; LA developer Zach Sokoloff lost controller bid to Kenneth Mejia. Industry-backed Mayor Karen Bass held LA mayoral lead with nearly 35% of vote alongside Spencer Pratt (27%).</p>
+        <p class="news-why-text">Why it matters: Reveals limits of real estate industry political influence and shows housing-focused messaging didn't gain traction in state politics—important context for understanding future regulatory environment and land-use policy in Southern California.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">San Diego City Council Scraps Controversial Paid Parking Plan for Balboa Park, Reduces Trash Fees to Avert Ballot Challenge</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">San Diego City Council is reversing course on aggressive trash and parking fees after political pressure, cutting trash costs by $16-$5/month and eliminating paid Balboa Park parking. The concession will cost the city $2M next fiscal year and ~$14M over two years, forcing service cuts including bulky trash pickups and electric truck programs.</p>
+        <p class="news-why-text">Why it matters: Direct impact on San Diego municipal finances, property operating costs, and city's ability to fund infrastructure—critical for understanding local development feasibility and property valuations in prime San Diego markets.</p>
+        <div class="news-source-note">Find it in your <strong>Axios San Diego</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Data Center Lobbying Muscle Shifts to Statehouses as Local Battles Over AI Infrastructure Boil</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">As local zoning battles intensify over data center and AI infrastructure placement, lobbying efforts are escalating at the state legislative level. This reflects growing tension between communities resisting hyperscale data facility development and tech/financial investors pushing for regulatory pathways.</p>
+        <p class="news-why-text">Why it matters: Data center development is reshaping real estate markets nationwide; understanding state-level regulatory dynamics will be essential for identifying future development opportunities and cap rate drivers in emerging tech corridors.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal</strong> email.</div>
       </div>
     </div>
     </div>
