@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/164/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/165/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,17 +406,17 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">SATURDAY</div>
-        <div class="hero-date">June 13, 2026</div>
-        <div class="hero-quote">"Be willing to be a beginner every single morning."</div>
-        <div class="hero-author">— Meister Eckhart</div>
+        <div class="hero-day">SUNDAY</div>
+        <div class="hero-date">June 14, 2026</div>
+        <div class="hero-quote">"Today is a new day. Stop telling yourself it's just another boring day."</div>
+        <div class="hero-author">— Steve Maraboli</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
     <div class="temp-bar" style="background:#FF4C4C;"></div>
-    <div class="weather-temp-big">77°</div>
+    <div class="weather-temp-big">76°</div>
     <div class="weather-right">
       <div class="weather-condition">Foggy</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
@@ -427,7 +427,12 @@
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
-      <div class="empty">Free day — make it yours.</div>
+      
+          <div class="event" style="border-left-color:#80cbc4;min-height:86px;">
+            <div class="event-time">7:45pm — 10:38pm</div>
+            <div class="event-name">Flight to San Diego (DL 2672)</div>
+            <div class="event-category" style="color:#80cbc4">Personal</div>
+          </div>
     </div>
     <div>
       <div class="label">To-Do</div>
@@ -439,15 +444,15 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Меня зовут...</div>
-      <div class="russian-translit">MEENYA ZUVOOT</div>
-      <div class="russian-english">My name is</div>
-      <audio id="russian-audio" src="Russian Words/my name is.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Сегодня</div>
+      <div class="russian-translit">SEE-VOID-KNEE-YA</div>
+      <div class="russian-english">Today</div>
+      <audio id="russian-audio" src="Russian Words/today.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Literally 'they call me...' — follow with your name</div>
+      <div class="russian-explanation">The 'г' is pronounced like 'v' here — a common pronunciation quirk</div>
     </div>
   </div>
 
@@ -457,57 +462,35 @@
       
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">SpaceX IPO Becomes Largest Ever at $1.77T Valuation; Elon Musk Becomes First Trillionaire</span>
+        <span class="news-title">SpaceX IPO Makes Elon Musk World's First Trillionaire; Stock Surges 19% on Debut</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">SpaceX raised $75B in the largest IPO in history at $1.77T valuation, with 4x oversubscription and $100B in retail orders. The offering signals strong investor appetite for high-growth tech infrastructure and marks a critical data point for upcoming AI company IPOs. Musk retained 80% voting control while early employees and VCs realized massive gains.</p>
-        <p class="news-why-text">Why it matters: Demonstrates capital markets appetite for infrastructure-heavy, long-term growth stories—relevant to understanding how institutional capital will price future development and infrastructure deals in 2026.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew / Straight Arrow</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">SpaceX completed the largest IPO ever, opening at $135/share and closing at ~$161 (19% gain), valuing the company at $2.1 trillion and making it the 6th most valuable US public company. Elon Musk's net worth reached $1.1 trillion as the first trillionaire globally, with massive institutional capital now flowing into space/infrastructure assets. This IPO sets a new benchmark for mega-cap tech/infrastructure valuations and signals strong investor appetite for capital-intensive, long-duration asset classes despite macro uncertainty.</p>
+        <p class="news-why-text">Why it matters: Unprecedented mega-IPO validates institutional appetite for infrastructure and long-duration assets; benchmark for future CRE/development financing and cap rate expectations in a high-valuation environment.</p>
+        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Multifamily Market Shows Resilience with Rising Occupancy and Rents Through June 2026</span>
+        <span class="news-title">US Youth Camp Industry Worth $4.6B; Day Camps Averaging $87/Day as Inflation Drives Pricing</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">U.S. apartment market saw occupancy and rents increase every month in 2026, with concessions holding near multiyear highs despite supply pressures. Renters using AI-assisted leasing tools show 43% higher application rates, indicating technology's impact on conversion metrics. Market fundamentals remain strong despite macro headwinds.</p>
-        <p class="news-why-text">Why it matters: Critical for understanding San Diego multifamily investment thesis—strong national rents and occupancy trends support local market resilience, while AI adoption signals operational efficiency gains that could affect NOI and exit valuations.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow Multifamily</strong> email. <a class="news-article-link" href="http://links.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">The US summer camp industry, valued at $4.6 billion annually, has rebounded strongly post-pandemic with significant price inflation—day camps now average $87/day ($173 for overnight). Rising labor costs, real estate pressures, and demand from families seeking childcare alternatives are driving operator margins and property valuations. Affluent markets (NYC, coastal cities) command $10K+ premiums, creating niche real estate development opportunities in hospitality/recreational uses.</p>
+        <p class="news-why-text">Why it matters: Demonstrates how operational cost inflation (labor, food, utilities) flows through to end-user pricing and real estate yields; identifies emerging niche property development/acquisition opportunity in specialty hospitality and recreational facilities.</p>
+        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">CRE Distress Cycle Enters Forced Phase as $1T Debt Wall Looms; Lenders Shift from Extensions to Workouts</span>
+        <span class="news-title">Teen Job Market Hits Record Lows; Gen Z Pivots to Tech Entrepreneurship and Startups</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Roughly $1T in CRE debt matures in 2026, forcing borrowers into a refinancing market with rates climbing from 3-4% to 7%+, creating valuation gaps many owners cannot bridge. Lenders are pivoting from passive extensions to active workouts, with success dependent on early communication, market understanding, and credible business plans. The era of hoping for rate cuts is definitively over.</p>
-        <p class="news-why-text">Why it matters: Essential context for acquisitions and dispositions—understanding which properties have viable workouts vs. forced sales will identify distressed opportunities and refinancing constraints on current holdings in San Diego and nationally.</p>
-        <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email. <a class="news-article-link" href="https://www.credaily.com/briefs/cre-loan-workouts-shift-focus-as-debt-maturities-loom/" target="_blank" rel="noopener">Try article →</a></div>
-      </div>
-    </div>
-    <div class="news-item">
-      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">HUD Halts LA Homeless Agency Funding Pending Investigation; Potential Regional Policy Shift</span>
-        <span class="news-plus">+</span>
-      </div>
-      <div class="news-body">
-        <p class="news-summary-text">HUD suspended funding to an LA homeless agency under investigation, signaling stricter oversight and accountability expectations for housing/homelessness programs. This regulatory shift may tighten funding availability and compliance requirements for affordable housing and social services infrastructure investments in California.</p>
-        <p class="news-why-text">Why it matters: Affects affordable housing development pipelines and public-private partnerships in Southern California—regulatory tightening could increase compliance costs and slow project timelines for mixed-income and supportive housing deals.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow SoCal</strong> email. <a class="news-article-link" href="http://links.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
-      </div>
-    </div>
-    <div class="news-item">
-      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Apartment Market Concessions Remain Near Multiyear Highs Despite Rent Growth; AI Leasing Tools Drive 43% Higher Application Rates</span>
-        <span class="news-plus">+</span>
-      </div>
-      <div class="news-body">
-        <p class="news-summary-text">While occupancy and rents rose monthly through mid-2026, concessions (free rent, move-in specials) stayed elevated, indicating competitive lease-up environments persist. AI-powered leasing assistance platforms demonstrate measurable impact on conversion—a proptech trend worth monitoring for operational margin improvement.</p>
-        <p class="news-why-text">Why it matters: Signals San Diego multifamily investors should prioritize properties with strong unit economics that don't depend on concession reduction; AI adoption in leasing ops represents a friction-reduction opportunity that could drive competitive leasing advantages.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow Multifamily</strong> email. <a class="news-article-link" href="http://links.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">High school and college students face the worst youth employment market on record, worse than post-WWII and Great Recession periods, prompting pivot to startup creation and tech skills development. This structural shift in youth labor supply may permanently reduce traditional service-sector employment and reshape commercial real estate demand for retail/food service tenants. Reflects broader automation and AI displacement affecting entry-level real estate use cases.</p>
+        <p class="news-why-text">Why it matters: Labor supply shock to traditionally tenant-intensive retail/food service real estate; signals long-term secular decline in demand for certain CRE use classes and potential cap rate compression risk for high-labor-dependent properties.</p>
+        <div class="news-source-note">Find it in your <strong>Straight Arrow</strong> email. <a class="news-article-link" href="https://clicks.san.com/f/a/TH2C91MPKupnb1h3sd8t2g" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     </div>
