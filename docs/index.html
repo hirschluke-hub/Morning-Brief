@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/172/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/173/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,17 +406,17 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">SUNDAY</div>
-        <div class="hero-date">June 21, 2026</div>
-        <div class="hero-quote">"The only limit to our realization of tomorrow will be our doubts of today."</div>
-        <div class="hero-author">— Franklin D. Roosevelt</div>
+        <div class="hero-day">MONDAY</div>
+        <div class="hero-date">June 22, 2026</div>
+        <div class="hero-quote">"Whether you think you can or you think you can't, you're right."</div>
+        <div class="hero-author">— Henry Ford</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
     <div class="temp-bar" style="background:#FF7A00;"></div>
-    <div class="weather-temp-big">73°</div>
+    <div class="weather-temp-big">75°</div>
     <div class="weather-right">
       <div class="weather-condition">Foggy</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
@@ -427,7 +427,17 @@
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
-      <div class="empty">Free day — make it yours.</div>
+      
+          <div class="event" style="border-left-color:#b39ddb;min-height:120px;">
+            <div class="event-time">8:30am — 12:30pm</div>
+            <div class="event-name">Interwest Capital Internship</div>
+            <div class="event-category" style="color:#b39ddb">Work</div>
+          </div>
+          <div class="event" style="border-left-color:#80cbc4;min-height:86px;">
+            <div class="event-time">7:45pm — 10:38pm</div>
+            <div class="event-name">Flight to San Diego (DL 2672)</div>
+            <div class="event-category" style="color:#80cbc4">Personal</div>
+          </div>
     </div>
     <div>
       <div class="label">To-Do</div>
@@ -439,15 +449,15 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Понедельник</div>
-      <div class="russian-translit">PUH-KNEE- DIEL-NEEK</div>
-      <div class="russian-english">Monday</div>
-      <audio id="russian-audio" src="Russian Words/Recording (32).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Дом</div>
+      <div class="russian-translit">DOME</div>
+      <div class="russian-english">House</div>
+      <audio id="russian-audio" src="Russian Words/housee.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Derived from 'после недели' — after the week (i.e. after Sunday)</div>
+      <div class="russian-explanation">Also means 'home' and 'building' — very versatile word</div>
     </div>
   </div>
 
@@ -457,35 +467,57 @@
       
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">San Diego's Wellness Economy Booming: 19% Growth in Health & Beauty Real Estate Activity</span>
+        <span class="news-title">CRE's Biggest Gap On Record: Winners vs. Laggards Pricing Spread Widens</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">San Diego's health and wellness sector is experiencing 19% economic growth over three years—nearly 5x the national decline of 3.9%—driven by foot traffic increases to beauty and spa tenants (up 18% annually 2021-2023). The boom reflects favorable demographics, climate, and innovation ecosystem, with new concepts like Breathe Degrees (Liberty Station cold plunge), The Pilates Collective wellness suites, and Seoul Glow Lab creating high-traffic, recurring-visit retail opportunities.</p>
-        <p class="news-why-text">Why it matters: This signals strong tenant demand and resilience in San Diego retail real estate; wellness operators generate sticky, repeat customer tenancy that anchors mixed-use developments and drives premium valuations.</p>
-        <div class="news-source-note">Find it in your <strong>Axios San Diego</strong> email. <a class="news-article-link" href="https://link.axios.com/click/46243077.42888" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">Rising interest rates and global uncertainty haven't halted CRE pricing momentum, but the market is bifurcating sharply—top-performing sectors command premium valuations while laggard asset classes face significant repricing. Hines' 2026 Midyear Outlook indicates debt availability is improving and transaction activity is returning, but constraints around supply, financing, and demand create uneven opportunities across markets and property types.</p>
+        <p class="news-why-text">Why it matters: This uneven recovery creates both selection risk and alpha opportunities—understanding which sectors and markets are mispriced will be critical for your acquisition and disposition strategy.</p>
+        <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email.</div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Prediction Markets Explode to $24B Trading Volume; Kalshi Valued at $22B, Polymarket at $15B</span>
+        <span class="news-title">Netflix Acquires Storied Hollywood Studio at 78% Price Discount</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Prediction market platforms Kalshi and Polymarket have exploded from $4.5B to ~$24B combined monthly trading volume in six months, with Kalshi's valuation jumping from $11B to $22B and Polymarket in talks for $15B Series funding. However, only 0.1% of users capture 67% of profits on Polymarket, and the average user loses $1-$100, suggesting highly concentrated alpha and retail-driven speculation.</p>
-        <p class="news-why-text">Why it matters: As an institutional CRE investor focused on capital markets and proptech, understanding prediction markets helps you gauge market sentiment on interest rates, construction costs, and development timelines—plus signals where fintech capital is flowing.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">Netflix is purchasing a major Hollywood studio property at a steep discount, signaling distressed asset dynamics in the creative real estate sector as traditional studio operators face cash flow pressures. This M&A activity reflects broader institutional capital reallocating toward operating companies acquiring real estate, a key trend in the current cycle.</p>
+        <p class="news-why-text">Why it matters: This demonstrates how non-traditional operators are acquiring trophy assets at significant discounts—useful case study for understanding where value is being created in entertainment/media-adjacent CRE.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal</strong> email.</div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Los Angeles City Council Advances Noncitizen Voting Measure; Potential November 2026 Ballot Initiative</span>
+        <span class="news-title">Homeownership Costs Surging: Emergency Repairs Up 175%, Maintenance 85% Since 2019</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">LA City Council voted to advance a noncitizen voting measure for the November midterm ballot, allowing residents on visas and green cards—who pay taxes and use city services—to vote in local elections. The measure reflects historical precedent (citizenship wasn't a voting requirement in early U.S. history) and taps into 'no taxation without representation' arguments, though passage remains uncertain.</p>
-        <p class="news-why-text">Why it matters: Demographic and policy shifts in LA cascade into San Diego; expanding electorate could reshape local development priorities, housing policy, and infrastructure spending that affect regional real estate valuations and project feasibility.</p>
-        <div class="news-source-note">Find it in your <strong>Straight Arrow News</strong> email. <a class="news-article-link" href="https://clicks.san.com/f/a/1O-wZAczM6YVnhjYPjy10w~~/AAQRxRA" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">Operating and maintenance costs for homeowners have exploded since 2019, with emergency repairs up 175%, insurance 72%, and property taxes 31%—compressing affordability for middle-class buyers who now require $133k less home value at identical monthly budgets. This cost inflation is reshaping residential real estate dynamics and homeowner investment returns, creating pressure on residential valuations and NOI quality.</p>
+        <p class="news-why-text">Why it matters: Understanding operating cost inflation is critical for multifamily underwriting and residential development—these cost trends directly impact both cap rates and the sustainability of current valuations in residential CRE.</p>
+        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">ICE Looks to Offload $700M in U.S. Warehouses as Detention Overhaul Unravels</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Immigration and Customs Enforcement is shedding $700M in warehouse assets following a stalled detention facility overhaul, creating a large portfolio of potential institutional sales in the industrial sector. This represents a meaningful supply shock and distressed liquidation opportunity in warehouse assets across multiple markets.</p>
+        <p class="news-why-text">Why it matters: A $700M industrial portfolio hitting the market represents significant acquisition opportunity and pricing signals for the warehouse sector—monitor this liquidation for market entry points.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">San Diego's Wellness Economy Booming: 18% Growth in Visits, 19% Economic Activity Increase</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">San Diego's health and wellness sector is bucking national trends with 18% average annual visit increases to beauty and spa businesses (2021-2023) and 19% economic activity growth over three years, compared to a 3.9% national decline. The region is emerging as a U.S. epicenter for wellness brands, driven by favorable climate, health-focused demographics, and innovation-focused local economy.</p>
+        <p class="news-why-text">Why it matters: This is a meaningful tenant diversification story for San Diego retail—wellness operators are reliable, repeat-traffic drivers that mall owners and developers should prioritize in their San Diego pipelines.</p>
+        <div class="news-source-note">Find it in your <strong>Axios San Diego</strong> email.</div>
       </div>
     </div>
     </div>
