@@ -2,7 +2,7 @@ name: Morning Brief
 
 on:
   schedule:
-    - cron: '0 15 * * *'  # 7am PT (UTC-8) / 8am PDT (UTC-7)
+    - cron: '0 14 * * *'  # 7am PDT (UTC-7) / 6am PST (UTC-8)
   workflow_dispatch:
 
 permissions:
