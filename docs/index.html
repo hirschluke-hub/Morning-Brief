@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/186/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/187/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,9 +406,9 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">SUNDAY</div>
-        <div class="hero-date">July 5, 2026</div>
-        <div class="hero-quote">"Dream it. Believe it. Build it."</div>
+        <div class="hero-day">MONDAY</div>
+        <div class="hero-date">July 6, 2026</div>
+        <div class="hero-quote">"Success doesn't just find you. You have to go out and get it."</div>
         <div class="hero-author">— Anonymous</div>
       </div>
     </div>
@@ -416,7 +416,7 @@
 
   <div class="weather-strip">
     <div class="temp-bar" style="background:#FF4C4C;"></div>
-    <div class="weather-temp-big">76°</div>
+    <div class="weather-temp-big">78°</div>
     <div class="weather-right">
       <div class="weather-condition">Overcast</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
@@ -427,7 +427,12 @@
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
-      <div class="empty">Free day — make it yours.</div>
+      
+          <div class="event" style="border-left-color:#b39ddb;min-height:120px;">
+            <div class="event-time">8:30am — 12:30pm</div>
+            <div class="event-name">Interwest Capital Internship</div>
+            <div class="event-category" style="color:#b39ddb">Work</div>
+          </div>
     </div>
     <div>
       <div class="label">To-Do</div>
@@ -439,22 +444,66 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Минута</div>
-      <div class="russian-translit">ME-NOOTA</div>
-      <div class="russian-english">Minute</div>
-      <audio id="russian-audio" src="Russian Words/Recording (40).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Я понимаю</div>
+      <div class="russian-translit">YA PU-KNEE MY-YOO</div>
+      <div class="russian-english">I understand</div>
+      <audio id="russian-audio" src="Russian Words/I understand'.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Sounds like 'minute' — one of many Russian-English near-matches</div>
+      <div class="russian-explanation">Nod and say this to show you're following along in conversation</div>
     </div>
   </div>
 
   <div class="news-section">
     <div class="news-inner">
       <div class="label">Top Stories</div>
-      <div class="empty">No stories cleared the bar today.</div>
+      
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">LA City Council Kills Ballot Measure For ULA Multifamily Exemption</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">LA City Council rejected a ballot measure that would have exempted multifamily developments from the Undue Localities Act (ULA), a significant setback for transit-oriented housing. This reflects broader tensions between local zoning authority and state housing mandates in California. The decision signals continued regulatory friction for multifamily developers in major SoCal metros.</p>
+        <p class="news-why-text">Why it matters: Understanding LA's zoning politics directly informs San Diego development strategy—similar ULA/zoning debates will likely emerge here, affecting your long-term acquisition and entitlement timelines.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a4ae314bb65a" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">DWS Group REIT Misses Redemption Requests By More Than 30%</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">DWS Group REIT failed to meet over 30% of investor redemption requests, signaling deepening liquidity stress in the nontraded REIT space. This is a critical marker of broader distress in less-liquid real estate vehicles as interest rates remain elevated and asset valuations face pressure. Expect similar redemption issues to emerge across the nontraded REIT universe.</p>
+        <p class="news-why-text">Why it matters: This demonstrates capital markets dysfunction in nontraded vehicles—relevant for understanding where opportunistic acquisition capital will come from and which REITs may be forced sellers in 2026-27.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a4ade1f28bfa" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Miami Office Rents Hit No. 1 (Highest Among U.S. Gateway Cities)</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Miami office rents have reached top-tier gateway city levels, driven by supply constraints and strong demand from luxury tenants relocating from other metros. This signals a structural shift in office dynamics post-pandemic, with flight-to-quality favoring select coastal markets. Cap rate compression is likely in trophy Miami office assets.</p>
+        <p class="news-why-text">Why it matters: Miami's office outperformance provides a comp for San Diego's less-proven office recovery and informs your perspective on which gateway markets are actually capturing institutional capital flows versus which are still trapped.</p>
+        <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">California's New Transit-Oriented Housing Law Takes Effect—But San Diego Already Complies</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">New California law allowing dense multifamily development near transit hubs (MTS Trolley, SPRINTER) went into effect this month. San Diego already permits such density, but loosening statewide restrictions doesn't guarantee faster builds or affordability. Implementation and financing remain the binding constraints.</p>
+        <p class="news-why-text">Why it matters: This confirms San Diego's regulatory environment is relatively permissive, but execution risk—not zoning—is the real bottleneck for multifamily development you're evaluating.</p>
+        <div class="news-source-note">Find it in your <strong>Axios San Diego</strong> email.</div>
+      </div>
+    </div>
     </div>
   </div>
 
