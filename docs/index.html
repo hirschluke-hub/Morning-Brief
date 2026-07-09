@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/189/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/190/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,33 +406,28 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">WEDNESDAY</div>
-        <div class="hero-date">July 8, 2026</div>
-        <div class="hero-quote">"Work hard in silence, let your success be your noise."</div>
-        <div class="hero-author">— Frank Ocean</div>
+        <div class="hero-day">THURSDAY</div>
+        <div class="hero-date">July 9, 2026</div>
+        <div class="hero-quote">"The difference between ordinary and extraordinary is that little extra."</div>
+        <div class="hero-author">— Jimmy Johnson</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
-    <div class="temp-bar" style="background:#FF4C4C;"></div>
-    <div class="weather-temp-big">77°</div>
+    <div class="temp-bar" style="background:#FF7A00;"></div>
+    <div class="weather-temp-big">75°</div>
     <div class="weather-right">
-      <div class="weather-condition">Overcast</div>
+      <div class="weather-condition">Foggy</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
     </div>
-    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
+    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="1.4" stroke-linecap="round"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5" y1="16" x2="19" y2="16"/></svg></div>
   </div>
 
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
-      
-          <div class="event" style="border-left-color:#b39ddb;min-height:120px;">
-            <div class="event-time">8:30am — 12:30pm</div>
-            <div class="event-name">Interwest Capital Internship</div>
-            <div class="event-category" style="color:#b39ddb">Work</div>
-          </div>
+      <div class="empty">Free day — make it yours.</div>
     </div>
     <div>
       <div class="label">To-Do</div>
@@ -444,22 +439,77 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Говорите медленнее</div>
-      <div class="russian-translit">GUH-VAR-EE-TEE    MIED- LEE-NIEH</div>
-      <div class="russian-english">Talk slower</div>
-      <audio id="russian-audio" src="Russian Words/Talk slower.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Оба</div>
+      <div class="russian-translit">OH-BAH</div>
+      <div class="russian-english">Both</div>
+      <audio id="russian-audio" src="Russian Words/Recording (27).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Politely ask anyone to slow down — Russians speak fast</div>
+      <div class="russian-explanation">Short and punchy — 'оба варианта' means 'both options'</div>
     </div>
   </div>
 
   <div class="news-section">
     <div class="news-inner">
       <div class="label">Top Stories</div>
-      <div class="empty">No stories cleared the bar today.</div>
+      
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Starwood Raises $10B for Distressed Assets, With an Eye On Data Centers</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Starwood Property Trust closed a $10B capital raise targeting distressed CRE assets, with explicit focus on data centers as a core opportunity. The fund positions for continued market stress and plays into the explosive data center demand thesis, giving sponsors dry powder for acquisitions and workouts.</p>
+        <p class="news-why-text">Why it matters: Direct signal that institutional capital sees distressed deals and data center opportunities as the 2026 play—critical for understanding where capital is flowing and which asset classes will drive returns.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow CRE Investor</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a4d74c7d4ccc" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">$20B North Carolina Data Center Canceled Amid Moratorium Debate</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">A $20B data center project in North Carolina was canceled as local jurisdictions debate imposing data center moratoriums due to power consumption and grid concerns. This reflects growing policy friction around buildable supply and zoning constraints for one of the hottest asset classes.</p>
+        <p class="news-why-text">Why it matters: Shows regulatory headwinds could cap data center supply growth—critical variable for understanding cap rates, development pipelines, and which markets remain open vs. constrained.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a4ec165419a6" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Palisades Village To Reopen After $100M Fire Recovery Effort</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Palisades Village, a major LA retail/mixed-use property, is reopening after a $100M fire recovery rebuild. The project demonstrates resilience of institutional retail assets and recovery of premium coastal California retail despite market headwinds.</p>
+        <p class="news-why-text">Why it matters: Validates that distressed/damaged retail assets can command significant capital for repositioning and recover; relevant for San Diego retail market benchmarking and acquisition strategy.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a4ef7a27cfe5" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">62 Real Estate Insiders On A Year That Took A Turn, And What They're Doing About It</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Bisnow surveyed 62 CRE professionals on 2026 strategy and sentiment amid market shifts. Provides real-time perspective on how institutional players are repositioning—likely covering cap rates, distressed strategies, and asset class allocation.</p>
+        <p class="news-why-text">Why it matters: Captures market sentiment and insider positioning at a pivotal inflection point; helps you understand what institutional players are actually doing vs. what headlines say.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow CRE Investor</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a4d74c18f5c4" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Industrial Leasing Surges as Occupiers Lock In Long-Term Deals</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Industrial leasing gained momentum in H1 2026 with larger deal sizes and longer lease terms as major occupiers secure strategic space despite elevated vacancy. Signals demand recovery and occupier confidence driving deal economics.</p>
+        <p class="news-why-text">Why it matters: Industrial fundamentals stabilizing with long-term lease commitments; relevant for understanding which asset classes are healing and where leasing spreads/cap rates are moving.</p>
+        <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email.</div>
+      </div>
+    </div>
     </div>
   </div>
 
