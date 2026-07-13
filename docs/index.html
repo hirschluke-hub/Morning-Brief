@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/193/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/194/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,28 +406,38 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">SUNDAY</div>
-        <div class="hero-date">July 12, 2026</div>
-        <div class="hero-quote">"Don't stop when you're tired. Stop when you're done."</div>
-        <div class="hero-author">— Anonymous</div>
+        <div class="hero-day">MONDAY</div>
+        <div class="hero-date">July 13, 2026</div>
+        <div class="hero-quote">"A year from now you may wish you had started today."</div>
+        <div class="hero-author">— Karen Lamb</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
-    <div class="temp-bar" style="background:#444;"></div>
-    <div class="weather-temp-big"></div>
+    <div class="temp-bar" style="background:#D92020;"></div>
+    <div class="weather-temp-big">81°</div>
     <div class="weather-right">
-      <div class="weather-condition"></div>
+      <div class="weather-condition">Foggy</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
     </div>
-    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="17.66" y2="6.34"/><line x1="6.34" y1="17.66" x2="4.93" y2="19.07"/></svg></div>
+    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="1.4" stroke-linecap="round"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5" y1="16" x2="19" y2="16"/></svg></div>
   </div>
 
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
-      <div class="empty">Free day — make it yours.</div>
+      
+          <div class="event" style="border-left-color:#b39ddb;min-height:120px;">
+            <div class="event-time">8:30am — 12:30pm</div>
+            <div class="event-name">Interwest Capital Internship</div>
+            <div class="event-category" style="color:#b39ddb">Work</div>
+          </div>
+          <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
+            <div class="event-time">9am — 10am</div>
+            <div class="event-name">HomeFed Office Visit - Luke Hirsch & Steve Levenson</div>
+            <div class="event-category" style="color:#80cbc4">Personal</div>
+          </div>
     </div>
     <div>
       <div class="label">To-Do</div>
@@ -439,15 +449,15 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Аэропорт</div>
-      <div class="russian-translit">AERO-PORT</div>
-      <div class="russian-english">Airport</div>
-      <audio id="russian-audio" src="Russian Words/airport.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Осторожно!</div>
+      <div class="russian-translit">ASTA ROJNA!</div>
+      <div class="russian-english">Careful</div>
+      <audio id="russian-audio" src="Russian Words/Recording (2).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">International word — you'll recognize it on signs immediately</div>
+      <div class="russian-explanation">Printed on warning signs everywhere — metro doors, wet floors, etc.</div>
     </div>
   </div>
 
@@ -457,35 +467,46 @@
       
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Netflix Considers Live Channels and Bundle Packages to Boost Engagement</span>
+        <span class="news-title">Jamison Prepares Another Conversion in Koreatown's Wilshire Corridor</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Netflix is exploring live TV channels and streaming bundles as engagement drops and stock performance lags—generating ~$1.5B in ad revenue last year with projections to double. The shift signals how digital platforms are evolving monetization strategies, relevant to understanding real estate tech companies' pivot to alternative revenue streams and bundled service models.</p>
-        <p class="news-why-text">Why it matters: Understanding platform economics and business model pivots is critical when evaluating proptech investments and how digital disruption reshapes traditional CRE tenant relationships and tenant retention metrics.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">Jamison is converting office buildings to residential in LA's Koreatown corridor, continuing the adaptive reuse wave that's reshaping urban office markets. This reflects the broader office-to-residential conversion thesis gaining institutional traction as office valuations remain depressed and housing demand persists in high-barrier-to-entry coastal markets.</p>
+        <p class="news-why-text">Why it matters: Direct example of how dev/acquisition strategies are pivoting in response to office distress—critical for understanding cap rate compression, conversion economics, and where institutional capital is deploying in your region.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a54323ad333c" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Gordie Howe International Bridge Opening Soon With New Revenue Deal</span>
+        <span class="news-title">Mavik Capital Looks To Raise $1B, Targeting Distressed Real Estate</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">The long-delayed Gordie Howe International Bridge connecting Detroit to Windsor is reportedly set to open by August 1st under a new federal deal that shifts revenue sharing significantly—Michigan/Canada now receive 50% of toll revenue versus prior arrangements. This $5.7B+ infrastructure project demonstrates how major transportation hubs can reshape regional real estate values and create development opportunities around border crossings.</p>
-        <p class="news-why-text">Why it matters: Major infrastructure completions directly impact regional cap rates, development feasibility, and logistics real estate demand—a critical variable when underwriting projects near strategic trade corridors.</p>
-        <div class="news-source-note">Find it in your <strong>Straight Arrow News</strong> email. <a class="news-article-link" href="https://clicks.san.com/f/a/QuFgNzJyi6zpnh3CLnBP9A~~/AAQRxRA~/" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">Mavik Capital is closing a $1B fund focused on distressed real estate opportunities, signaling continued institutional appetite for opportunistic strategies in challenged assets. This reflects confidence in yield-accretive acquisitions amid higher interest rate regimes and extended hold periods for value-add plays.</p>
+        <p class="news-why-text">Why it matters: Key signal of where capital is being deployed in distressed markets—essential context for understanding current acquisition pricing, available capital sources, and investment theses in this cycle.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a5431ef27209" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">National Parks Budget Strain: $23B Deferred Maintenance Gap and Revenue Pressures</span>
+        <span class="news-title">53% of Office Markets Improved—National Office Recovery Spreading Beyond Gateway Cities</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">The NPS received $2.88B for 2026 operations (down from $3.48B in 2023) while sitting on $23B in deferred maintenance across 85+ million acres, relying increasingly on private concessions and volunteer labor. This funding gap highlights how public real estate portfolios face severe capital constraints and the growing privatization of historically public assets.</p>
-        <p class="news-why-text">Why it matters: Understanding public sector real estate distress and privatization trends is important for identifying acquisition opportunities in lodging, hospitality, and concession management on public lands.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">More than half of the nation's largest office markets posted lower vacancy in Q2 2026, indicating the office recovery is broadening geographically beyond traditional strongholds like NYC and San Francisco. This data point suggests rational allocators should examine secondary/tertiary markets where cap rate spreads may still offer value relative to gateway cities.</p>
+        <p class="news-why-text">Why it matters: The nationwide office stabilization thesis is critical for your long-term investing framework—understand where the market is healing and at what cap rates to establish opportunistic positions before the cycle fully recovers.</p>
+        <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Federal Housing Bill Becomes Law Without Trump's Signature</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Federal housing legislation has become law, shaping regulatory and incentive structures for residential development. The details will affect multifamily investment returns, zoning flexibility, and whether developers can improve unit economics through reduced development friction.</p>
+        <p class="news-why-text">Why it matters: Policy changes directly impact your multifamily and development analysis—understand what regulatory tailwinds or headwinds this creates for San Diego's housing pipeline and investor returns.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a5431ef243ad" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     </div>
