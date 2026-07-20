@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/200/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/201/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,17 +406,17 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">SUNDAY</div>
-        <div class="hero-date">July 19, 2026</div>
-        <div class="hero-quote">"Be so good they can't ignore you."</div>
-        <div class="hero-author">— Steve Martin</div>
+        <div class="hero-day">MONDAY</div>
+        <div class="hero-date">July 20, 2026</div>
+        <div class="hero-quote">"Do something today that your future self will thank you for."</div>
+        <div class="hero-author">— Sean Patrick Flanery</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
-    <div class="temp-bar" style="background:#D92020;"></div>
-    <div class="weather-temp-big">82°</div>
+    <div class="temp-bar" style="background:#A00000;"></div>
+    <div class="weather-temp-big">87°</div>
     <div class="weather-right">
       <div class="weather-condition">Foggy</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
@@ -427,7 +427,12 @@
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
-      <div class="empty">Free day — make it yours.</div>
+      
+          <div class="event" style="border-left-color:#b39ddb;min-height:120px;">
+            <div class="event-time">8:30am — 12:30pm</div>
+            <div class="event-name">Interwest Capital Internship</div>
+            <div class="event-category" style="color:#b39ddb">Work</div>
+          </div>
     </div>
     <div>
       <div class="label">To-Do</div>
@@ -439,55 +444,22 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Как сказать...?</div>
-      <div class="russian-translit">KAK SKU-ZIET</div>
-      <div class="russian-english">How do you say…?</div>
-      <audio id="russian-audio" src="Russian Words/Recording (3).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Открыто</div>
+      <div class="russian-translit">OT-KREET</div>
+      <div class="russian-english">Open</div>
+      <audio id="russian-audio" src="Russian Words/open.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Point at an object and use this — locals love helping learners</div>
+      <div class="russian-explanation">Look for this on shop doors — its opposite is Закрыто (closed)</div>
     </div>
   </div>
 
   <div class="news-section">
     <div class="news-inner">
       <div class="label">Top Stories</div>
-      
-    <div class="news-item">
-      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">China's Latest AI Model Kimi K3 Closes Gap with US Leaders, Threatens OpenAI/Anthropic Revenue Model</span>
-        <span class="news-plus">+</span>
-      </div>
-      <div class="news-body">
-        <p class="news-summary-text">Beijing's Moonshot AI released Kimi K3, which outperforms most US models except Claude Fable 5 and GPT-5.6 Sol, while charging $15 per million tokens versus $30-50 for competitors. The model's superior coding capabilities and lower cost directly threaten OpenAI and Anthropic's revenue drivers ahead of planned IPOs, potentially depressing valuations for tech investors who've priced in AI dominance.</p>
-        <p class="news-why-text">Why it matters: As a CRE investor tracking proptech and AI infrastructure plays, this signals intensifying competition in AI markets, which could affect tech tenant stability and valuations of data center real estate where these companies operate.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
-      </div>
-    </div>
-    <div class="news-item">
-      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Ontario Wildfires Blanket US with Hazardous Smoke—Health & Operational Impacts Extend 2,000+ Miles</span>
-        <span class="news-plus">+</span>
-      </div>
-      <div class="news-body">
-        <p class="news-summary-text">Wildfires in Ontario have created air quality crises from Minnesota to Virginia, with Milwaukee reporting historic lows and Toronto hospitals seeing 80% ER uptick spikes. Smoke exposure linked to miscarriage, preterm delivery, cancer risk, and economic productivity losses affecting workforce availability across affected regions.</p>
-        <p class="news-why-text">Why it matters: For San Diego-based operations, this demonstrates climate/environmental risks to workforce productivity and tenant health in buildings; relevant to lease negotiations, ESG reporting, and operational cost assumptions in multi-state portfolios.</p>
-        <div class="news-source-note">Find it in your <strong>Straight Arrow News</strong> email. <a class="news-article-link" href="https://clicks.san.com/f/a/Uqkhkql_g8diUl9bXitvtA~~/AAQRxRA~/" target="_blank" rel="noopener">Try article →</a></div>
-      </div>
-    </div>
-    <div class="news-item">
-      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Kalshi Launches Prediction Market Bets on Airline Flight Delays—Creates New Moral Hazard in Transportation Markets</span>
-        <span class="news-plus">+</span>
-      </div>
-      <div class="news-body">
-        <p class="news-summary-text">Prediction market platform Kalshi filed with CFTC to offer contracts betting on airline delays at specific airports using FlightAware data—despite FlightAware's refusal to authorize the use. The structure allows airport-wide timeliness bets, though insider-information risks already plague similar platforms like Polymarket.</p>
-        <p class="news-why-text">Why it matters: This reveals market design risks in emerging betting infrastructure affecting transportation hubs (airports are major commercial real estate anchors); demonstrates potential moral hazard in speculative markets that could impact CRE investments in airport-adjacent properties and hospitality assets.</p>
-        <div class="news-source-note">Find it in your <strong>Straight Arrow News</strong> email. <a class="news-article-link" href="https://clicks.san.com/f/a/cURRTmsVbQP1aWG5I9WDfQ~~/AAQRxRA~/" target="_blank" rel="noopener">Try article →</a></div>
-      </div>
-    </div>
+      <div class="empty">No stories cleared the bar today.</div>
     </div>
   </div>
 
