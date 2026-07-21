@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/201/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/202/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,17 +406,17 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">MONDAY</div>
-        <div class="hero-date">July 20, 2026</div>
-        <div class="hero-quote">"Do something today that your future self will thank you for."</div>
-        <div class="hero-author">— Sean Patrick Flanery</div>
+        <div class="hero-day">TUESDAY</div>
+        <div class="hero-date">July 21, 2026</div>
+        <div class="hero-quote">"Motivation gets you going, but discipline keeps you growing."</div>
+        <div class="hero-author">— John C. Maxwell</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
-    <div class="temp-bar" style="background:#A00000;"></div>
-    <div class="weather-temp-big">87°</div>
+    <div class="temp-bar" style="background:#D92020;"></div>
+    <div class="weather-temp-big">84°</div>
     <div class="weather-right">
       <div class="weather-condition">Foggy</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
@@ -444,22 +444,77 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Открыто</div>
-      <div class="russian-translit">OT-KREET</div>
-      <div class="russian-english">Open</div>
-      <audio id="russian-audio" src="Russian Words/open.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Скоро</div>
+      <div class="russian-translit">SKOORA</div>
+      <div class="russian-english">Soon</div>
+      <audio id="russian-audio" src="Russian Words/Recording (43).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Look for this on shop doors — its opposite is Закрыто (closed)</div>
+      <div class="russian-explanation">Russians use this loosely — could mean minutes or hours, be warned</div>
     </div>
   </div>
 
   <div class="news-section">
     <div class="news-inner">
       <div class="label">Top Stories</div>
-      <div class="empty">No stories cleared the bar today.</div>
+      
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Oceanwide Plaza Sale Primed To Move Forward</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Downtown LA's troubled Oceanwide Plaza appears positioned for sale after years of development limbo and financial distress. This represents a critical test of investor appetite for distressed mixed-use urban assets and potential value-add repositioning opportunities in a recovering office market.</p>
+        <p class="news-why-text">Why it matters: Major LA office/mixed-use transaction signals shift in distressed asset market; relevant for understanding institutional capital deployment and urban CRE recovery strategies applicable to San Diego's downtown</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a5ecb8fb0cc8" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Brookfield, CPP To Pay $5.2B To Take 108-Property Industrial Firm Private</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Brookfield and Canada Pension Plan Investment Board's $5.2B take-private deal for a 108-property industrial REIT signals institutional appetite for consolidated logistics assets with long-term lease stability. This mega-transaction reflects confidence in industrial fundamentals despite recent cap rate compression.</p>
+        <p class="news-why-text">Why it matters: Demonstrates institutional capital returning to large-scale acquisitions; industrial sector dynamics directly relevant to San Diego's strong logistics market and potential acquisition targets</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a5e93643d478" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Brookfield, Healthpeak Form $2.1B Medical Office Joint Venture</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Major institutional players partnering on $2.1B medical office portfolio indicates strong conviction in healthcare real estate as defensive, income-generating asset class with secular tailwinds. JV structure suggests confidence in operational value-add and long-term tenant stability.</p>
+        <p class="news-why-text">Why it matters: Medical office gaining traction as yield play; relevant to San Diego's life sciences corridor expansion and healthcare real estate opportunities in UTC/La Jolla submarkets</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a5e93643eae6" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Miami's Rise as 'Wall Street South' Faces Cost-of-Living Reality Check</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Miami's competitive advantage over NYC is eroding as housing costs, insurance, and everyday expenses now match or exceed New York levels, undermining the relocation narrative. This challenges assumptions about secondary market cost arbitrage and corporate migration sustainability.</p>
+        <p class="news-why-text">Why it matters: Directly applicable to San Diego's positioning: understanding whether secondary markets can sustain cost advantages is critical for long-term development strategy and attracting employer relocations</p>
+        <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Manhattan Beach Studios Shopped As Possible Defense Tech Site</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Existing studio space in Manhattan Beach being marketed for adaptive reuse as defense technology facility, reflecting growing defense-tech sector clustering in LA's South Bay. This signals emerging specialization opportunities beyond traditional office/industrial uses.</p>
+        <p class="news-why-text">Why it matters: San Diego's dominant defense sector presence means understanding South Bay competition and adaptive reuse strategies is important for positioning San Diego's competitive advantage</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a5d27da72f4f" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
     </div>
   </div>
 
