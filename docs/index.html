@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/207/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/208/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,28 +406,38 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">SUNDAY</div>
-        <div class="hero-date">July 26, 2026</div>
-        <div class="hero-quote">"You are in danger of living a life so comfortable and soft that you will die without ever realizing your true potential."</div>
-        <div class="hero-author">— David Goggins</div>
+        <div class="hero-day">MONDAY</div>
+        <div class="hero-date">July 27, 2026</div>
+        <div class="hero-quote">"Hard work beats talent when talent doesn't work hard."</div>
+        <div class="hero-author">— Tim Notke</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
     <div class="temp-bar" style="background:#D92020;"></div>
-    <div class="weather-temp-big">85°</div>
+    <div class="weather-temp-big">82°</div>
     <div class="weather-right">
-      <div class="weather-condition">Overcast</div>
+      <div class="weather-condition">Foggy</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
     </div>
-    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
+    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="1.4" stroke-linecap="round"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5" y1="16" x2="19" y2="16"/></svg></div>
   </div>
 
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
-      <div class="empty">Free day — make it yours.</div>
+      
+          <div class="event" style="border-left-color:#80cbc4;min-height:88px;">
+            <div class="event-time">7:15am — 10:11am</div>
+            <div class="event-name">Flight to San Diego (DL 2508)</div>
+            <div class="event-category" style="color:#80cbc4">Personal</div>
+          </div>
+          <div class="event" style="border-left-color:#b39ddb;min-height:120px;">
+            <div class="event-time">8:30am — 12:30pm</div>
+            <div class="event-name">Interwest Capital Internship</div>
+            <div class="event-category" style="color:#b39ddb">Work</div>
+          </div>
     </div>
     <div>
       <div class="label">To-Do</div>
@@ -439,15 +449,15 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Они</div>
-      <div class="russian-translit">UH-KNEE</div>
-      <div class="russian-english">They</div>
-      <audio id="russian-audio" src="Russian Words/they.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Вместе</div>
+      <div class="russian-translit">V-MIE-STEE</div>
+      <div class="russian-english">Together</div>
+      <audio id="russian-audio" src="Russian Words/Recording (6).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">One of the basic pronouns — used for groups regardless of gender</div>
+      <div class="russian-explanation">Useful when paying a bill together or asking to sit as a group</div>
     </div>
   </div>
 
@@ -457,35 +467,46 @@
       
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Data Centers Could Define the Midterms — Texas Becomes Political Battleground</span>
+        <span class="news-title">LA Buyers Propping Up San Diego Real Estate Market</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Data center development is emerging as a critical political issue across high-value acquisition states (Texas, Pennsylvania, Georgia, Ohio), with 70% of Americans opposing local projects. Trump's ratepayer protection pledge (signed by 23 GOP governors) attempts to force tech companies to fund infrastructure upgrades, signaling a major policy shift that could reshape data center development economics and financing for the foreseeable future.</p>
-        <p class="news-why-text">Why it matters: Data center site selection, development feasibility, and capital costs are now tied to political/regulatory risk; understand the infrastructure financing burden before underwriting any data center or adjacent real estate deals.</p>
-        <div class="news-source-note">Find it in your <strong>Straight Arrow News</strong> email. <a class="news-article-link" href="https://clicks.san.com/f/a/cAFekYdYlweTLov_rqxNNg~~/AAQRxRA~/uI_fG24rQfRzEPjQtWS_fnALm-AlQ8NIU0XXwWpvd5dqmUD7JYx-H1byLTXIW8FOqBor3Y0sODoNRezgxIRz1QdJpcpgdEX6VTxI73fY9WwSnIYfciZDHL5Az3G36TJvA17q7n1LvHI1DE5xlrs-ZmwZ_Q1fglHZx3wvE1P3g4a1wxpa_ZMrmB3pIiep2FMtRsZZAgflmoShZV_DkAE2CY6oqes1w1bWr3TqcE5F99a9k_hZ-2ZqJKNJj4Ua8eZMOHQc1U6bcFr-0Ykpie0yCHXqgqsgi0hMX7T3AUQmZAOVGLnGXFCnFvvGvFAAzYWJMK7hmw2wZ5SjMc69SAe9DnFihB9oGRmvvP4zEtvRTAA~" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">LA residents with higher incomes and larger home equities are driving San Diego's residential market, with 11.7% of SD home searchers coming from LA compared to 3.8% from Riverside. Real estate agents report LA buyers view San Diego properties as a bargain—getting 6,000 sq ft on 5 acres for $6M versus comparable LA pricing—and this trend is expected to intensify over the next few years. Without LA buyer demand, local experts believe San Diego prices would be significantly lower given the region's limited inventory and historically low sales velocity.</p>
+        <p class="news-why-text">Why it matters: Understanding migration patterns and external capital flows into SD's market is critical for assessing pricing sustainability and acquisition opportunities in the region.</p>
+        <div class="news-source-note">Find it in your <strong>Axios San Diego</strong> email. <a class="news-article-link" href="https://axios.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Trump Administration Imposes Fresh Tariffs on 60 Trade Partners (10%-12.5%) as Global Trade Tensions Escalate</span>
+        <span class="news-title">Banks Growing CRE Loan Books on Stronger Fundamentals</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">New tariffs replacing February's 10% temporary levies now hit 99.4% of US imports across 60 countries, citing forced labor violations. Duties range 10%-12.5% with limited exemptions (oil, natural gas, pre-existing steel/aluminum tariffs), creating immediate cost pressure on construction materials, supply chains, and imported goods critical to development projects.</p>
-        <p class="news-why-text">Why it matters: Construction cost inflation and material supply uncertainty directly impact development pro formas, construction financing, and project feasibility—you need updated capex assumptions before modeling 2026-2027 starts.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">Commercial real estate is re-entering banks' growth agendas driven by improved fundamentals rather than pre-pandemic risk appetite. Capital markets have recovered faster than leasing fundamentals, with focus shifting from demand generation to deploying capital into supply-constrained assets, suggesting selective opportunities exist for disciplined investors willing to move now.</p>
+        <p class="news-why-text">Why it matters: Stabilizing lending appetite and rebalancing risk/reward dynamics in CRE are directly relevant to your acquisition and capital markets analysis—this signals the timing window for institutional-grade deals may be narrowing.</p>
+        <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email.</div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Oil Prices Top $100/Barrel Amid Iran Tensions; Cascading Impact on Food, Logistics, and Back-to-School Costs</span>
+        <span class="news-title">Battery Storage Emerging as Real Estate's Supercharged New Asset Class</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Oil at $100/barrel is rippling through supply chains via diesel fuel costs for farmers ($1.4B+ spend increase YoY), trucking, and cold storage. Retail and multifamily operators face margin pressure from higher logistics and energy costs; grocery/food-dependent retail tenants especially vulnerable to cost pass-through.</p>
-        <p class="news-why-text">Why it matters: Energy and logistics cost inflation compress NOI on multifamily/retail—stress-test underwriting for sustained $90-110 oil and factor elevated triple-net expense passes into tenant viability models.</p>
-        <div class="news-source-note">Find it in your <strong>Straight Arrow News</strong> email. <a class="news-article-link" href="https://clicks.san.com/f/a/WywnBoZmCDikS30DNeCOKA~~/AAQRxRA~/iHYWxYCGlv-LijEl8EeX8mB-0gueqfH1kB95B51Nfip-YjZl_eByuLpSsOUaQhYTCYeGrvv_sPP5ERwLbro0gM-uBjLedIzX1-_3avlY83HUttfB3KL0Nu9vqrJbI7a3AkUMrSN87NZp9kfNkNIqLCvtF1DRLKO7WDfRHUjAHk4AIus-WMw8GJEFPd1qMevaulNPmhUnTtNHpozZJev82XKlNsaq1_QC7u-pnnaOxf4NxWqxmJB8q1-jBmIhZmg_N-ob0oLSHQbDGhlpMdL6VjHcrSyLUKFHBltw8kvlWVt8cKJi2e1oQPha9MwA_qfOHUjk4AvMlhFRtb3UOEI1R3CSwH33jsMQ8FPqdis8xwRAL9ZgS89qmRTQ7Z4KG2FK" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">Battery storage and energy infrastructure represent a new emerging real estate asset class gaining significant institutional attention. This reflects broader trends in proptech and energy infrastructure development that intersect with traditional CRE investment and development strategies.</p>
+        <p class="news-why-text">Why it matters: Energy infrastructure and battery storage represent a frontier opportunity in your proptech/AI and infrastructure investment focus—understanding this asset class now positions you ahead of institutional capital allocation shifts.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Tariffs on 80+ Countries Cloud CRE Pricing Outlook</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Escalating tariffs across 80+ countries are creating uncertainty in CRE pricing models and construction cost projections. This macro headwind directly impacts development feasibility, cap rate assumptions, and underwriting for both new acquisitions and ongoing portfolio positions.</p>
+        <p class="news-why-text">Why it matters: Tariff impacts on construction materials and supply chains materially affect your development and acquisition underwriting—factor this into project IRRs and cap rate expectations for deals in your pipeline.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal</strong> email.</div>
       </div>
     </div>
     </div>
