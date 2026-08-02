@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/213/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/214/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,32 +406,37 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">SATURDAY</div>
-        <div class="hero-date">August 1, 2026</div>
-        <div class="hero-quote">"You have within you right now, everything you need to deal with whatever the world can throw at you."</div>
-        <div class="hero-author">— Brian Tracy</div>
+        <div class="hero-day">SUNDAY</div>
+        <div class="hero-date">August 2, 2026</div>
+        <div class="hero-quote">"It always seems impossible until it's done."</div>
+        <div class="hero-author">— Nelson Mandela</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
-    <div class="temp-bar" style="background:#D92020;"></div>
-    <div class="weather-temp-big">83°</div>
+    <div class="temp-bar" style="background:#FF4C4C;"></div>
+    <div class="weather-temp-big">79°</div>
     <div class="weather-right">
-      <div class="weather-condition">Overcast</div>
+      <div class="weather-condition">Foggy</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
     </div>
-    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
+    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="1.4" stroke-linecap="round"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5" y1="16" x2="19" y2="16"/></svg></div>
   </div>
 
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
-      <div class="empty">Free day — make it yours.</div>
+      
+          <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
+            <div class="event-time">7pm — 8pm</div>
+            <div class="event-name">Dinner @ Garbatella</div>
+            <div class="event-category" style="color:#80cbc4">Personal</div>
+          </div>
     </div>
     <div>
       <div class="label">To-Do</div>
-      <div class="todo-item"><div class="circle"></div>call dude at pathfinder</div><div class="todo-item"><div class="circle"></div>text Sean about Stratford</div>
+      <div class="empty">add &lt;item&gt; &nbsp;·&nbsp; done &lt;n&gt; &nbsp;·&nbsp; list &nbsp;·&nbsp; clear</div>
     </div>
   </div>
 
@@ -439,15 +444,15 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Четверг</div>
-      <div class="russian-translit">CHEET-VIERG</div>
-      <div class="russian-english">Thursday</div>
-      <audio id="russian-audio" src="Russian Words/Recording (35).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Дорогой</div>
+      <div class="russian-translit">DAH-RAH-GOY</div>
+      <div class="russian-english">Expensive</div>
+      <audio id="russian-audio" src="Russian Words/expensive.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">From 'четыре' (four) — the fourth day of the work week</div>
+      <div class="russian-explanation">Also means 'dear/darling' as a term of endearment — context matters</div>
     </div>
   </div>
 
@@ -457,56 +462,34 @@
       
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Equity Residential & AvalonBay Merger Creates Vivmark Residential</span>
+        <span class="news-title">Mega El Niño Could Drive Up Food, Insurance, and Tourism Costs</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Two of the largest publicly traded multifamily REITs are merging to form Vivmark Residential, a major institutional consolidation that signals continued M&A activity in the sector. This mega-deal reshapes the competitive landscape for apartment operators and could influence cap rates and investor sentiment across multifamily assets nationwide.</p>
-        <p class="news-why-text">Why it matters: Major REIT merger dynamics directly impact acquisition strategies, valuation benchmarks, and institutional investor appetite for multifamily—critical for understanding market positioning and deal flow.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow Multifamily</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a6ba46d7f0ac" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">A strengthening El Niño (97% chance through spring 2027, 81% chance of becoming very strong by fall) threatens to compound economic pressures on food, insurance, utility costs, and tourism-dependent real estate markets through drought and flooding cycles. Climate expert Jesse Keenan warns this arrives on top of an already-stressed economy, creating cascading impacts on operating costs, property insurance premiums, and regional development stability. For San Diego specifically, this affects coastal properties, agricultural development, and tourism-dependent hospitality assets.</p>
+        <p class="news-why-text">Why it matters: Major climate headwinds directly impact cap rates, NOI stability, and insurance costs on your San Diego real estate investments, plus could affect financing availability for California development projects.</p>
+        <div class="news-source-note">Find it in your <strong>Straight Arrow</strong> email. <a class="news-article-link" href="https://clicks.san.com/f/a/9JalLc3mjNAai_aBBpXI4Q~~/AAQRxRA~/YfVu8NPQ-Toor1karoEqKgTKoGmLekeKFpKN_E7lnXK9O3dfSBhsrhsK6-oOb" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">UDR Raises Guidance Amid Slowing Supply and Employment Growth</span>
+        <span class="news-title">Airline Loyalty Programs Emerge as Major Revenue Driver; Premium Seating and Perks Wars Intensify</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">UDR's upward guidance revision reflects structural supply constraints in multifamily—fewer new units are being delivered while tenant employment remains strong. This supply-demand imbalance is pushing rents higher and improving occupancy metrics for quality operators.</p>
-        <p class="news-why-text">Why it matters: Supply tightening is a key driver of multifamily fundamentals; understanding supply pipelines by market helps identify which regions offer the best risk-adjusted returns for acquisitions.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow Multifamily</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a6ba45375cd2" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">Airline loyalty programs generated $6B+ annually for American and Delta, $2B+ for United and Southwest in 2024, as carriers monetize premium seating innovations (no middle seats, convertible economy couches, luxury headrests) to extract higher spend from passengers. The shift toward segmented pricing—stripping free perks from lower tiers to drive business class upgrades—signals a broader commoditization and pricing power play in hospitality-adjacent sectors. This reflects broader asset-light monetization trends relevant to hospitality real estate valuations and airport concourse development.</p>
+        <p class="news-why-text">Why it matters: Loyalty program revenue streams and premium seating economics could inform your analysis of airport hospitality development deals and adjacent commercial real estate in San Diego and Southern California.</p>
+        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Office Landlords Regain Leverage as Trophy Space Tightens</span>
+        <span class="news-title">FIFA Scraps $4.2B Private Equity Investment Plan for World Cup Profits After UEFA Boycott Threat</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Limited new office development is creating a landlord's market, with premium space commanding rents and leasing momentum accelerating. BXP and other quality office operators are signing significant lease volume with minimal concessions, signaling a structural shift toward scarcity-driven pricing power.</p>
-        <p class="news-why-text">Why it matters: Office market fundamentals are shifting from tenant to landlord advantages; this impacts cap rate compression for stabilized trophy assets and signals better development opportunities in select markets.</p>
-        <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email.</div>
-      </div>
-    </div>
-    <div class="news-item">
-      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Developers Riding the Surf Park Wave with Resorts, Retail and Residences</span>
-        <span class="news-plus">+</span>
-      </div>
-      <div class="news-body">
-        <p class="news-summary-text">Developers are building mixed-use surf park developments combining hospitality, retail, and residential components—a niche but growing trend in SoCal coastal markets. These projects blend lifestyle amenities with revenue diversification through multiple asset classes.</p>
-        <p class="news-why-text">Why it matters: Mixed-use development trends and emerging amenity demand in San Diego and coastal markets offer acquisition and development insights for your local market focus.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow SoCal</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a6c0dc0afa63" target="_blank" rel="noopener">Try article →</a></div>
-      </div>
-    </div>
-    <div class="news-item">
-      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">US GDP Slows to 1.5% but Consumer Spending Accelerates to 3.2%</span>
-        <span class="news-plus">+</span>
-      </div>
-      <div class="news-body">
-        <p class="news-summary-text">Q2 GDP came in below expectations at 1.5%, but consumer spending growth surged to 3.2%, driven by tax refunds and lower gas prices from Iran ceasefire. AI infrastructure investment also fueled business spending, though inflation remains sticky at 3.7% annually.</p>
-        <p class="news-why-text">Why it matters: Consumer spending strength supports multifamily and retail fundamentals; persistent inflation and potential renewed Iran tensions could pressure tenant credit quality and cap rate expansion.</p>
+        <p class="news-summary-text">FIFA President Infantino withdrew a proposal to spin off and sell a 20% stake in World Cup/broadcasting profits to a Kushner-led PE group ($4.2B valuation on $20B subsidiary) after fierce backlash from UEFA and member nations threatening boycotts. The aborted deal highlighted tension between nonprofit sports governance and private capital seeking monetization of media/event revenues. While not a direct CRE story, it signals challenges in packaging recurring revenue streams for institutional investors when stakeholder consensus is required.</p>
+        <p class="news-why-text">Why it matters: Demonstrates how governance and stakeholder resistance can block major asset monetization deals—relevant when evaluating event/sports venue development and mixed-use projects that depend on media/broadcasting revenue stability.</p>
         <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
