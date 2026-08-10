@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/221/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/222/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,28 +406,48 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">SUNDAY</div>
-        <div class="hero-date">August 9, 2026</div>
-        <div class="hero-quote">"When you feel like quitting, think about why you started."</div>
-        <div class="hero-author">— Anonymous</div>
+        <div class="hero-day">MONDAY</div>
+        <div class="hero-date">August 10, 2026</div>
+        <div class="hero-quote">"Be fearless in the pursuit of what sets your soul on fire."</div>
+        <div class="hero-author">— Jennifer Lee</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
-    <div class="temp-bar" style="background:#D92020;"></div>
-    <div class="weather-temp-big">83°</div>
+    <div class="temp-bar" style="background:#FF4C4C;"></div>
+    <div class="weather-temp-big">78°</div>
     <div class="weather-right">
-      <div class="weather-condition">Foggy</div>
+      <div class="weather-condition">Overcast</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
     </div>
-    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="1.4" stroke-linecap="round"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5" y1="16" x2="19" y2="16"/></svg></div>
+    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
   </div>
 
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
-      <div class="empty">Free day — make it yours.</div>
+      
+          <div class="event" style="border-left-color:#80cbc4;min-height:62px;">
+            <div class="event-time">All day</div>
+            <div class="event-name">Call Proliance about knee & shoulder</div>
+            <div class="event-category" style="color:#80cbc4">Personal</div>
+          </div>
+          <div class="event" style="border-left-color:#b39ddb;min-height:120px;">
+            <div class="event-time">8:30am — 12:30pm</div>
+            <div class="event-name">Interwest Capital Internship</div>
+            <div class="event-category" style="color:#b39ddb">Work</div>
+          </div>
+          <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
+            <div class="event-time">2pm — 3pm</div>
+            <div class="event-name">Virtual Interview - Fairfield Acquisitions Analyst - Luke Hirsch</div>
+            <div class="event-category" style="color:#80cbc4">Personal</div>
+          </div>
+          <div class="event" style="border-left-color:#80cbc4;min-height:82px;">
+            <div class="event-time">7:30pm — 10:15pm</div>
+            <div class="event-name">Padres game</div>
+            <div class="event-category" style="color:#80cbc4">Personal</div>
+          </div>
     </div>
     <div>
       <div class="label">To-Do</div>
@@ -439,55 +459,22 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Друг</div>
-      <div class="russian-translit">DROOG & PUH-DROOGA</div>
-      <div class="russian-english">Friend</div>
-      <audio id="russian-audio" src="Russian Words/friend.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Вместе</div>
+      <div class="russian-translit">V-MIE-STEE</div>
+      <div class="russian-english">Together</div>
+      <audio id="russian-audio" src="Russian Words/Recording (6).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Sounds like English 'drug' but means friend. FIRST ONE MALE, SECOND ONE FEMALE</div>
+      <div class="russian-explanation">Useful when paying a bill together or asking to sit as a group</div>
     </div>
   </div>
 
   <div class="news-section">
     <div class="news-inner">
       <div class="label">Top Stories</div>
-      
-    <div class="news-item">
-      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">US Unexpectedly Lost 23,000 Jobs in July; Unemployment Falls as Labor Force Participation Drops</span>
-        <span class="news-plus">+</span>
-      </div>
-      <div class="news-body">
-        <p class="news-summary-text">The US lost 23,000 jobs in July against expectations of 100,000 gains, with notable declines in retail (-19,000), finance (-14,000), and restaurants (-26,000), though healthcare (+22,000) and construction/manufacturing (+27,000, boosted by data center buildout) showed strength. Over 260,000 people exited the labor market entirely, artificially lowering unemployment to its lowest 2025 level while employment participation hit pandemic-era lows. Previous two months' job creation was revised down 103,000, signaling a weakening labor market that could reduce Fed rate hike pressure.</p>
-        <p class="news-why-text">Why it matters: Weakening job growth and labor force participation directly impact commercial real estate demand (office, industrial, retail) and could ease Fed tightening, improving cap rates and acquisition financing conditions for institutional investors.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
-      </div>
-    </div>
-    <div class="news-item">
-      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Data Center Buildout Drives Construction and Manufacturing Job Gains</span>
-        <span class="news-plus">+</span>
-      </div>
-      <div class="news-body">
-        <p class="news-summary-text">Construction and manufacturing sectors gained 27,000 combined jobs in July, with analysis suggesting the data center buildout is a primary driver of this strength. This represents one of the few bright spots in an otherwise disappointing July jobs report and contrasts with weakness in retail, finance, and hospitality sectors.</p>
-        <p class="news-why-text">Why it matters: Data center development is a critical industrial real estate trend you should monitor—it's currently the strongest occupier demand driver, creating opportunities for land acquisition, build-to-suit deals, and long-term lease valuations in strategic markets.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
-      </div>
-    </div>
-    <div class="news-item">
-      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Young Adults' Financial Dependence on Parents Reaches Historic Levels; Nearly 50% of Multi-Generational Households Delay Boomer Downsizing</span>
-        <span class="news-plus">+</span>
-      </div>
-      <div class="news-body">
-        <p class="news-summary-text">Over 50% of parents with adult children provided financial support in 2025 (up from 45% in 2023), with less than half of Americans age 18-34 financially independent from parents; nearly 50% of young adults age 18-29 now live with parents, up from 37% in 2019. This multi-generational housing trend is driving boomers to retain larger homes rather than downsize, fundamentally reshaping residential real estate demand patterns and supply dynamics.</p>
-        <p class="news-why-text">Why it matters: This structural shift in household formation and residential preferences impacts multifamily development pipelines, empty-nesters' housing supply decisions, and should inform your thesis on single-family vs. multi-unit demand and demographic-driven real estate cycles.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
-      </div>
-    </div>
+      <div class="empty">No stories cleared the bar today.</div>
     </div>
   </div>
 
