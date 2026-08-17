@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/228/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/229/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,28 +406,38 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">SUNDAY</div>
-        <div class="hero-date">August 16, 2026</div>
-        <div class="hero-quote">"Success is not final, failure is not fatal: it is the courage to continue that counts."</div>
-        <div class="hero-author">— Winston Churchill</div>
+        <div class="hero-day">MONDAY</div>
+        <div class="hero-date">August 17, 2026</div>
+        <div class="hero-quote">"The two most important days in your life are the day you are born and the day you find out why."</div>
+        <div class="hero-author">— Mark Twain</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
-    <div class="temp-bar" style="background:#FF4C4C;"></div>
-    <div class="weather-temp-big">78°</div>
+    <div class="temp-bar" style="background:#D92020;"></div>
+    <div class="weather-temp-big">81°</div>
     <div class="weather-right">
-      <div class="weather-condition">Overcast</div>
+      <div class="weather-condition">Foggy</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
     </div>
-    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
+    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="1.4" stroke-linecap="round"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5" y1="16" x2="19" y2="16"/></svg></div>
   </div>
 
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
-      <div class="empty">Free day — make it yours.</div>
+      
+          <div class="event" style="border-left-color:#b39ddb;min-height:120px;">
+            <div class="event-time">8:30am — 12:30pm</div>
+            <div class="event-name">Interwest Capital Internship</div>
+            <div class="event-category" style="color:#b39ddb">Work</div>
+          </div>
+          <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
+            <div class="event-time">8:30am — 9:30am</div>
+            <div class="event-name">Talk to Victoria on tracker</div>
+            <div class="event-category" style="color:#80cbc4">Personal</div>
+          </div>
     </div>
     <div>
       <div class="label">To-Do</div>
@@ -439,15 +449,15 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Рано</div>
-      <div class="russian-translit">RANA</div>
-      <div class="russian-english">Early</div>
-      <audio id="russian-audio" src="Russian Words/Recording (39).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Обед</div>
+      <div class="russian-translit">AH-BIED</div>
+      <div class="russian-english">Lunch</div>
+      <audio id="russian-audio" src="Russian Words/Recording (47).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Opposite is поздно (late) — simple and short, easy to remember</div>
+      <div class="russian-explanation">The main meal of the day in Russian culture — often the biggest</div>
     </div>
   </div>
 
@@ -457,24 +467,35 @@
       
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">US Consumers Might Be Spent: Retail Sales Miss Expectations, Consumer Sentiment Drops 8%</span>
+        <span class="news-title">CRE Loan Modifications Shift Toward Multifamily as Distress Evolves</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">US retail sales fell 0.6% in July—the first drop in nine months and largest since May 2025—signaling consumer weakness even after adjusting for inflation. Amazon's shift of Prime Day from July to June artificially inflated June sales; consumer sentiment declined 8% as Americans worry about high prices and economic outlook. This slowdown has direct implications for commercial real estate demand, retail tenant viability, and overall CRE investment fundamentals.</p>
-        <p class="news-why-text">Why it matters: Weakening consumer fundamentals threaten retail property valuations, tenant credit quality, and cap rate compression potential—critical for your understanding of CRE market cyclicality and investment risk.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">CRED iQ tracked $2.36B in modified CMBS and CRE CLO loans (May-July 2026), with multifamily leading distress. Beyond traditional extend-and-pretend, lenders are deploying creative structures—forbearances ($514M), combinations ($345.6M), paydowns, rate adjustments, and reserve requirements—signaling a shift from extension-only strategies toward sustainable workout solutions.</p>
+        <p class="news-why-text">Why it matters: Multifamily distress patterns and lender creativity on modifications will shape refinancing windows, cap rate dynamics, and acquisition opportunities for the next 12-18 months as you evaluate portfolio risk.</p>
+        <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email. <a class="news-article-link" href="https://www.credaily.com/briefs/multifamily-leads-2-36b-in-cre-loan-modifications-for-q2-2026/" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Harvard Economist Links GLP-1 Weight Loss to 27-29% Increases in Employment and Marriage Rates</span>
+        <span class="news-title">AI-Generated Models in Advertising Face First Enforcement Under New York Law</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">A Harvard working paper finds women using GLP-1s for weight loss saw employment rates jump 27 percentage points and marriage probability increase 29 points within 18 months, driven by the 'obesity penalty' in labor and dating markets. The study analyzed 15,000 US residents from USC's Understanding America Study; roughly 22% of women and 14% of men have used GLP-1s. This emerging trend impacts workforce participation, consumer spending patterns, and long-term demographic/economic trends.</p>
-        <p class="news-why-text">Why it matters: Labor force participation shifts and consumer behavior changes from GLP-1 adoption affect retail spending, office occupancy demand, and multifamily demographic trends you should track for long-term CRE positioning.</p>
-        <div class="news-source-note">Find it in your <strong>Straight Arrow</strong> email. <a class="news-article-link" href="https://clicks.san.com/f/a/mvv6bLF-dVYVyWKdvM78DQ~~/AAQRxRA~/ZQU2AZO1SscA506kl-2-gwMNC-LdxpUPl1no3y-ogeZndIUw2evEfts6bXlc7x7TuGNN_OfWGExVTDs35QPugtNQ-bXcINS95-dPa7j-NfvfLHseDfdgAjBSm1rTw0fj1Xj4pT2doFETN5_8_h-P2XHvDKyRpOiNZW6XhyzFreys-K4pDviMosX3MAnQs6p5nk9yBcrNQqmiMTg6mE7Jg6tMnoEwiRvx8e0WNBPLalV2ajwtZzMD1hvLnMFeUmWw" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">New York's June 2026 synthetic disclosure law is seeing first enforcement actions against companies like Athletifreak and Bloobloom for using AI-generated models without disclosure. This landmark regulation sets precedent for consumer protection and workforce transparency in AI-generated content, with potential for rapid state-level adoption across the country.</p>
+        <p class="news-why-text">Why it matters: AI regulation frameworks emerging at state level will impact how CRE firms, landlords, and property marketers deploy AI for marketing, visualizations, and tenant communications—watch for similar disclosure mandates affecting commercial real estate advertising and leasing strategies.</p>
+        <div class="news-source-note">Find it in your <strong>Straight Arrow</strong> email. <a class="news-article-link" href="https://clicks.san.com/f/a/gY26snS9esF63TvUATAHkA~~/AAQRxRA~/WCFm3j5-_XFhF8lyPJNTkfBYO7HPO4_8OUiOkW1tKEdtXU0rHf01Kj4b9XiEKFMx4_eNFwT8S0389RW-IPHgmIA-Nikt1Ug8e63C-pAyxxR5YjOnTOhzX_vqz5yRy3BH-G7a9Evk83jV3VeFUbS-1j9lQG9rbtuBDywXuL1kIjVIYwBGWHLmPEc_UJtPvXkWBsdiYKaJT4gxnMtqzNjl_RFwCTO_nJendkWHxzdsYsRDnylmJZZnekpRPS2J4WP56b6u9waRQvjLC-GaGQTA9PRHvbCdNMRwvxDdggrEBksaUMGf4FZzm_EnHPAE6uyYaw38jsFa1fQ0BSXuFn0zxVOKK9mQhSCfkZ_d1mA9hClho1saUlL8gov7v3ZwKyKH6IKFCEiApwaO9G-Qzw6pow~~" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">AI Reshaping College Major Choices and Labor Market Expectations</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">A Superhuman survey found 69% of US college students fear AI will make job-hunting harder, with 22% changing majors due to AI disruption concerns. Lumina/Gallup data shows 13% of bachelor's and 19% of associate students have already switched fields, indicating structural shifts in talent pipeline and future workforce composition.</p>
+        <p class="news-why-text">Why it matters: CRE employers and developers face tightening talent supply in certain disciplines as labor pools shift away from roles perceived as AI-vulnerable; this affects long-term leasing demand for office, coworking, and life sciences spaces in markets dependent on specific professional talent.</p>
+        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     </div>
