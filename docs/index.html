@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/244/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/245/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,17 +406,17 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">TUESDAY</div>
-        <div class="hero-date">September 1, 2026</div>
-        <div class="hero-quote">"Happiness is not something ready-made. It comes from your own actions."</div>
-        <div class="hero-author">— Dalai Lama</div>
+        <div class="hero-day">WEDNESDAY</div>
+        <div class="hero-date">September 2, 2026</div>
+        <div class="hero-quote">"Count your age by friends, not years. Count your life by smiles, not tears."</div>
+        <div class="hero-author">— John Lennon</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
-    <div class="temp-bar" style="background:#FF4C4C;"></div>
-    <div class="weather-temp-big">80°</div>
+    <div class="temp-bar" style="background:#D92020;"></div>
+    <div class="weather-temp-big">82°</div>
     <div class="weather-right">
       <div class="weather-condition">Overcast</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
@@ -434,8 +434,8 @@
             <div class="event-category" style="color:#b39ddb">Work</div>
           </div>
           <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
-            <div class="event-time">9:30am — 10:30am</div>
-            <div class="event-name">Coffee - Gus/Luke</div>
+            <div class="event-time">8pm — 9pm</div>
+            <div class="event-name">Mastermind</div>
             <div class="event-category" style="color:#80cbc4">Personal</div>
           </div>
     </div>
@@ -449,22 +449,77 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Незнакомец</div>
-      <div class="russian-translit">NEE-EZ-NAH KOY-MIETS</div>
-      <div class="russian-english">Stranger</div>
-      <audio id="russian-audio" src="Russian Words/Recording (23).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Подождите</div>
+      <div class="russian-translit">PAH-DA  JSHDEE-TEE</div>
+      <div class="russian-english">Wait / Hold on</div>
+      <audio id="russian-audio" src="Russian Words/hold on.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Literally 'unknown person' — 'не' (not) + 'знакомый' (familiar)</div>
+      <div class="russian-explanation">Useful in busy situations — also 'одну секунду' (one second)</div>
     </div>
   </div>
 
   <div class="news-section">
     <div class="news-inner">
       <div class="label">Top Stories</div>
-      <div class="empty">No stories cleared the bar today.</div>
+      
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Lenders Warm Up, Lawmakers Step In: Modular Construction Picks Up In SoCal</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">SoCal modular construction is accelerating as lenders warm to the asset class and lawmakers provide supportive policy. This addresses construction cost inflation and labor constraints that have plagued traditional development, offering a viable path to faster, more predictable project delivery in a tightening market.</p>
+        <p class="news-why-text">Why it matters: Understanding modular construction trends and lender appetite is critical for evaluating development feasibility and IRRs in your San Diego market analysis.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://www.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">How local zoning laws could decide the data center revolution</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Zoning has become the 'Achilles' heel' of data center expansion as communities weaponize land use law to block AI infrastructure projects. Attorneys report zoning fights now dominate their practices, with opponents using local hearings to challenge projects regardless of technical merit, creating significant entitlement risk for developers.</p>
+        <p class="news-why-text">Why it matters: Data center development is a critical emerging asset class—understanding zoning barriers and community opposition tactics will inform your investment thesis on infrastructure plays and development risk assessment.</p>
+        <div class="news-source-note">Find it in your <strong>Straight Arrow</strong> email. <a class="news-article-link" href="https://clicks.san.com/f/a/-SvclOyA_eT9v_84tB2NCA" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">'Liquidity Is Back': JLL Reports Increase In CRE Investor Competition</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Capital is flowing back into CRE markets with increased investor competition driving deal velocity and tighter bid-ask spreads. JLL's report signals improved liquidity conditions after months of constrained lending, suggesting a shift in lender risk appetite and pricing power returning to sellers.</p>
+        <p class="news-why-text">Why it matters: This macro shift in capital markets affects entry points, underwriting standards, and competitive positioning for acquisitions—essential context for your deal sourcing and valuation strategies.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow CRE Finance</strong> email. <a class="news-article-link" href="https://www.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Large Commercial Real Estate Sales Up 30% Despite Headwinds</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Major CRE sales volume surged 30% year-over-year despite persistent economic headwinds, indicating institutional investors are aggressively deploying capital into trophy and value-add assets. This uptick suggests confidence in market fundamentals and strong returns expectations driving deal flow.</p>
+        <p class="news-why-text">Why it matters: Rising transaction volume and institutional appetite signals healthy market momentum and potential for seller competition—critical inputs for your acquisition pipeline and pricing assumptions.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow CRE Finance</strong> email. <a class="news-article-link" href="https://www.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Global bond selloff escalates</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Global government bond yields hit 25-year highs as investors demand premium returns for longer-duration debt amid inflation concerns and unsustainable debt levels. The 10-year US Treasury yield has risen sharply, with international peers showing even steeper increases, signaling tightening financial conditions.</p>
+        <p class="news-why-text">Why it matters: Rising bond yields directly impact CRE cap rates, construction financing costs, and refinancing risk—fundamental to underwriting assumptions and portfolio positioning in your analyses.</p>
+        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
     </div>
   </div>
 
