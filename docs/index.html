@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/250/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/251/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,10 +406,10 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">MONDAY</div>
-        <div class="hero-date">September 7, 2026</div>
-        <div class="hero-quote">"Joy is what happens to us when we allow ourselves to recognize how good things really are."</div>
-        <div class="hero-author">— Marianne Williamson</div>
+        <div class="hero-day">TUESDAY</div>
+        <div class="hero-date">September 8, 2026</div>
+        <div class="hero-quote">"The present moment is filled with joy and happiness. If you are attentive, you will see it."</div>
+        <div class="hero-author">— Thich Nhat Hanh</div>
       </div>
     </div>
   </div>
@@ -433,6 +433,11 @@
             <div class="event-name">Interwest Capital Internship</div>
             <div class="event-category" style="color:#b39ddb">Work</div>
           </div>
+          <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
+            <div class="event-time">2pm — 3pm</div>
+            <div class="event-name">Intro - Luke/Dennis</div>
+            <div class="event-category" style="color:#80cbc4">Personal</div>
+          </div>
     </div>
     <div>
       <div class="label">To-Do</div>
@@ -444,22 +449,66 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Дорогой</div>
-      <div class="russian-translit">DAH-RAH-GOY</div>
-      <div class="russian-english">Expensive</div>
-      <audio id="russian-audio" src="Russian Words/expensive.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">С днём рождения</div>
+      <div class="russian-translit">S-KNEE-YOM ROJ-DEENYA</div>
+      <div class="russian-english">Happy Birthday</div>
+      <audio id="russian-audio" src="Russian Words/happy bday.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Also means 'dear/darling' as a term of endearment — context matters</div>
+      <div class="russian-explanation">Literally 'with day of birth' — the standard birthday greeting</div>
     </div>
   </div>
 
   <div class="news-section">
     <div class="news-inner">
       <div class="label">Top Stories</div>
-      <div class="empty">No stories cleared the bar today.</div>
+      
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Summer Is Over. Here's What CRE Is Walking Back Into</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Post-Labor Day CRE landscape assessment covering market conditions, lending dynamics, and deal flow reentry after summer slowdown. Provides critical context on capital markets positioning and investor sentiment as Q4 season begins.</p>
+        <p class="news-why-text">Why it matters: Essential briefing on macro CRE conditions and capital markets reset as you head into acquisition and deal-making season post-summer.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a9f6daa3ce7c" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Angels Sale To Stan Kroenke Reopens Land Deal Possibilities In Anaheim</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">MLB Angels ownership change to Kroenke signals potential mixed-use development opportunities around Anaheim stadium district, reopening previously constrained land/redevelopment deals. Institutional buyer with development track record entering market creates catalyst for regional project activity.</p>
+        <p class="news-why-text">Why it matters: Major Los Angeles basin institutional acquisition with direct implications for development pipeline—exactly your regional focus area with high-net-worth buyer appetite.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a9f6db096344" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Labor Day Gas Prices Hit Record High—Implications for Operating Costs and Logistics</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Labor Day gas prices averaged $4.15/gallon (record high), with diesel hitting $5.85/gallon—driven by Middle East tensions and Ukraine conflict disrupting global supply. Upstream oil disruptions translating directly to elevated transportation/logistics costs affecting property operations and construction projects.</p>
+        <p class="news-why-text">Why it matters: Rising fuel/logistics costs will compress NOI on industrial properties and increase construction/fit-out costs on development—critical input for underwriting and acquisition analysis.</p>
+        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">After 5 Years Of Gains, CRE's C-Suites Just Got Less Diverse</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Diversity metrics in CRE executive leadership reversed course after five years of improvement, signaling talent market and corporate governance shifts. Reflects broader institutional capital priorities and team composition trends affecting deal flow and firm strategy.</p>
+        <p class="news-why-text">Why it matters: Understanding leadership composition shifts helps inform which firms/sponsors are evolving operations and acquisition strategies—relevant to gauging counterparty quality and institutional trends.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://a-prod.bisnow.io/s/6a9f6daa3b139" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
     </div>
   </div>
 
