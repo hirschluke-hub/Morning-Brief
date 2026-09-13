@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/255/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/256/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,22 +406,22 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">SATURDAY</div>
-        <div class="hero-date">September 12, 2026</div>
-        <div class="hero-quote">"Enjoy the little things, for one day you may look back and realize they were the big things."</div>
-        <div class="hero-author">— Robert Brault</div>
+        <div class="hero-day">SUNDAY</div>
+        <div class="hero-date">September 13, 2026</div>
+        <div class="hero-quote">"The journey of a thousand miles begins with one step."</div>
+        <div class="hero-author">— Lao Tzu</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
-    <div class="temp-bar" style="background:#FF4C4C;"></div>
-    <div class="weather-temp-big">79°</div>
+    <div class="temp-bar" style="background:#444;"></div>
+    <div class="weather-temp-big"></div>
     <div class="weather-right">
-      <div class="weather-condition">Foggy</div>
+      <div class="weather-condition"></div>
       <div class="weather-location">San Diego, CA — Today's High</div>
     </div>
-    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="1.4" stroke-linecap="round"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5" y1="16" x2="19" y2="16"/></svg></div>
+    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="17.66" y2="6.34"/><line x1="6.34" y1="17.66" x2="4.93" y2="19.07"/></svg></div>
   </div>
 
   <div class="content">
@@ -439,22 +439,55 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Я хочу</div>
-      <div class="russian-translit">YA HACHU</div>
-      <div class="russian-english">I want</div>
-      <audio id="russian-audio" src="Russian Words/I want.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Они</div>
+      <div class="russian-translit">UH-KNEE</div>
+      <div class="russian-english">They</div>
+      <audio id="russian-audio" src="Russian Words/they.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Combine with any noun: 'Я хочу воду' = I want water</div>
+      <div class="russian-explanation">One of the basic pronouns — used for groups regardless of gender</div>
     </div>
   </div>
 
   <div class="news-section">
     <div class="news-inner">
       <div class="label">Top Stories</div>
-      <div class="empty">No stories cleared the bar today.</div>
+      
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Inflation Sizzles…and a Rate Hike Looks Inevitable</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">August CPI data shows inflation resurging to 3.4% YoY with core CPI jumping 0.3% monthly, pushing Fed rate hike probability to 90% for next week under new Chair Kevin Warsh. Energy prices (up 27.4% YoY) and software costs (up 25.4% YoY) are major drivers, with traders pricing in imminent quarter-point rate hike. This marks a significant shift from July's cooling narrative and will directly impact borrowing costs, cap rates, and deal economics across all CRE asset classes.</p>
+        <p class="news-why-text">Why it matters: Higher rates compress valuations, reduce leverage capacity, and increase acquisition costs—critical variables for your deal modeling and understanding current market fundamentals.</p>
+        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">AI is Upending the Hiring Process</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">AI screening now filters 90% of US job applications, with average applications per opening jumping from 89 (2022) to 243 (2025), while only 25% of hiring managers can accurately detect AI-generated resumes despite claiming 60% accuracy. Nearly two-thirds of job seekers report AI-bot interviews, and exhaustive digital background checks now pull data from dozens of sources. This trend reflects broader CRE industry adoption of proptech and automation tools that will reshape talent acquisition and operational efficiency.</p>
+        <p class="news-why-text">Why it matters: Understanding AI's role in hiring and talent screening is relevant to your proptech/AI focus and shows how automation is accelerating across professional services sectors including CRE advisory and development firms.</p>
+        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">TSA Launches Gateside Program & Considers Water Bottle Policy Relaxation</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">TSA rolled out Gateside by TSA PreCheck at 13 airports, allowing eligible members to pass security without a ticket for welcomes, layovers, and shopping—the first major post-9/11 gate access reversal in 25 years. The agency is also testing relaxed liquid restrictions for PreCheck members. These policy shifts reflect technology advancements improving security efficiency and signal potential modernization of airport infrastructure and retail/hospitality experiences.</p>
+        <p class="news-why-text">Why it matters: Airport terminal modernization and passenger experience improvements create CRE opportunities in hospitality, retail, and F&B at major hubs—relevant if you're tracking commercial development and tenant demand evolution in transportation nodes.</p>
+        <div class="news-source-note">Find it in your <strong>Straight Arrow</strong> email. <a class="news-article-link" href="https://clicks.san.com/f/a/8RE2So7NgiwO7cNg4omkqA~~/AAQRxRA~/1Gbd1dUDQP44-uQDaWCVAAlumVyrtWAL5o1gFHkDY0igDuKkWTxWDEXAVd52IKV_U7BanP44DfgJFzm4wXlvM1DrhM2vUTIG5cj4J8SNTdYRSMMuX0mQYx625oGR1zq10DRbl1hgVAWNp2A6p-QQXAOchDtrmFt9SUztrnzJJ6B51EseJuFEBbk92jyTUP3pKIll6x0owU7dxaSsvPw6zcShG0wgWIROZ96G5bOXax0OKEeFhl20hnCV4rurcKZOSwCmi1yG50PukNvIjjGDTcv9oDkJhBFhlvYCRkDMegULSoZtnFpf1HfegmmEC5NHITvbDF3qaXgyNuXAQQbKxAf_9eX5aLQrC_RaFVBI1BAxY5azVcCRq1C-8t2FHZkMFWxCzVEBmspjFwAPWAf4Talp1d2NuZvBV9Fwp0G9LG9rvIE8edYxyD9k7vTPVHeoI1YccGH4HuCb21aOvYDV3Q~~" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
     </div>
   </div>
 
