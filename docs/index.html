@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/259/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/260/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,52 +406,47 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">WEDNESDAY</div>
-        <div class="hero-date">September 16, 2026</div>
-        <div class="hero-quote">"The best time to plant a tree was 20 years ago. The second best time is now."</div>
-        <div class="hero-author">— Chinese Proverb</div>
+        <div class="hero-day">THURSDAY</div>
+        <div class="hero-date">September 17, 2026</div>
+        <div class="hero-quote">"Go confidently in the direction of your dreams. Live the life you have imagined."</div>
+        <div class="hero-author">— Henry David Thoreau</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
     <div class="temp-bar" style="background:#FF4C4C;"></div>
-    <div class="weather-temp-big">76°</div>
+    <div class="weather-temp-big">77°</div>
     <div class="weather-right">
-      <div class="weather-condition">Foggy</div>
+      <div class="weather-condition">Overcast</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
     </div>
-    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="1.4" stroke-linecap="round"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5" y1="16" x2="19" y2="16"/></svg></div>
+    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
   </div>
 
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
       
+          <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
+            <div class="event-time">8:30am — 9:15am</div>
+            <div class="event-name">Coffee - Luke/Scott</div>
+            <div class="event-category" style="color:#80cbc4">Personal</div>
+          </div>
           <div class="event" style="border-left-color:#b39ddb;min-height:120px;">
             <div class="event-time">8:30am — 12:30pm</div>
             <div class="event-name">Interwest Capital Internship</div>
             <div class="event-category" style="color:#b39ddb">Work</div>
           </div>
           <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
-            <div class="event-time">9:30am — 10:15am</div>
-            <div class="event-name">Intro Coffee - Luke/Alex</div>
-            <div class="event-category" style="color:#80cbc4">Personal</div>
-          </div>
-          <div class="event" style="border-left-color:#80cbc4;min-height:60px;">
-            <div class="event-time">4pm — 6pm</div>
-            <div class="event-name">DL CREDA Event </div>
-            <div class="event-category" style="color:#80cbc4">Personal</div>
-          </div>
-          <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
-            <div class="event-time">8pm — 9pm</div>
-            <div class="event-name">Mastermind</div>
+            <div class="event-time">12pm — 1pm</div>
+            <div class="event-name">Intro Lunch - Luke - Patch/Jack</div>
             <div class="event-category" style="color:#80cbc4">Personal</div>
           </div>
     </div>
     <div>
       <div class="label">To-Do</div>
-      <div class="empty">add &lt;item&gt; &nbsp;·&nbsp; done &lt;n&gt; &nbsp;·&nbsp; list &nbsp;·&nbsp; clear</div>
+      <div class="todo-item"><div class="circle"></div>email prof Horton</div><div class="todo-item"><div class="circle"></div>email jacks referral guy</div><div class="todo-item"><div class="circle"></div>text Joey regarding coffee next week</div><div class="todo-item"><div class="circle"></div>get resident pass</div><div class="todo-item"><div class="circle"></div>get Caden dinner</div>
     </div>
   </div>
 
@@ -459,15 +454,15 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Овощи</div>
-      <div class="russian-translit">OH-VUH-SHE</div>
-      <div class="russian-english">Vegetables</div>
-      <audio id="russian-audio" src="Russian Words/Recording (49).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Скоро</div>
+      <div class="russian-translit">SKOORA</div>
+      <div class="russian-english">Soon</div>
+      <audio id="russian-audio" src="Russian Words/Recording (43).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">The 'щ' sound is a soft 'shch' — one of Russian's trickier sounds</div>
+      <div class="russian-explanation">Russians use this loosely — could mean minutes or hours, be warned</div>
     </div>
   </div>
 
@@ -477,57 +472,57 @@
       
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">'Beyond A Routine Wobble': 10-Year Treasury Clears 5% Ahead Of Key Fed Meeting</span>
+        <span class="news-title">Fed Raises Benchmark Rate for First Time in 3 Years to 3.75%-4%</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">The 10-year Treasury yield hit 5.04% yesterday—its highest level in 19 years—signaling a 92% probability of a 25-basis-point Fed rate hike today, up from 70% last week. This is the Fed's first potential hike in three years, driven by worse-than-expected inflation and oil prices spiking due to Iran tensions. The move will significantly impact borrowing costs across all CRE financing and refinancing activity.</p>
-        <p class="news-why-text">Why it matters: Rising rates and higher Treasury yields directly compress cap rates, affect CMBS spreads, and will reshape deal economics for acquisitions and refinancings you'll be analyzing this fall.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow National</strong> email.</div>
+        <p class="news-summary-text">The Federal Reserve unanimously voted to raise the benchmark interest rate by 25 basis points, the first hike since July 2023, citing persistent inflation at 3.7% YoY well above the 2% target. Most Fed officials expect at least one more rate increase this year. This directly impacts borrowing costs across all CRE asset classes and debt financing structures.</p>
+        <p class="news-why-text">Why it matters: Rate hikes compress cap rates, refinancing windows tighten, and acquisition funding becomes more expensive—critical variables for your investment thesis and underwriting models.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow CRE Investor / Morning Brew</strong> email. <a class="news-article-link" href="https://www.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">CBRE IM Buys Net Lease REIT For $1.6B, Plans More Investment</span>
+        <span class="news-title">Wall Street's Data Center Boom Is Reshaping the Real Estate Bond Market</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">CBRE Investment Management acquired a net lease REIT for $1.6B and signaled plans for continued institutional investment in the sector. This reflects strong capital market activity and institutional appetite for yield-producing retail real estate despite broader retail sector challenges.</p>
-        <p class="news-why-text">Why it matters: Major institutional moves like this signal market sentiment on net lease valuations and demonstrate how large operators are consolidating assets—relevant for understanding current deal pricing and capital availability.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow Capital Markets</strong> email.</div>
+        <p class="news-summary-text">Data center assets are rapidly becoming a dominant force in CMBS and real estate bond issuance, driven by AI infrastructure demand and massive institutional capital flows. This structural shift is changing pricing, underwriting standards, and competition for quality assets in the bond market.</p>
+        <p class="news-why-text">Why it matters: Data centers are now competing with traditional office/multifamily for capital and bond market attention—this is reshaping the entire capital stack available for different asset classes.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow CRE Investor</strong> email. <a class="news-article-link" href="https://www.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Crow Holdings Raising Nearly $3.3B Fund, Its Largest Ever</span>
+        <span class="news-title">Amazon Eyes Renewed Multibillion-Dollar Industrial Push with Same-Day Delivery Expansion</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Crow Holdings is raising approximately $3.3B in its largest fund ever, demonstrating strong LP appetite for institutional real estate capital. This major fund raise reflects continued investor confidence despite macro uncertainty and rising rates.</p>
-        <p class="news-why-text">Why it matters: Mega-fund closures signal available capital in the market and provide benchmarks for understanding deployment velocity, GP terms, and what returns LPs expect in the current rate environment.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow Capital Markets</strong> email.</div>
+        <p class="news-summary-text">Amazon is aggressively expanding its industrial real estate footprint to support same-day delivery capabilities, signaling sustained demand for logistics and fulfillment centers across major markets. This represents major lease volume and development activity in the industrial sector.</p>
+        <p class="news-why-text">Why it matters: Amazon's industrial expansion drives significant absorption, rent growth, and development opportunities in industrial markets—relevant for understanding long-term logistics real estate demand in Southern California.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://www.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Stockdale, Hamilton Lane Pay $157M For Chino Hills Shopping Center</span>
+        <span class="news-title">San Diego Considering AI-Powered Policy Drafting Contract with Madison AI</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Stockdale Capital Partners and Hamilton Lane acquired a shopping center in Chino Hills for $157M, representing continued institutional activity in SoCal retail assets. The deal reflects ongoing investor appetite for stabilized, well-located retail properties.</p>
-        <p class="news-why-text">Why it matters: A recent major SoCal retail transaction provides pricing benchmarks and insights into cap rate expectations, buyer profiles, and how institutions are underwriting retail in your backyard.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow SoCal</strong> email.</div>
+        <p class="news-summary-text">The City of San Diego is in active negotiations with Madison AI to deploy AI models that draft city policies, agendas, and staff reports using municipal documents, starting at $25K/year. The move raises data security concerns and questions about how AI will shape zoning, development, and municipal decision-making.</p>
+        <p class="news-why-text">Why it matters: AI-driven municipal policy drafting could reshape how development approvals, zoning decisions, and land-use policies are created—directly affecting project timelines, feasibility, and regulatory predictability for San Diego development.</p>
+        <div class="news-source-note">Find it in your <strong>Axios San Diego</strong> email. <a class="news-article-link" href="https://www.axios.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Inside The Nationwide Jockeying For Opportunity Zones 2.0</span>
+        <span class="news-title">DivcoWest Sells Glendale Office Building for $70M; 10-Year Treasury Clears 5%</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">States and municipalities are competing to position themselves for potential Opportunity Zones 2.0 legislation, which could expand or modify the current qualified opportunity zone framework. This reflects growing political and developer interest in continuing this tax incentive vehicle.</p>
-        <p class="news-why-text">Why it matters: Understanding OZ 2.0 dynamics is critical for long-term development strategies and tax-advantaged capital structuring, especially in San Diego where OZ concentration could affect future fund formation and deal structures.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow National</strong> email.</div>
+        <p class="news-summary-text">DivcoWest disposed of a Glendale office asset for $70M as 10-year Treasury yields pushed above 5% for the first time, creating capital pressure on distressed office holders and raising refinancing risk. Rising yields are intensifying borrowing cost headwinds across the sector.</p>
+        <p class="news-why-text">Why it matters: Rising Treasury yields and office dispositions signal continued stress in office markets and refinancing risk for 2026-2027 maturities—relevant for understanding Southern California office pricing and distressed opportunities.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://www.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     </div>
