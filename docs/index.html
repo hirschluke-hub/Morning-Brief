@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/263/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/264/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,28 +406,38 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">SUNDAY</div>
-        <div class="hero-date">September 20, 2026</div>
-        <div class="hero-quote">"If not now, when?"</div>
-        <div class="hero-author">— Hillel</div>
+        <div class="hero-day">MONDAY</div>
+        <div class="hero-date">September 21, 2026</div>
+        <div class="hero-quote">"The best revenge is massive success."</div>
+        <div class="hero-author">— Frank Sinatra</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
     <div class="temp-bar" style="background:#FF4C4C;"></div>
-    <div class="weather-temp-big">76°</div>
+    <div class="weather-temp-big">77°</div>
     <div class="weather-right">
-      <div class="weather-condition">Foggy</div>
+      <div class="weather-condition">Overcast</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
     </div>
-    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="1.4" stroke-linecap="round"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5" y1="16" x2="19" y2="16"/></svg></div>
+    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
   </div>
 
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
-      <div class="empty">Free day — make it yours.</div>
+      
+          <div class="event" style="border-left-color:#b39ddb;min-height:120px;">
+            <div class="event-time">8:30am — 12:30pm</div>
+            <div class="event-name">Interwest Capital Internship</div>
+            <div class="event-category" style="color:#b39ddb">Work</div>
+          </div>
+          <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
+            <div class="event-time">12pm — 1pm</div>
+            <div class="event-name">Lunch - Hirsch/Kolcum</div>
+            <div class="event-category" style="color:#80cbc4">Personal</div>
+          </div>
     </div>
     <div>
       <div class="label">To-Do</div>
@@ -439,55 +449,22 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Минута</div>
-      <div class="russian-translit">ME-NOOTA</div>
-      <div class="russian-english">Minute</div>
-      <audio id="russian-audio" src="Russian Words/Recording (40).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Поздравляю</div>
+      <div class="russian-translit">PAHZ-DRAV-LEE-EYE-YOU</div>
+      <div class="russian-english">Congratulations</div>
+      <audio id="russian-audio" src="Russian Words/congrats.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Sounds like 'minute' — one of many Russian-English near-matches</div>
+      <div class="russian-explanation">Used for birthdays, promotions, achievements — very versatile</div>
     </div>
   </div>
 
   <div class="news-section">
     <div class="news-inner">
       <div class="label">Top Stories</div>
-      
-    <div class="news-item">
-      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Opposition to AI and Data Centers is Bipartisan—So is Campaign Spending on It</span>
-        <span class="news-plus">+</span>
-      </div>
-      <div class="news-body">
-        <p class="news-summary-text">Congressional lawmakers on both sides of the aisle publicly oppose unrestricted AI development and data center construction in their districts, yet campaign finance records show candidates spent $54K+ on AI products through mid-August. This reflects growing political concern about energy costs, power grid strain, and real estate impacts of hyperscale data center development—a core issue for institutional CRE investors evaluating infrastructure-heavy assets.</p>
-        <p class="news-why-text">Why it matters: Data center development is reshaping CRE fundamentals in major markets; understanding political headwinds around permitting, zoning, and utilities is critical for your acquisition and development thesis.</p>
-        <div class="news-source-note">Find it in your <strong>Straight Arrow</strong> email. <a class="news-article-link" href="https://clicks.san.com/f/a/HX8gQDXIY-82FC0UjdRlrA~~/AAQRxRA~/zYaNS0HWhw9AiAxxl_x1cbksK69dvrvqru-9vQJhC-ogyV2kq1LvD4BE36T3sxfgSI3h0qw_VMjeuflIuLoEZ6sAHQdjyl9TQRNYe0tCl4D3Mh0d5osOXKfGdP5ZVWiO8ARba8QzsPMuBDp2rGrtUxZ0v__icGUXX-H63jWVEcX_HPp7K7Wnalib5qHdYd1m7wJTadiVSveDc9Fn6nXqSqPb7ObHBTSTxi8hpH9v0oUBUs0GZFvlzCuKv7KW6S9J1PLQmjd86HaneUOpN_SRBw~~" target="_blank" rel="noopener">Try article →</a></div>
-      </div>
-    </div>
-    <div class="news-item">
-      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Gaming Industry Shifts to Digital-Only Distribution; Sony Eliminating Physical Media by 2028</span>
-        <span class="news-plus">+</span>
-      </div>
-      <div class="news-body">
-        <p class="news-summary-text">Sony announced it will sell PlayStation games as digital-only downloads starting 2028, citing consumer demand and file sizes too large for physical discs. Meanwhile, cloud gaming adoption is accelerating, and rising hardware/AI costs are pushing gaming toward subscription models—a shift that mirrors broader commercial real estate trends toward asset-light, service-based business models and reduced physical retail footprints.</p>
-        <p class="news-why-text">Why it matters: This reflects how technology disruption is reshaping consumer behavior and retail/entertainment real estate demand; understanding these secular shifts helps you evaluate retail property valuations and tenant durability in your portfolio.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
-      </div>
-    </div>
-    <div class="news-item">
-      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Warren Buffett Steps Down as Berkshire Hathaway Chair; Son Howard Takes Over</span>
-        <span class="news-plus">+</span>
-      </div>
-      <div class="news-body">
-        <p class="news-summary-text">After 60+ years leading Berkshire Hathaway, 96-year-old Warren Buffett has handed the chairmanship to his son Howard (age 71), who will manage the $1 trillion conglomerate. Buffett turns emeritus but remains on the board—a succession that signals potential shifts in Berkshire's investment philosophy and capital allocation strategy for real estate and infrastructure assets.</p>
-        <p class="news-why-text">Why it matters: Berkshire is a major institutional real estate and infrastructure investor; leadership transitions can signal changes in acquisition strategy, capital deployment, and yield expectations that affect deal pricing and market sentiment.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
-      </div>
-    </div>
+      <div class="empty">No stories cleared the bar today.</div>
     </div>
   </div>
 
