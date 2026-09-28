@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/270/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/271/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,28 +406,33 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">SUNDAY</div>
-        <div class="hero-date">September 27, 2026</div>
-        <div class="hero-quote">"We rise by lifting others."</div>
-        <div class="hero-author">— Robert Ingersoll</div>
+        <div class="hero-day">MONDAY</div>
+        <div class="hero-date">September 28, 2026</div>
+        <div class="hero-quote">"No act of kindness, no matter how small, is ever wasted."</div>
+        <div class="hero-author">— Aesop</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
     <div class="temp-bar" style="background:#D92020;"></div>
-    <div class="weather-temp-big">83°</div>
+    <div class="weather-temp-big">81°</div>
     <div class="weather-right">
-      <div class="weather-condition">Overcast</div>
+      <div class="weather-condition">Foggy</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
     </div>
-    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
+    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="1.4" stroke-linecap="round"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5" y1="16" x2="19" y2="16"/></svg></div>
   </div>
 
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
-      <div class="empty">Free day — make it yours.</div>
+      
+          <div class="event" style="border-left-color:#b39ddb;min-height:120px;">
+            <div class="event-time">8:30am — 12:30pm</div>
+            <div class="event-name">Interwest Capital Internship</div>
+            <div class="event-category" style="color:#b39ddb">Work</div>
+          </div>
     </div>
     <div>
       <div class="label">To-Do</div>
@@ -439,15 +444,15 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Поздравляю</div>
-      <div class="russian-translit">PAHZ-DRAV-LEE-EYE-YOU</div>
-      <div class="russian-english">Congratulations</div>
-      <audio id="russian-audio" src="Russian Words/congrats.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Старый</div>
+      <div class="russian-translit">STAR-E</div>
+      <div class="russian-english">Old</div>
+      <audio id="russian-audio" src="Russian Words/Recording (52).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Used for birthdays, promotions, achievements — very versatile</div>
+      <div class="russian-explanation">Refers to age of objects and people — 'старый город' = old town</div>
     </div>
   </div>
 
@@ -457,35 +462,46 @@
       
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Mortgage rates soar past 7%, with potential path to 8% as Fed tightening and Iran war drive bond selloff</span>
+        <span class="news-title">AEW Sells San Gabriel Valley Industrial Park for $61M; More Developments Getting Mothballed Due to Spiking Construction Costs</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">30-year mortgage rates topped 7% this week for the first time since early 2025, driven by Fed rate hikes and Treasury bond volatility tied to Iran geopolitical risk and inflation concerns. Moody's chief economist warns rates could approach 8% or higher if the dollar's safe-haven status deteriorates and bond selloff continues. This rate environment is reshaping housing market dynamics after brief sub-6% window in February gave false hope for 2026 recovery.</p>
-        <p class="news-why-text">Why it matters: Rising mortgage rates directly compress multifamily and residential development feasibility, affect CMBS underwriting, and alter capital stack economics for acquisitions—critical inputs for your investment thesis.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">AEW divested a San Gabriel Valley industrial asset while Valencia campus fetched $32M, signaling continued institutional portfolio rebalancing in Southern California industrial. The broader trend shows developers are mothballing projects amid persistent construction cost inflation, creating a supply constraint that could support cap rate compression in stabilized industrial assets.</p>
+        <p class="news-why-text">Why it matters: Industrial market dynamics and cost inflation directly impact acquisition strategy and underwriting assumptions for your San Diego region focus—understanding SoCal institutional exits helps gauge market sentiment.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://www.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Alternative investments attract Gen Z and millennial investors amid distrust of traditional markets and search for above-average returns</span>
+        <span class="news-title">Senators Push to Kick Data Centers Out of Opportunity Zones</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Nearly 67% of Gen Z and millennial investors believe stocks and bonds can't deliver adequate returns, driving allocation to alternatives including private equity, real estate, and credit. Millennials now hold ~20% of portfolios in alternatives vs. 11% for Gen X and 6% for boomers, according to Goldman Sachs data. Banks and platforms scrambling to offer private markets access, but liquidity locks and higher risks blur line between democratized investing and gambling.</p>
-        <p class="news-why-text">Why it matters: This shift in capital flows toward private real estate and credit is reshaping how deals get funded—understanding retail participation in alternative RE strategies and private debt is essential for your long-term investor and capital markets focus.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">Legislative pressure is mounting to exclude data center investments from Opportunity Zone tax incentives, which could reshape deal economics for AI/tech infrastructure projects that have relied on favorable capital gains treatment. This regulatory shift threatens a key financing mechanism that's been critical to the debt-heavy data center development boom.</p>
+        <p class="news-why-text">Why it matters: Data centers are a high-priority asset class for you; policy changes to OZ treatment directly impact developer returns and lender appetite—critical for understanding future deal flow and valuation metrics in the AI infrastructure space.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://www.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Blackfin and Enterprise Community Partners acquire 177-unit garden-style apartments in Nashville's tight Antioch submarket</span>
+        <span class="news-title">Mortgage Rates Soaring with Little Relief in Sight</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Blackfin and Enterprise Community Partners closed on Brookridge Apartments, a 177-unit garden-style community in Nashville's Antioch submarket, as supply constraints tighten in Music City. The partnership underscores institutional appetite for multifamily assets in secondary markets with supply tailwinds. Deal type and timing reflect broader institutional capital focus on tight supply markets amid higher interest rate environment.</p>
-        <p class="news-why-text">Why it matters: Nashville multifamily dynamics and secondary market acquisition strategies are relevant comparables for understanding supply-constrained market pricing and institutional capital deployment patterns.</p>
-        <div class="news-source-note">Find it in your <strong>Multifamily Dive</strong> email. <a class="news-article-link" href="https://www.multifamilydive.com/news/blackfin-enterprise-community-partners-apartment-transaction/831065/" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">Mortgage rates remain elevated as bond yields climb (10-year at 5.184%), constraining borrowing costs across residential and commercial property finance. The persistent rate environment is pressuring multifamily underwriting and refinance activity, particularly for debt-heavy repositioning projects.</p>
+        <p class="news-why-text">Why it matters: Rising rates compress cap rates and refinance spreads—critical for your acquisition analysis; understanding the rate trajectory helps inform entry timing and floating-rate risk management in your investment thesis.</p>
+        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="https://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Retail Trading Volume Down; Institutional Investors Reassert Market Control</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Retail trading has cooled significantly in 2026 after peak meme-stock activity, with institutional investors recapturing trading volume dominance. This shift reflects normalization in market dynamics and reduced speculative positioning, potentially benefiting institutional-grade real estate deals.</p>
+        <p class="news-why-text">Why it matters: Capital market structure affects deal velocity and buyer quality; institutional reassertion means less noise, more disciplined underwriting standards, and stronger cap rate discovery for quality CRE assets you'll encounter.</p>
+        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="https://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     </div>
