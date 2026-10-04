@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/276/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/277/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,17 +406,17 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">SATURDAY</div>
-        <div class="hero-date">October 3, 2026</div>
-        <div class="hero-quote">"Knowing yourself is the beginning of all wisdom."</div>
-        <div class="hero-author">— Aristotle</div>
+        <div class="hero-day">SUNDAY</div>
+        <div class="hero-date">October 4, 2026</div>
+        <div class="hero-quote">"The more that you read, the more things you will know. The more that you learn, the more places you'll go."</div>
+        <div class="hero-author">— Dr. Seuss</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
     <div class="temp-bar" style="background:#A00000;"></div>
-    <div class="weather-temp-big">100°</div>
+    <div class="weather-temp-big">93°</div>
     <div class="weather-right">
       <div class="weather-condition">Clear skies</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
@@ -427,7 +427,12 @@
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
-      <div class="empty">Free day — make it yours.</div>
+      
+          <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
+            <div class="event-time">10:12am — 11:42am</div>
+            <div class="event-name">Untitled</div>
+            <div class="event-category" style="color:#80cbc4">Personal</div>
+          </div>
     </div>
     <div>
       <div class="label">To-Do</div>
@@ -439,15 +444,15 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Я не понимаю</div>
-      <div class="russian-translit">YA NE-UH PU-KNEE MY-YOO</div>
-      <div class="russian-english">I don't understand</div>
-      <audio id="russian-audio" src="Russian Words/I don't understand'.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Вчера</div>
+      <div class="russian-translit">V-CHEERA</div>
+      <div class="russian-english">Yesterday</div>
+      <audio id="russian-audio" src="Russian Words/yesterday.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">The 'не' (ne) means 'not' — very useful when lost in conversation</div>
+      <div class="russian-explanation">The 'вч' cluster sounds tricky but comes naturally with practice</div>
     </div>
   </div>
 
@@ -457,57 +462,46 @@
       
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">US Jobs Report Shows Surprise Slowdown with Only 29,000 Added in September</span>
+        <span class="news-title">Did an affordable housing policy make the home shortage worse? Inclusionary zoning under scrutiny</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">The US added just 29,000 jobs in September, far below the 84,000 expected, with unemployment ticking up to 4.2%. Weakness was broad-based: healthcare added only 17,000 vs. 33,000 average, construction and manufacturing added just 11,000 and 9,000 respectively, and AI-exposed sectors shed jobs. The summer's strong job gains were also revised down by 60,000 combined in July-August, suggesting earlier strength may have been overstated.</p>
-        <p class="news-why-text">Why it matters: Softening labor markets typically precede commercial real estate weakness; this data signals potential headwinds for tenant demand, leasing velocity, and cap rate expansion across all asset classes.</p>
+        <p class="news-summary-text">Across hundreds of US cities and counties, inclusionary zoning policies mandate affordable units in new developments—but emerging evidence suggests these policies may unintentionally reduce overall housing supply by increasing development costs and reducing developer returns. This affects acquisition underwriting and development feasibility nationwide, with particular relevance to high-cost markets like San Diego.</p>
+        <p class="news-why-text">Why it matters: Understanding the unintended consequences of inclusionary zoning is critical for your development and acquisitions work, especially in California where these policies are pervasive and directly impact project economics and entitled density.</p>
+        <div class="news-source-note">Find it in your <strong>Straight Arrow</strong> email. <a class="news-article-link" href="https://clicks.san.com/f/a/9DJ1xT9aE4MbL3VeWpgeyw~~/AAQRxRA~/6GCLtzoNo6zGWaLjxXdHBsny2hEPHVXMEaq8_6GyMLGlspMqE4zx-uMnmYgQBQ1bpBCzsqlqYUd9MMF-7UbzI-kQYtPgeOu-8-g7retoJmEmq4uYZwCD4zGsuK_uNBEJjivyr_ZtlwPY_kwPc_oUjb3mBwiANa2sH009xyIzZ-YBmPukLAc91XmC0ZJdMMXPGOOGKQP8g6kxf8TpLkcVbzRt5JcXlwBxY1WHp7lq0FeqmodqYeiCOVUd8wHS-IlfVZf4MD2R9_yV5eBXyz7DU5zshxrKTn1nEjP0DHktmtY~" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Real estate listings get an AI makeover. When does it become false advertising?</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">AI-generated imagery and virtual staging in property listings are raising disclosure and liability concerns as listing agents use generative tools to enhance photos or create virtual renovations. This emerging proptech trend creates legal ambiguity around misrepresentation—potentially impacting buyer perception, transaction risk, and broker liability in both residential and commercial markets.</p>
+        <p class="news-why-text">Why it matters: As an investor and acquisitions analyst, you need to understand how AI-enhanced listings affect due diligence, appraisals, and the credibility of comparable sales data—and potential regulatory crackdowns could reshape disclosure standards.</p>
+        <div class="news-source-note">Find it in your <strong>Straight Arrow</strong> email. <a class="news-article-link" href="https://clicks.san.com/f/a/lfM8BBGiUGlUKZgkAp_GoA~~/AAQRxRA~/3Wo2n0iEJToyVnZ3e121alsId3Zqa1EeZ01iOT-y5twsjS9HK6L80-IJzeUotHzBlrEU1NtDahzFkXFy96WV0Upg5WHMMQhGRWauzbr2IwC8Li9uoTw3i_bgO4jL9z4qIM8wDTatKUejJaKQqw7HVMH8B2tv9gtIS8If6CtMz7M3kERmtyJctpXlEz2pSEho457rg5jN88FrMCtbZZLOfULMD55bNlaxYPLGMpEhAbG3ypLage640hqripNwnpvqo-DY_bjlerY228vBpAjnRQ~~" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">America posts a surprise job market slowdown: only 29,000 jobs added in September</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">The US job market unexpectedly decelerated in September with only 29,000 new positions added—far below economist expectations of 84,000—and unemployment ticked up to 4.2%. Construction and manufacturing remain weak (11K and 9K jobs respectively), while healthcare, business services, and AI-exposed sectors disappointed, signaling potential cooling demand for commercial real estate and tenant growth.</p>
+        <p class="news-why-text">Why it matters: Softer job growth directly impacts commercial real estate demand, tenant creditworthiness, and occupancy assumptions in your acquisition models; coupled with easing labor market, this may pressure cap rates and lease growth in competitive markets like San Diego.</p>
         <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Global Bond Rout Deepens: Treasury Yields Hit 2002 Highs Amid Inflation and Fiscal Concerns</span>
+        <span class="news-title">Kelvin wave incoming: El Niño-driven coastal flooding risks threaten California infrastructure this winter</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">Global government bond yields hit multidecade highs, with US 10-year Treasuries reaching 5.34% (2002 levels), France at highest since 2002, and UK 30-year yields exceeding 6% for first time since 1998. The sell-off is driven by inflation concerns exacerbated by Iran war disruptions (oil spiking from $70 to ~$100/barrel) and rising fiscal deficits. Flight-to-quality dynamics pushed German yields lower while peripheral Europe (France, Italy, Greece) saw yields spike higher.</p>
-        <p class="news-why-text">Why it matters: Rising Treasury yields directly impact CRE borrowing costs, refinancing risk, and CMBS spreads—critical for acquisitions, development financing, and portfolio valuations across your deal pipeline.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
-      </div>
-    </div>
-    <div class="news-item">
-      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Real Estate Taxes Now Represent 21% of Apartment Operating Expenses; Bozzuto Moving HQ</span>
-        <span class="news-plus">+</span>
-      </div>
-      <div class="news-body">
-        <p class="news-summary-text">Property tax burdens on multifamily assets have grown to consume 21% of operating expenses—a significant headwind for NOI and cap rate compression. Additionally, Bozzuto (major multifamily operator) is relocating its corporate headquarters, signaling potential market shifts or operational restructuring within the sector.</p>
-        <p class="news-why-text">Why it matters: Rising tax as a proportion of OpEx directly impacts multifamily returns and acquisition underwriting; understanding which markets have controlled tax growth vs. spiraling rates is critical for investment site selection.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow Multifamily</strong> email.</div>
-      </div>
-    </div>
-    <div class="news-item">
-      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Lenders Warn CRE's 'Day of Reckoning' Is Close at Hand</span>
-        <span class="news-plus">+</span>
-      </div>
-      <div class="news-body">
-        <p class="news-summary-text">Lending community is sounding alarm bells on commercial real estate distress emerging in the near term, citing capital markets stress, rising rates, and refinancing cliff pressures. The warning signals accumulating portfolio stress across office, hospitality, and retail segments as rate-sensitive debt matures into a higher-rate environment.</p>
-        <p class="news-why-text">Why it matters: This validates thesis timing for distressed acquisition opportunities and heightened refinancing risk; positioning for selective buys at stressed cap rates while monitoring lender liquidity withdrawal impacts on deal flow.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow SoCal / National</strong> email.</div>
-      </div>
-    </div>
-    <div class="news-item">
-      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">More CRE Developments Get Mothballed Due to Spiking Construction Costs</span>
-        <span class="news-plus">+</span>
-      </div>
-      <div class="news-body">
-        <p class="news-summary-text">Rising construction costs are forcing developers to pause or shelve projects, particularly in San Diego, as hard costs continue outpacing pro forma assumptions. This reflects persistent labor, material, and financing headwinds preventing ground-break of marginal development economics.</p>
-        <p class="news-why-text">Why it matters: Development delays reduce new supply, potentially supporting existing asset values and rents in your market; but also signals capital is cautious on new construction returns—relevant for your development and acquisition thesis.</p>
-        <div class="news-source-note">Find it in your <strong>Bisnow San Diego</strong> email.</div>
+        <p class="news-summary-text">A massive Kelvin wave from strengthening El Niño will raise West Coast sea levels by approximately 6 inches this winter, with potential for storm surge to reach roads, homes, and coastal infrastructure. NASA and NOAA projections indicate elevated flood risk through fall/winter 2026, with compounding effects when combined with high tides and storms.</p>
+        <p class="news-why-text">Why it matters: For San Diego coastal property acquisitions and development—particularly downtown, Mission Beach, and waterfront assets—you must factor increased flooding risk, infrastructure hardening costs, and potential insurance/financing impacts into underwriting assumptions.</p>
+        <div class="news-source-note">Find it in your <strong>Straight Arrow</strong> email. <a class="news-article-link" href="https://clicks.san.com/f/a/47uFUZtuGYum3ytbRupFsQ~~/AAQRxRA~/UpGFrmZmHKX128yvzd4CjGvOsxlq12rCm5c-Ech3cjiH_Kz9ZBCzXfyWhZ2I30b3N4_IAzkgdh-WBQNGT8iijPMrdtgdLmPlTNBhILe4YKSN_RQTnTpuj31yb0tpKfJtFHDvj8Jje0uUK5o25XzdkZ5ZxhtpAs8pK148DcBfar2fK90Zic0k92CZXn8V6H5Xdc5R5K_8rDly16UhOW0HQPnwvbz6wefOM4ptYzmULvMl2tzE1Uh_CnMxCndXAzE54japEwjimfrp3TSs98BnYRNJwlRyfYKUDnRZzkAYBrCiI194r8jzY7YANKJMHC2crpH9siCGNyqpqhD8G9JJDA~~" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     </div>
