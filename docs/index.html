@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/282/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/283/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,9 +406,9 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">FRIDAY</div>
-        <div class="hero-date">October 9, 2026</div>
-        <div class="hero-quote">"In three words I can sum up everything I've learned about life: it goes on."</div>
+        <div class="hero-day">SATURDAY</div>
+        <div class="hero-date">October 10, 2026</div>
+        <div class="hero-quote">"Two roads diverged in a wood, and I — I took the one less traveled by, and that has made all the difference."</div>
         <div class="hero-author">— Robert Frost</div>
       </div>
     </div>
@@ -418,26 +418,16 @@
     <div class="temp-bar" style="background:#D92020;"></div>
     <div class="weather-temp-big">81°</div>
     <div class="weather-right">
-      <div class="weather-condition">Overcast</div>
+      <div class="weather-condition">Light drizzle</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
     </div>
-    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
+    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#7aafc9" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 16H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/><line x1="8" y1="19" x2="8" y2="21"/><line x1="12" y1="19" x2="12" y2="21"/><line x1="16" y1="19" x2="16" y2="21"/></svg></div>
   </div>
 
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
-      
-          <div class="event" style="border-left-color:#b39ddb;min-height:120px;">
-            <div class="event-time">8:30am — 12:30pm</div>
-            <div class="event-name">Interwest Capital Internship</div>
-            <div class="event-category" style="color:#b39ddb">Work</div>
-          </div>
-          <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
-            <div class="event-time">10:30am — 11am</div>
-            <div class="event-name">Intro Call - Luke/Erik</div>
-            <div class="event-category" style="color:#80cbc4">Personal</div>
-          </div>
+      <div class="empty">Free day — make it yours.</div>
     </div>
     <div>
       <div class="label">To-Do</div>
@@ -449,22 +439,66 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Фрукты</div>
-      <div class="russian-translit">FROOKT</div>
-      <div class="russian-english">Fruit</div>
-      <audio id="russian-audio" src="Russian Words/Recording (50).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Серьёзно?</div>
+      <div class="russian-translit">SEER-DEE-OH-ZNAH</div>
+      <div class="russian-english">Seriously?</div>
+      <audio id="russian-audio" src="Russian Words/Recording (9).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Borrowed from Latin — similar to French 'fruits', easy to recall</div>
+      <div class="russian-explanation">Used just like English 'seriously?' — expresses surprise or disbelief</div>
     </div>
   </div>
 
   <div class="news-section">
     <div class="news-inner">
       <div class="label">Top Stories</div>
-      <div class="empty">No stories cleared the bar today.</div>
+      
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">U.S. Multifamily Market Regaining Its Balance As Yearslong Supply Wave Tapers Off</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">After years of oversupply, the U.S. multifamily market is stabilizing as new construction slows. Institutional investors are returning, with L&G expanding U.S. holdings, signaling renewed confidence in the asset class. The shift creates opportunities for acquisitions as supply constraints improve rent growth dynamics.</p>
+        <p class="news-why-text">Why it matters: Critical timing signal for multifamily acquisition strategy—supply normalization could unlock better cap rate compression and refinancing windows for existing portfolios.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow Multifamily</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Multifamily's Days As Commercial Real Estate's 'Golden Child' Are Over</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Multifamily has fallen from favor due to persistent oversupply colliding with rising borrowing costs. Around $1.8T in debt comes due over the next decade, with $757B due by 2028, forcing lenders to pivot toward better-returning asset classes. Distress is now seen as inevitable for owners who financed at near-zero rates in 2020-2022.</p>
+        <p class="news-why-text">Why it matters: Understanding the multifamily distress cycle is essential for identifying acquisition opportunities and navigating capital allocation away from stressed underperforming assets.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow National</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Delta Air Lines Cuts Guidance Amid Fuel Cost Shocks; Airline Industry Struggles</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Delta slashed full-year earnings guidance from $6.50-$7.50 to $5.10-$5.60 per share, citing $500M in unexpected Q3 fuel costs (62% YoY increase). Even strong travel demand and 23.4% ticket price increases couldn't offset geopolitical oil supply shocks, signaling broader margin pressures across travel-dependent real estate sectors.</p>
+        <p class="news-why-text">Why it matters: Energy volatility and commodity inflation directly impact operating expenses for hospitality, logistics, and travel-adjacent real estate—critical for underwriting NOI stability in these sectors.</p>
+        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Hines Names New Co-CEO As Part Of Generational Leadership Shift</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Major developer Hines announces new co-CEO appointment, reflecting generational transition among top-tier CRE firms. Leadership changes signal strategic repositioning as firms adapt to evolving market cycles and capital deployment priorities.</p>
+        <p class="news-why-text">Why it matters: Leadership transitions at mega-cap developers often precede portfolio shifts and capital reallocation—watch for changes in acquisition strategy, asset sales, or geographic focus from major players like Hines.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow National</strong> email.</div>
+      </div>
+    </div>
     </div>
   </div>
 
