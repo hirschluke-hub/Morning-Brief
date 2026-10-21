@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/293/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/294/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,10 +406,10 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">TUESDAY</div>
-        <div class="hero-date">October 20, 2026</div>
-        <div class="hero-quote">"With the new day comes new strength and new thoughts."</div>
-        <div class="hero-author">— Eleanor Roosevelt</div>
+        <div class="hero-day">WEDNESDAY</div>
+        <div class="hero-date">October 21, 2026</div>
+        <div class="hero-quote">"This is a wonderful day. I've never seen this one before."</div>
+        <div class="hero-author">— Maya Angelou</div>
       </div>
     </div>
   </div>
@@ -418,10 +418,10 @@
     <div class="temp-bar" style="background:#FF4C4C;"></div>
     <div class="weather-temp-big">76°</div>
     <div class="weather-right">
-      <div class="weather-condition">Overcast</div>
+      <div class="weather-condition">Drizzle</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
     </div>
-    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
+    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#7aafc9" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 16H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/><line x1="8" y1="19" x2="8" y2="21"/><line x1="12" y1="19" x2="12" y2="21"/><line x1="16" y1="19" x2="16" y2="21"/></svg></div>
   </div>
 
   <div class="content">
@@ -434,8 +434,13 @@
             <div class="event-category" style="color:#b39ddb">Work</div>
           </div>
           <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
-            <div class="event-time">1pm — 2pm</div>
-            <div class="event-name">Chaevi Meeting</div>
+            <div class="event-time">4pm — 5pm</div>
+            <div class="event-name">Golf</div>
+            <div class="event-category" style="color:#80cbc4">Personal</div>
+          </div>
+          <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
+            <div class="event-time">8pm — 9pm</div>
+            <div class="event-name">Mastermind</div>
             <div class="event-category" style="color:#80cbc4">Personal</div>
           </div>
     </div>
@@ -449,22 +454,77 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Незнакомец</div>
-      <div class="russian-translit">NEE-EZ-NAH KOY-MIETS</div>
-      <div class="russian-english">Stranger</div>
-      <audio id="russian-audio" src="Russian Words/Recording (23).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Вторник</div>
+      <div class="russian-translit">VTOORNIK</div>
+      <div class="russian-english">Tuesday</div>
+      <audio id="russian-audio" src="Russian Words/Recording (34).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Literally 'unknown person' — 'не' (not) + 'знакомый' (familiar)</div>
+      <div class="russian-explanation">From 'второй' (second) — the second day of the work week</div>
     </div>
   </div>
 
   <div class="news-section">
     <div class="news-inner">
       <div class="label">Top Stories</div>
-      <div class="empty">No stories cleared the bar today.</div>
+      
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Distressed Sales Up 26% As Debt Funds Wait To Take The Keys</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Distressed property sales are surging 26% as debt fund managers hold positions and prepare for potential asset acquisitions. This signals heightened workout activity across the CRE market as lenders move problem loans through the pipeline. The trend reflects ongoing stress in certain asset classes and geographies, with special servicing activity climbing.</p>
+        <p class="news-why-text">Why it matters: Understanding distressed deal flow and debt fund behavior is critical for identifying acquisition opportunities and understanding cap rate compression across asset classes.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">$1.3B Blackstone Multifamily Loan Hits Special Servicing</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">A $1.3 billion Blackstone-backed multifamily loan entered special servicing, underscoring stress in the multifamily sector despite recent narrative shifts. This mega-deal moving to special servicing indicates even institutional-quality portfolios face challenges in the current rate environment. The development signals continued CMBS deterioration and lender scrutiny.</p>
+        <p class="news-why-text">Why it matters: Large multifamily loans entering special servicing reveal underlying market stress and potential yield opportunities for distressed debt investors.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Big Banks Take Bigger CRE Losses As They Clear Out Problem Loans</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Major banks are recognizing larger loss provisions as they move to offload troubled CRE loans from their portfolios. This accelerated clearance activity reflects a strategic shift to reduce CRE exposure and de-risk balance sheets. Losses are being crystallized now rather than extended, which has implications for secondary market pricing and distressed deal volume.</p>
+        <p class="news-why-text">Why it matters: Bank loan sales and loss recognition create acquisition opportunities and establish floor valuations for CRE assets in your underwriting.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Holiday travel could be the priciest in a decade</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Domestic flight costs are surging 31% for Thanksgiving and 23% for Christmas compared to last year, driven primarily by jet fuel costs that have jumped 91% since February due to the Iran war. Airlines like United are cutting profit guidance due to sustained fuel pressures. Consumer demand remains strong despite price increases, suggesting inflation resilience in discretionary spending.</p>
+        <p class="news-why-text">Why it matters: Elevated travel costs and energy inflation affect investor sentiment, construction costs, and operational expenses across the CRE sector.</p>
+        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Faring Proposes Office, Retail On Sunset Strip Car Dealership Site</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Developer Faring is pitching a mixed-use office and retail project on a prime West Hollywood dealership site. The proposal reflects ongoing capital stack strategies for adaptive reuse and land repositioning in high-value markets. West Hollywood's transit orientation and affluent demographics support office/retail hybrid models.</p>
+        <p class="news-why-text">Why it matters: Mixed-use infill development on premium Los Angeles sites offers insights into market appetite for office products and capital allocation in tight urban markets.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
+      </div>
+    </div>
     </div>
   </div>
 
