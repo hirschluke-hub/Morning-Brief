@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/299/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/300/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,22 +406,22 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">MONDAY</div>
-        <div class="hero-date">October 26, 2026</div>
-        <div class="hero-quote">"Every day begins with an act of courage and hope: getting out of bed."</div>
-        <div class="hero-author">— Mason Cooley</div>
+        <div class="hero-day">TUESDAY</div>
+        <div class="hero-date">October 27, 2026</div>
+        <div class="hero-quote">"Smile in the mirror. Do that every morning and you'll start to see a big difference in your life."</div>
+        <div class="hero-author">— Yoko Ono</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
-    <div class="temp-bar" style="background:#D92020;"></div>
-    <div class="weather-temp-big">81°</div>
+    <div class="temp-bar" style="background:#FF4C4C;"></div>
+    <div class="weather-temp-big">76°</div>
     <div class="weather-right">
-      <div class="weather-condition">Foggy</div>
+      <div class="weather-condition">Overcast</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
     </div>
-    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="1.4" stroke-linecap="round"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5" y1="16" x2="19" y2="16"/></svg></div>
+    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
   </div>
 
   <div class="content">
@@ -444,22 +444,77 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Дом</div>
-      <div class="russian-translit">DOME</div>
-      <div class="russian-english">House</div>
-      <audio id="russian-audio" src="Russian Words/housee.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Сейчас</div>
+      <div class="russian-translit">SEE-CHAS</div>
+      <div class="russian-english">Now</div>
+      <audio id="russian-audio" src="Russian Words/now.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Also means 'home' and 'building' — very versatile word</div>
+      <div class="russian-explanation">Also used informally to mean 'in a moment' or 'just a second'</div>
     </div>
   </div>
 
   <div class="news-section">
     <div class="news-inner">
       <div class="label">Top Stories</div>
-      <div class="empty">No stories cleared the bar today.</div>
+      
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Anthropic Files for IPO Under Ticker ANT, Reveals Financial Details and AI Risk Management Plans</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Anthropic filed for its widely anticipated Nasdaq IPO yesterday under ticker ANT, disclosing key financials and frameworks for managing catastrophic AI risks. The filing signals confidence in AI adoption and sentiment recovery following last week's sector selloff, with major institutional interest in AI infrastructure plays.</p>
+        <p class="news-why-text">Why it matters: AI is reshaping CRE through proptech, data center demand, and capital allocation—Anthropic's IPO signals institutional appetite for AI bets and validates the infrastructure buildout thesis critical for long-term real estate trends.</p>
+        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Barings Acquires Ralphs-Anchored Shopping Center in Placentia for $66M</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Barings completed a $66M acquisition of a Ralphs-anchored retail center in Placentia, OC, reflecting institutional investor appetite for grocery-anchored properties with essential tenant bases. Deal demonstrates ongoing capital deployment into stabilized, recession-resistant retail despite broader market concerns.</p>
+        <p class="news-why-text">Why it matters: Shows how major CRE firms are deploying capital into lower-volatility retail assets with strong tenant covenants—relevant for understanding how cap rate compression and institutional competition shape acquisition strategies in your market.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">NMHC: Apartment Borrowing Conditions Hit Worst Level Since 2023 as Debt Financing Plunges</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">NMHC's October survey reveals apartment borrowing conditions have deteriorated sharply—Debt Financing Index fell from 46 (July) to 10 (October), with 81% of respondents reporting worsening borrowing conditions and 66% citing reduced equity availability. This marks the worst financing environment since 2023 despite strong rental fundamentals and occupancy levels.</p>
+        <p class="news-why-text">Why it matters: Illustrates the critical spread between operational performance (full buildings) and capital market access (severe financing constraints)—understanding this disconnect is essential for acquisition, refinance, and development strategy in the current lending environment.</p>
+        <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Blackstone Vet's Town Lane Raises $1.9B for Second Investment Fund</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Town Lane, led by a veteran Blackstone executive, successfully raised $1.9B for its second institutional investment fund, signaling strong LP appetite for differentiated CRE strategies despite macro uncertainty. Fund-raising success underscores institutional capital continues flowing into seasoned managers with proven track records.</p>
+        <p class="news-why-text">Why it matters: Demonstrates that despite current market volatility, institutional capital still backs experienced operators—relevant for understanding where dry powder is concentrated and which strategy archetypes (value-add, core-plus) are attracting the largest commitments.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Banks Restrict AI Agents from Account Access Amid Unauthorized Third-Party Integration Risks</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Major US banks (JPMorgan, BofA, Citi, Morgan Stanley) are restricting third-party AI agents from accessing customer accounts following unauthorized integrations and potential liability concerns. Banks cannot easily reverse AI-initiated transactions, creating regulatory and legal uncertainty around agent autonomy.</p>
+        <p class="news-why-text">Why it matters: As AI becomes embedded in CRE transaction workflows and property management (lease analysis, underwriting, portfolio management), understanding liability frameworks and banking infrastructure constraints will shape how firms integrate AI agents into operations.</p>
+        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email.</div>
+      </div>
+    </div>
     </div>
   </div>
 
