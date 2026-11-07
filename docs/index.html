@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/310/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/311/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,17 +406,17 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">FRIDAY</div>
-        <div class="hero-date">November 6, 2026</div>
-        <div class="hero-quote">"Be willing to be a beginner every single morning."</div>
-        <div class="hero-author">— Meister Eckhart</div>
+        <div class="hero-day">SATURDAY</div>
+        <div class="hero-date">November 7, 2026</div>
+        <div class="hero-quote">"Today is a new day. Stop telling yourself it's just another boring day."</div>
+        <div class="hero-author">— Steve Maraboli</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
     <div class="temp-bar" style="background:#D92020;"></div>
-    <div class="weather-temp-big">82°</div>
+    <div class="weather-temp-big">85°</div>
     <div class="weather-right">
       <div class="weather-condition">Foggy</div>
       <div class="weather-location">San Diego, CA — Today's High</div>
@@ -427,12 +427,7 @@
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
-      
-          <div class="event" style="border-left-color:#b39ddb;min-height:120px;">
-            <div class="event-time">8:30am — 12:30pm</div>
-            <div class="event-name">Interwest Capital Internship</div>
-            <div class="event-category" style="color:#b39ddb">Work</div>
-          </div>
+      <div class="empty">Free day — make it yours.</div>
     </div>
     <div>
       <div class="label">To-Do</div>
@@ -444,22 +439,77 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Ужин</div>
-      <div class="russian-translit">OO-JAN</div>
-      <div class="russian-english">Dinner</div>
-      <audio id="russian-audio" src="Russian Words/Recording (48).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Суббота</div>
+      <div class="russian-translit">SOO-BOYTA</div>
+      <div class="russian-english">Saturday</div>
+      <audio id="russian-audio" src="Russian Words/Recording (37).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Evening meal — Russians eat dinner later than many Western cultures</div>
+      <div class="russian-explanation">Borrowed from Hebrew Shabbat — recognizable across many languages</div>
     </div>
   </div>
 
   <div class="news-section">
     <div class="news-inner">
       <div class="label">Top Stories</div>
-      <div class="empty">No stories cleared the bar today.</div>
+      
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">RealPage Rent-Pricing Settlement Reaches $360M—But Algorithmic Pricing Litigation Far From Over</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Federal court approved a $360M settlement in the RealPage algorithmic pricing case, marking a watershed moment for multifamily asset management. However, legal experts warn this won't be the final word on AI-driven rent optimization—setting precedent for future litigation around yield management software used across the sector.</p>
+        <p class="news-why-text">Why it matters: Critical for understanding regulatory/litigation risks in multifamily acquisitions and the future cost structure of property management tech you'll encounter in deals.</p>
+        <div class="news-source-note">Find it in your <strong>Multifamily Dive</strong> email. <a class="news-article-link" href="https://www.multifamilydive.com/news/realpage-rent-pricing-case-360m-renters/873553/" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Democrats Retake Congress; CRE Braces for Data Center Slowdown and Tariff Rollbacks</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Democratic midterm victories triggered a 5%+ stock market selloff in data center suppliers and AI chipmakers, as investors priced in tighter AI regulation and paused data center construction in Texas/Georgia. Conversely, Big Tech hyperscalers rallied as existing capacity becomes more valuable under constrained buildout scenarios.</p>
+        <p class="news-why-text">Why it matters: Fundamental shift in data center supply dynamics and capital allocation—directly impacts your underwriting assumptions for infrastructure deals and the trajectory of construction costs.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow National</strong> email. <a class="news-article-link" href="https://links.bisnow.com/u/click?_t=248ca2dac00d45a3a657609c1a03b8d6" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Stock Market Sells Off Hard on Post-Midterm AI Skepticism; Nasdaq Down 5.5%</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">The Nasdaq crashed 5.5% as investors reassessed the AI data center boom following Democratic congressional wins. Semiconductor suppliers like Nvidia (-9%) and SanDisk (-22%) led declines; VIX spiked 69% signaling peak volatility in the AI/tech trade.</p>
+        <p class="news-why-text">Why it matters: Signals potential repricing of cap rates, cost of capital, and equity returns for CRE plays tied to tech—expect lender sentiment to tighten and sponsor returns expectations to compress.</p>
+        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Democrats' Early Priority: Rescinding Trump Tariffs as Construction Cost Driver</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Democratic leaders signal immediate action to reverse tariffs, which have been a primary driver of elevated construction costs across CRE sectors. Reduced tariff pressure could ease material cost inflation, particularly on steel and aluminum critical to multifamily and office development.</p>
+        <p class="news-why-text">Why it matters: Potential relief on construction cost headwinds that have compressed development margins—material impact on your cost-to-completion assumptions and development feasibility on marginal deals.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow National</strong> email. <a class="news-article-link" href="https://links.bisnow.com/u/click?_t=248ca2dac00d45a3a657609c1a03b8d6" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Higher Rates and Economic Uncertainty Push Banks to Tighten CRE Lending Standards</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Banks are actively tightening CRE lending standards due to elevated interest rates and post-election uncertainty, reducing leverage available on acquisitions and refinances. This compounds existing debt service pressure on stabilized assets and raises the bar for development financing.</p>
+        <p class="news-why-text">Why it matters: Expect harder debt markets and higher DSCR/LTC requirements on your underwritten deals—equity requirements rising and sponsor returns under pressure.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow National</strong> email. <a class="news-article-link" href="https://links.bisnow.com/u/click?_t=248ca2dac00d45a3a657609c1a03b8d6" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
     </div>
   </div>
 
