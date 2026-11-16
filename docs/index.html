@@ -23,7 +23,7 @@
       width: 100%;
       height: 60vh;
       min-height: 360px;
-      background: #1a1a1a url('https://picsum.photos/seed/319/1400/800') center/cover no-repeat;
+      background: #1a1a1a url('https://picsum.photos/seed/320/1400/800') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -406,28 +406,43 @@
         <div class="greeting">Good morning, Luke.</div>
       </div>
       <div class="hero-bottom">
-        <div class="hero-day">SUNDAY</div>
-        <div class="hero-date">November 15, 2026</div>
-        <div class="hero-quote">"Whether you think you can or you think you can't, you're right."</div>
-        <div class="hero-author">— Henry Ford</div>
+        <div class="hero-day">MONDAY</div>
+        <div class="hero-date">November 16, 2026</div>
+        <div class="hero-quote">"The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty."</div>
+        <div class="hero-author">— Winston Churchill</div>
       </div>
     </div>
   </div>
 
   <div class="weather-strip">
-    <div class="temp-bar" style="background:#FF7A00;"></div>
-    <div class="weather-temp-big">72°</div>
+    <div class="temp-bar" style="background:#444;"></div>
+    <div class="weather-temp-big"></div>
     <div class="weather-right">
-      <div class="weather-condition">Foggy</div>
+      <div class="weather-condition"></div>
       <div class="weather-location">San Diego, CA — Today's High</div>
     </div>
-    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="1.4" stroke-linecap="round"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5" y1="16" x2="19" y2="16"/></svg></div>
+    <div class="weather-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="17.66" y2="6.34"/><line x1="6.34" y1="17.66" x2="4.93" y2="19.07"/></svg></div>
   </div>
 
   <div class="content">
     <div>
       <div class="label">Today's Schedule</div>
-      <div class="empty">Free day — make it yours.</div>
+      
+          <div class="event" style="border-left-color:#b39ddb;min-height:120px;">
+            <div class="event-time">8:30am — 12:30pm</div>
+            <div class="event-name">Interwest Capital Internship</div>
+            <div class="event-category" style="color:#b39ddb">Work</div>
+          </div>
+          <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
+            <div class="event-time">9am — 9:15am</div>
+            <div class="event-name">Follow up with Conner on AI</div>
+            <div class="event-category" style="color:#80cbc4">Personal</div>
+          </div>
+          <div class="event" style="border-left-color:#80cbc4;min-height:52px;">
+            <div class="event-time">10:30am — 11am</div>
+            <div class="event-name">AI Review - Alex/Luke</div>
+            <div class="event-category" style="color:#80cbc4">Personal</div>
+          </div>
     </div>
     <div>
       <div class="label">To-Do</div>
@@ -439,15 +454,15 @@
     <div class="russian-inner">
       <div class="label">Russian Word of the Day</div>
       
-      <div class="russian-word">Как сказать...?</div>
-      <div class="russian-translit">KAK SKU-ZIET</div>
-      <div class="russian-english">How do you say…?</div>
-      <audio id="russian-audio" src="Russian Words/Recording (3).mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
+      <div class="russian-word">Большой</div>
+      <div class="russian-translit">BULL-SHOY</div>
+      <div class="russian-english">Big</div>
+      <audio id="russian-audio" src="Russian Words/big.mp3" preload="auto"></audio><button class="russian-pronounce" onclick="document.getElementById('russian-audio').play()">&#9654; Pronounce</button>
       <div class="russian-expand" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.russian-plus').textContent=open?'+':'−';">
         <span class="russian-expand-label">Explanation</span>
         <span class="russian-plus">+</span>
       </div>
-      <div class="russian-explanation">Point at an object and use this — locals love helping learners</div>
+      <div class="russian-explanation">You may recognize this from the Bolshoy Theatre — means 'grand/big'</div>
     </div>
   </div>
 
@@ -457,24 +472,46 @@
       
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">FAA National Ground Stop Exposes Critical Infrastructure Risk—$50B System Overhaul Needed</span>
+        <span class="news-title">Construction Costs to Climb in 2027 Despite Slowing Demand</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">A 4-hour nationwide FAA ground stop affected 1.5M travelers and canceled 8,100+ flights, exposing decades-old air traffic control infrastructure vulnerable to technology upgrades. Transportation Secretary Duffy warned Congress that $50B in infrastructure investment is critical or more disruptions will occur—a major policy signal affecting logistics, industrial real estate accessibility, and investor confidence in supply chain resilience.</p>
-        <p class="news-why-text">Why it matters: Infrastructure failures directly impact industrial/logistics CRE valuations, tenant operations, and cap rate risk premiums; also signals potential government spending priorities that could affect bond yields and CMBS performance.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">JLL projects construction bid prices will rise 3.1-4.2% in 2027 despite weakening demand, driven by material inflation, labor shortages, and competition for crews from data center and power plant projects. This is an unusual dynamic—typically slowdowns pressure costs downward—signaling that infrastructure/AI-adjacent development is structurally reshaping the entire construction market.</p>
+        <p class="news-why-text">Why it matters: Understanding construction cost trajectories is critical for underwriting development deals and modeling acquisition IRRs; this trend directly impacts your project feasibility analysis and capital deployment decisions.</p>
+        <div class="news-source-note">Find it in your <strong>CRE Daily</strong> email. <a class="news-article-link" href="https://www.credaily.com/briefs/jll-sees-2027-construction-costs-rising-3-1-to-4-2/" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     <div class="news-item">
       <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
-        <span class="news-title">Microsoft Outage Signals Tech Stack Vulnerability in Enterprise Systems</span>
+        <span class="news-title">Where Developers Are Trying To Lease Public Lands To Build Data Centers</span>
         <span class="news-plus">+</span>
       </div>
       <div class="news-body">
-        <p class="news-summary-text">A major Microsoft outage highlighted systemic risks in cloud-dependent enterprise infrastructure, following Nvidia's executive crisis that wiped $1.7T in market value this week. Tech sector volatility—six consecutive losing weeks for Nvidia—signals potential headwinds for data center demand and tech tenant stability in CRE portfolios.</p>
-        <p class="news-why-text">Why it matters: Tech tenants represent a major driver of San Diego office/industrial demand; corporate instability, cap spending cuts, and M&A uncertainty could pressure occupancy rates and lease rates in life sciences/tech corridors.</p>
-        <div class="news-source-note">Find it in your <strong>Morning Brew</strong> email. <a class="news-article-link" href="http://www.morningbrew.com" target="_blank" rel="noopener">Try article →</a></div>
+        <p class="news-summary-text">Developers are aggressively pursuing public land leases across the country for data center development, reflecting the sector's explosive growth and scarcity of suitable sites. This trend reveals a critical challenge: land availability constraints and competitive pressure for prime data center locations with power/cooling infrastructure.</p>
+        <p class="news-why-text">Why it matters: Data centers represent the highest-velocity CRE asset class right now with institutional capital chasing limited supply; understanding public land opportunities is key to identifying alternative development models and acquisition targets.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email.</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">Foropoint Buys 117K SF Corona Building For $22M</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">Foropoint acquired a 117,000 SF industrial building in Corona for $22M, translating to roughly $188/SF—a data point in the ongoing Inland Empire logistics market. Corona's proximity to major freeway corridors and logistics clusters continues to attract institutional investors despite broader market uncertainty.</p>
+        <p class="news-why-text">Why it matters: This deal illustrates current pricing and investor appetite in Southern California's most active industrial submarket; relevant for benchmarking cap rates, construction costs, and acquisition strategies in the IE.</p>
+        <div class="news-source-note">Find it in your <strong>Bisnow SoCal Morning Brief</strong> email. <a class="news-article-link" href="https://www.bisnow.com" target="_blank" rel="noopener">Try article →</a></div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-toggle" onclick="var b=this.nextElementSibling;var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.news-plus').textContent=open?'+':'−';">
+        <span class="news-title">San Diego City Council Likely to End Flock Surveillance Camera Contract Today</span>
+        <span class="news-plus">+</span>
+      </div>
+      <div class="news-body">
+        <p class="news-summary-text">San Diego's City Council is poised to terminate the city's Flock automated license plate reader (ALPR) contract with overwhelming support, citing privacy concerns and improper surveillance use. The vote signals shifting political sentiment on government surveillance technology and may influence vendor relationships and municipal budgeting.</p>
+        <p class="news-why-text">Why it matters: Local policy shifts affect municipal bond ratings, operational costs, and investor sentiment around San Diego real estate; this reflects broader governance patterns that can impact development approvals and institutional confidence.</p>
+        <div class="news-source-note">Find it in your <strong>Axios San Diego</strong> email. <a class="news-article-link" href="https://www.axios.com" target="_blank" rel="noopener">Try article →</a></div>
       </div>
     </div>
     </div>
